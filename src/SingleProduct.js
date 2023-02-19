@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom";
-import { API, useProductContext } from "./context/productContext";
+import {  useProductContext } from "./context/productContext";
 import FormatPrice from "./Helpers/FormatPrice";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
@@ -10,9 +10,8 @@ import {TbReplace, TbTruckDelivery} from 'react-icons/tb'
 import {MdSecurity} from 'react-icons/md'
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
-import {UrlThumbnail} from "./util/UrlThumbnail";
 
-
+const API=`http://localhost:8000/api/product/:${id}`
 const SingleProduct = () => {
   console.log(image);
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
@@ -21,7 +20,7 @@ const SingleProduct = () => {
   // console.log('id: ', id);
    const {id:image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
   useEffect(()=>{
-  getSingleProduct(`${API}?id=${id}`)
+  getSingleProduct(API)
   },[])
   
   if(isSingleLoading){

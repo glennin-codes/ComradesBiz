@@ -13,7 +13,7 @@ let QUERY = encodeURIComponent('*[_type == "product"]');
 
 
 
-const API = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+const APIal = `http://localhost:8000/api/products/`;
 
 const initialState = {
   isLoading: false,
@@ -54,7 +54,7 @@ const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getProducts(API);
+    getProducts(APIal);
   }, []);
 
   return (
@@ -69,4 +69,4 @@ const useProductContext = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider, AppContext, useProductContext ,API};
+export { AppProvider, AppContext, useProductContext ,APIal};
