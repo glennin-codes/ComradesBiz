@@ -13,7 +13,7 @@ let QUERY = encodeURIComponent('*[_type == "product"]');
 
 
 
-const APIal = `http://localhost:8000/api/products/:${dataAmount?dataAmount:all}`;
+const APIal = `http://localhost:8000/api/products/:all`;
 const dataAmount=0;
 const initialState = {
   isLoading: false,

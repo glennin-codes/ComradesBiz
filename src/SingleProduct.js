@@ -11,7 +11,7 @@ import {MdSecurity} from 'react-icons/md'
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 
-const API=`http://localhost:8000/api/product/:${id}`
+
 const SingleProduct = () => {
   console.log(image);
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
@@ -19,7 +19,8 @@ const SingleProduct = () => {
   const {id} = useParams();
   // console.log('id: ', id);
    const {id:image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
-  useEffect(()=>{
+   const API=`http://localhost:8000/api/product/:${id}`
+   useEffect(()=>{
   getSingleProduct(API)
   },[])
   
