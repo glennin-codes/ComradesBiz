@@ -4,9 +4,7 @@ import reducer from "../Reducer/productReducer";
 
 const AppContext = createContext();
 
-let PROJECT_ID = "saczuqk8";
-let DATASET = "production";
-let QUERY = encodeURIComponent('*[_type == "product"]');
+
 
 // Compose the URL for your project's endpoint and add the query
 
