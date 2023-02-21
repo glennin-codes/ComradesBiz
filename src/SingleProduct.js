@@ -19,9 +19,8 @@ const SingleProduct = () => {
   const {id} = useParams();
   // console.log('id: ', id);
    const {id:image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
-   const API=`http://localhost:8000/api/product/:${id}`
+   const API=`http://localhost:8000/api/product/${id}`
    useEffect(()=>{
-  getSingleProduct(API)
   },[])
   
   if(isSingleLoading){
