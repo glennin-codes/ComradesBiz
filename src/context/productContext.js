@@ -11,7 +11,7 @@ const AppContext = createContext();
 
 
 
-const APIal = `http://localhost:8000/api/products/all`;
+const APIal = `https://shopifybackend.onrender.com/api/products/all`;
 const dataAmount=0;
 const initialState = {
   isLoading: false,

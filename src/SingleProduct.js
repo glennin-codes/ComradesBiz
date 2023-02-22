@@ -19,7 +19,7 @@ const SingleProduct = () => {
   const {id} = useParams();
   // console.log('id: ', id);
    const {id:Jamii,image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
-   const API=`http://localhost:8000/api/product/:`
+   const API=`https://shopifybackend.onrender.com/api/product/:`
    useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
