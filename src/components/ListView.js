@@ -8,7 +8,7 @@ const ListView = ({ products }) => {
     <Wrapper className="section">
       <div className="container grid">
         {products.map((curElem) => {
-          const { id, name, image, price, description } = curElem;
+          const { _id, name, image, price, description } = curElem;
           return (
             <div className="card grid grid-two-column">
               <figure>
@@ -22,7 +22,7 @@ const ListView = ({ products }) => {
                 </p>
                 <p>{description.slice(0, 90)}...</p>
 
-                <NavLink to={`/singleproduct/${id}`} className="btn-main">
+                <NavLink to={`/singleproduct/${_id}`} className="btn-main">
                   <Button className="btn">Read More</Button>
                 </NavLink>
               </div>

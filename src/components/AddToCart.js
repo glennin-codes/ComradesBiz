@@ -9,7 +9,7 @@ import { useCartContext } from "../context/cart_context";
 const AddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
 
-  const { id, colors, stock } = product;
+  const { _id, colors, stock } = product;
 
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
@@ -48,7 +48,7 @@ const AddToCart = ({ product }) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
+      <NavLink to="/cart" onClick={() => addToCart(_id, color, amount, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>
@@ -62,7 +62,7 @@ const Wrapper = styled.section`
     align-items: center;
   }
   .btnStyle {
-    width: 2rem;
+    w_idth: 2rem;
     height: 2rem;
     background-color: #000;
     border-radius: 50%;
