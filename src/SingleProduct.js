@@ -16,12 +16,12 @@ const SingleProduct = () => {
   console.log(image);
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
    console.log('SingleProduct: ', singleProduct);
-  const {_id} = useParams();
-  console.log('id: ', _id);
+  const {id} = useParams();
+  console.log('id: ', id);
    const {image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
    const API=`https://shopifybackend.onrender.com/api/product/:`
    useEffect(() => {
-    getSingleProduct(`${API}?id=${_id}`);
+    getSingleProduct(`${API}?id=${id}`);
   }, []);
   
   if(isSingleLoading){
@@ -71,7 +71,7 @@ const SingleProduct = () => {
             </div>
             <div className="product-data-info">
               <p>Available: <span>{stock > 0 ? "In Stock" : "Not Available"}</span></p>
-              <p>ID : <span> {_id} </span></p>
+              <p>ID : <span> {id} </span></p>
               <p>Brand : <span> {company} </span></p>
             </div>
             <hr />
