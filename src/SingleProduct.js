@@ -16,12 +16,12 @@ const SingleProduct = () => {
   console.log(image);
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
    console.log('SingleProduct: ', singleProduct);
-  const {id} = useParams();
-  // console.log('id: ', id);
-   const {id:Jamii,image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
+  const {_id} = useParams();
+  console.log('id: ', _id);
+   const {image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
    const API=`https://shopifybackend.onrender.com/api/product/:`
    useEffect(() => {
-    getSingleProduct(`${API}?id=${id}`);
+    getSingleProduct(`${API}?id=${_id}`);
   }, []);
   
   if(isSingleLoading){
