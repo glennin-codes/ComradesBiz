@@ -6,17 +6,12 @@ import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
   const {_id,name,image,price,category} = curElem;
-  const imgs=image[{url:''}]
-  const [mainImage , setMainImage] = useState(imgs[0]);
-
-  // useEffect(() => {
-  //   setMainImage(imgs[0]);
-  // }, [imgs]);
+ 
     return (
     <NavLink to={`/singleproduct/${_id}`}>
     <div className="card">
       <figure>
-        <img src={mainImage.url}
+        <img src={image[0]?.url}
          alt={name} />
         <figcaption className="caption">{category}</figcaption>
       </figure>
