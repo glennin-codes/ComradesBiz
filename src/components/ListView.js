@@ -12,7 +12,7 @@ const ListView = ({ products }) => {
           return (
             <div className="card grid grid-two-column">
               <figure>
-                <img src={image} alt={name} />
+                <img src={image.url} alt={name} />
               </figure>
 
               <div className="card-data">
