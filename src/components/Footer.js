@@ -27,7 +27,7 @@ const Footer = () => {
         <footer>
           <div className="container grid grid-four-column">
             <div className="footer-about">
-              <h3>Sheela Store</h3>
+              <h3>Shopify Store</h3>
               <p>In 2020, many offline stores were forced to shift to e-commerce to keep
                  their businesses going, while many small e-commerce businesses struggled and others flourished. </p>
             </div>
@@ -43,20 +43,20 @@ const Footer = () => {
               <h3>Follow Us</h3>
               <div className="footer-social--icons">
                 <div>
-                  <a href="https://github.com/Preetiraj3697" target="_blank">
+                  <a href="https://github.com/glennin-codes" target="_blank">
                   <FaGithub className="icons" />
                   </a>
                 </div>
                 <div>
                 <a
-                    href="https://www.instagram.com/paarthavshah3697/"
+                    href="https://www.instagram.com/glenayienda/"
                     target="_blank">
                   <FaInstagram className="icons" />
                   </a>
                 </div>
                 <div>
                   <a
-                    href="https://www.linkedin.com/in/preetiraj3697/"
+                    href="https://www.linkedin.com/in/glenayienda/"
                     target="_blank">
                     <FaLinkedin className="icons" />
                   </a>
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
             <div className="footer-contact">
               <h3>Call Us</h3>
-              <h3>+91 8448206862</h3>
+              <h3>+254713322025</h3>
             </div>
           </div>
 
@@ -73,7 +73,7 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} 💟 PREETI RAJ. All Rights Reserved
+                @{new Date().getFullYear()} 💟 Glen Ayienda All Rights Reserved
               </p>
               <div>
                 <p>PRIVACY POLICY</p>

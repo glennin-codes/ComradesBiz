@@ -6,7 +6,7 @@ import HeroSection from './components/HeroSection'
 const About = () => {
   // const {myName} = useProductContext();
   const data={
-    name: "Sheela Ecommerce"
+    name: "Shopify Ecommerce"
   }
   return (
     <>
