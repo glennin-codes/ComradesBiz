@@ -5,7 +5,7 @@ const Product = (curElem) => {
     const {_id,name,image,price,category} = curElem;
   
   const pic=image[0].url
-  console.log(image);
+  console.log("pick",pic);
     return (
     <NavLink to={`/singleproduct/${_id}`}>
     <div className="card">
