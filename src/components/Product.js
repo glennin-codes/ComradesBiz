@@ -9,9 +9,9 @@ const Product = (curElem) => {
   const imgs=image[{url:''}]
   const [mainImage , setMainImage] = useState(imgs[0]);
 
-  useEffect(() => {
-    setMainImage(imgs[0]);
-  }, [imgs]);
+  // useEffect(() => {
+  //   setMainImage(imgs[0]);
+  // }, [imgs]);
     return (
     <NavLink to={`/singleproduct/${_id}`}>
     <div className="card">
