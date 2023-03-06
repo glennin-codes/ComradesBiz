@@ -65,7 +65,8 @@ const Cart = () => {
             <div>
               <p>shipping fee:</p>
               <p>
-                <FormatPrice price={shipping_fee} />
+                {/* <FormatPrice price={shipping_fee} /> */}
+                  absolutely free
               </p>
             </div>
             <hr />
