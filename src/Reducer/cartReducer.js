@@ -30,7 +30,7 @@ const cartReducer = (state, action) => {
       };
     } else {
       let cartProduct = {
-        id: _id + color,
+        _id: _id + color,
         name: product.name,
         color,
         amount,

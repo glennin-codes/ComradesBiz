@@ -41,7 +41,7 @@ const SingleProduct = () => {
             <Star stars={stars} reviews={reviews}/>
             <p>{reviews} reviews</p>
             <p className="product-data-price ">
-               MRP: 
+               KSH: 
                <del>
                 <FormatPrice price={price + 250000}/>
                </del>
