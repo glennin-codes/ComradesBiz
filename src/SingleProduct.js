@@ -13,7 +13,7 @@ import AddToCart from "./components/AddToCart";
 
 
 const SingleProduct = () => {
-  console.log(image);
+ 
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
    console.log('SingleProduct: ', singleProduct);
   const {id} = useParams();
@@ -43,7 +43,7 @@ const SingleProduct = () => {
             <p className="product-data-price ">
                KSH: 
                <del>
-                <FormatPrice price={price + 250000}/>
+                <FormatPrice price={price + 1999}/>
                </del>
             </p>
             <p className="product-data-price product-data-real-price">
@@ -62,7 +62,7 @@ const SingleProduct = () => {
               </div>
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon"/>
-                <p>Sheela Store Delivered</p>
+                <p>Shopify Store Delivered</p>
               </div>
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon"/>
