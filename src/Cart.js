@@ -59,7 +59,7 @@ const Cart = () => {
             <div>
               <p>subtotal:</p>
               <p>
-                <FormatPrice price={total_price} />
+                KSH: <FormatPrice price={total_price} />
               </p>
             </div>
             <div>
@@ -73,7 +73,8 @@ const Cart = () => {
             <div>
               <p>order total:</p>
               <p>
-                <FormatPrice price={shipping_fee + total_price} />
+                {/* <FormatPrice price={shipping_fee + total_price} /> */}
+                KSH: <FormatPrice price={total_price} />
               </p>
             </div>
           </div>
