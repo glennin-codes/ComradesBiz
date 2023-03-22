@@ -17,6 +17,9 @@ const HeroSection = ({myData}) => {
              <NavLink to="/products">
                 <Button>Shop Now</Button>
              </NavLink>
+             <NavLink to="/signup">
+                <Button>Be a Vender</Button>
+             </NavLink>
             </div>
             <div className="hero-section-image">
          <figure>
