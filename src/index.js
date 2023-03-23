@@ -12,7 +12,17 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 const domain = process.env.REACT_APP_AUTH_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#0066cc',
+    },
+  },
+});
 root.render(
+  <ThemeProvider theme={theme}>
+ 
   <Auth0Provider
   domain={domain}
   clientId={clientId}
@@ -25,6 +35,8 @@ root.render(
       </FilterContextProvider>
     </AppProvider>
   </Auth0Provider>
+
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

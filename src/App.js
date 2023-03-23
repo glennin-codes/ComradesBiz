@@ -11,6 +11,8 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Manageproducts from "./components/adminParts/product/ManageProduct";
+
 const App = () => {
   const theme = {
     colors: {
@@ -46,6 +48,8 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/addProduct" element={<addProduct/>}/>
+      <Route path="/manageProduct" element={<Manageproducts/>}/>
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>

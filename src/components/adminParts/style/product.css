@@ -1,0 +1,38 @@
+/* For image element */
+.image-fade-enter {
+    opacity: 0;
+  }
+  
+  .image-fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  
+  .image-fade-exit {
+    opacity: 1;
+  }
+  
+  .image-fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+  }
+  
+  /* For delete button */
+  .delete-fade-enter {
+    opacity: 0;
+  }
+  
+  .delete-fade-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+  
+  .delete-fade-exit {
+    opacity: 1;
+  }
+  
+  .delete-fade-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-out;
+  }
+  
