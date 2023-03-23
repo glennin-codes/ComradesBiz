@@ -25,7 +25,7 @@ import {
   import axios from "axios";
   import { Link } from "react-router-dom";
   
-  export default function addProduct() {
+  export default function productAdd() {
   {/*states*/}
   const [values, setValues] = useState({});
   const [images, setImages] = useState([]);

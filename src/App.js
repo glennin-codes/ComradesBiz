@@ -12,6 +12,7 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Manageproducts from "./components/adminParts/product/ManageProduct";
+import productAdd from "./components/adminParts/product/addProduct";
 
 const App = () => {
   const theme = {
@@ -48,7 +49,7 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/addProduct" element={<addProduct/>}/>
+      <Route path="/addProduct" element={<productAdd/>}/>
       <Route path="/manageProduct" element={<Manageproducts/>}/>
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
