@@ -12,7 +12,6 @@ import {
     Box,
     Paper,
   } from "@mui/material";
-  
   import React from "react";
   import {useCallback,useEffect,useState} from 'react'
   import { useDropzone } from "react-dropzone";
