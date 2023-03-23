@@ -16,7 +16,7 @@ import {
   import React from "react";
   import {useCallback,useEffect,useState} from 'react'
   import { useDropzone } from "react-dropzone";
-  import Toast from "../assets/utils/Toast";
+  import Toast from "../utils/Toast"
   import { toast } from "react-toastify";
   import 'react-toastify/dist/ReactToastify.css';
   import { CSSTransition } from "react-transition-group";
