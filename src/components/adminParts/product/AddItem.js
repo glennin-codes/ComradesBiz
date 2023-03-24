@@ -1,3 +1,4 @@
+import React from "react";
 import {
     Button,
     Alert,
@@ -12,7 +13,7 @@ import {
     Box,
     Paper,
   } from "@mui/material";
-  import React from "react";
+  
   import {useCallback,useEffect,useState} from 'react'
   import { useDropzone } from "react-dropzone";
   import Toast from "../utils/Toast"
@@ -24,7 +25,7 @@ import {
   import axios from "axios";
   import { Link } from "react-router-dom";
   
-  export default function productAdd() {
+  const AddItem=()=> {
   {/*states*/}
   const [values, setValues] = useState({});
   const [images, setImages] = useState([]);
@@ -349,4 +350,4 @@ import {
       </Box>
     );
   }
-  
+  export default AddItem
