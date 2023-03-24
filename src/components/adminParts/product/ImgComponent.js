@@ -15,7 +15,8 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
-// import usePrevious from "../assets/hooks/usePrevious";
+import { ThemeProvider } from "@material-ui/core/styles";
+import MuiTheme from '../utils/MuiTheme';
 export default function ImgComponent({ images, handleColorChange, deleteImage }) {
   // const prevImages =usePrevious(images);
   const refs = useRef(images.map(() => React.createRef()));
@@ -35,6 +36,7 @@ export default function ImgComponent({ images, handleColorChange, deleteImage })
 
   return (
     <>
+     <ThemeProvider theme={MuiTheme}>
       <Grid item xs={12}>
         {images.map((image, index) => (
           <Box
@@ -106,6 +108,7 @@ export default function ImgComponent({ images, handleColorChange, deleteImage })
           </Box>
         ))}
       </Grid>
+      </ThemeProvider>
     </>
   );
 }

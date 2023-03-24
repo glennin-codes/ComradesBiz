@@ -9,7 +9,9 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Stack from '@mui/material/Stack';
 import { Box } from "@mui/system";
-import Alert from "@mui/material/Alert"
+import Alert from "@mui/material/Alert";
+import { ThemeProvider } from "@material-ui/core/styles";
+import MuiTheme from '../utils/MuiTheme';
 
 export default function UpdateProductForm({product, onClose,setRefresh,}) {
   const [name, setName] = useState(product.name);
@@ -53,6 +55,8 @@ export default function UpdateProductForm({product, onClose,setRefresh,}) {
   };
 
   return (
+
+    <ThemeProvider theme={MuiTheme}>
     <div>
         {success && <Alert severity='success'>{success}</Alert>}
       <Button onClick={() => setOpen(true)}>Update Product</Button>
@@ -101,5 +105,6 @@ export default function UpdateProductForm({product, onClose,setRefresh,}) {
       </Dialog>
         </Box>
     </div>
+    </ThemeProvider>
   );
 }
