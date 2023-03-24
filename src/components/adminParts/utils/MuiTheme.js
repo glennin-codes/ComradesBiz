@@ -19,14 +19,9 @@ const MuiTheme = createTheme({
       "Arial",
       "sans-serif",
     ].join(","),
-    h1: {
-      fontSize: "3.25rem",
-      fontWeight: 600,
-      lineHeight: 1.167,
-      letterSpacing: "0em",
-    },
+    fontSize: 16,
 
-      fontSize: "3rem",
+      
       // add any other typography-related properties you want to apply to all components
     }
 }
