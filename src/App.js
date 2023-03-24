@@ -17,6 +17,23 @@ import AddItem from "./components/adminParts/product/AddItem";
 
 const App = () => {
   const theme = {
+    font:{
+      main:"'Poppins', sans-serif",
+      
+
+    },
+    font_size: {
+      h1: "3rem",
+      h2: "2.5rem",
+      h3: "2rem",
+      h4: "1.5rem",
+      h5: "1.2rem",
+      h6: "1rem",
+      p: "1rem",
+      small: ".8rem",
+      
+    }
+    ,
     colors: {
       heading: "rgb(24 24 29)",
       text: "rgba(29 ,29, 29, .8)",
