@@ -20,13 +20,13 @@ const MuiTheme = createTheme({
       "sans-serif",
     ].join(","),
     h1: {
-      fontSize: "2.5rem",
+      fontSize: "3.25rem",
       fontWeight: 600,
       lineHeight: 1.167,
       letterSpacing: "0em",
     },
-       
-      fontSize: "1.25rem",
+
+      fontSize: "3rem",
       // add any other typography-related properties you want to apply to all components
     }
 }
