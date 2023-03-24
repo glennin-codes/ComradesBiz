@@ -16,7 +16,7 @@ import {
 
   
   import {useCallback,useEffect,useState} from 'react'
-  import { ThemeProvider } from "@material-ui/core/styles";
+  import { ThemeProvider } from "@mui/material/styles";
 import MuiTheme from '../utils/MuiTheme';
   import { useDropzone } from "react-dropzone";
   import Toast from "../utils/Toast"

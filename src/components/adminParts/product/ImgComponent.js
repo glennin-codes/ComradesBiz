@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import MuiTheme from '../utils/MuiTheme';
 export default function ImgComponent({ images, handleColorChange, deleteImage }) {
   // const prevImages =usePrevious(images);

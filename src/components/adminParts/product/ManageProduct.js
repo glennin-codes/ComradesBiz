@@ -12,7 +12,7 @@ import  Typography from '@mui/material/Typography';
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import UpdateProductForm from './UpdateProductForm';
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import MuiTheme from '../utils/MuiTheme';
 
 

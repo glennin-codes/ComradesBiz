@@ -10,7 +10,7 @@ import DialogActions from "@mui/material/DialogActions";
 import Stack from '@mui/material/Stack';
 import { Box } from "@mui/system";
 import Alert from "@mui/material/Alert";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import MuiTheme from '../utils/MuiTheme';
 
 export default function UpdateProductForm({product, onClose,setRefresh,}) {
