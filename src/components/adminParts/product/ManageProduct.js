@@ -12,6 +12,8 @@ import  Typography from '@mui/material/Typography';
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import UpdateProductForm from './UpdateProductForm';
+import { ThemeProvider } from "@material-ui/core/styles";
+import MuiTheme from '../utils/MuiTheme';
 
 
 
@@ -56,6 +58,7 @@ fetchproducts()
     
   return (
     <>
+     <ThemeProvider theme={MuiTheme}>
     {selectedProduct && (
       <UpdateProductForm  product={selectedProduct}  onClose={() => setSelectedProduct(null) } setRefresh={setRefresh} />
     )}
@@ -140,6 +143,7 @@ fetchproducts()
         </TableBody>
       </Table>
     </TableContainer>
+    </ThemeProvider>
     </>
   );
    

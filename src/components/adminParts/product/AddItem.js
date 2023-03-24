@@ -13,8 +13,11 @@ import {
     Box,
     Paper,
   } from "@mui/material";
+
   
   import {useCallback,useEffect,useState} from 'react'
+  import { ThemeProvider } from "@material-ui/core/styles";
+import MuiTheme from '../utils/MuiTheme';
   import { useDropzone } from "react-dropzone";
   import Toast from "../utils/Toast"
   import { toast } from "react-toastify";
@@ -151,6 +154,9 @@ import {
         
     };
     return (
+      <>
+          <ThemeProvider theme={MuiTheme}>
+     
       <Box>
         <Toast time={time}/>
         <Typography variant="h4" align="center" color="primary" fontWeight="bold">
@@ -348,6 +354,8 @@ import {
           </form>
         </Box>
       </Box>
+      </ThemeProvider>
+      </>
     );
   }
   export default AddItem
