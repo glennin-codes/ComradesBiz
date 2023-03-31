@@ -71,7 +71,7 @@ const ContactMe = () => {
 
   return (
     <>
-    <Toast time={3000} /> 
+      <Toast time={3000} />
       <div className="main_container_second_contact">
         <div className="main_container_second_contact_right">
           <div className="main_container_second_contact_right-mainHeading">
@@ -109,9 +109,7 @@ const ContactMe = () => {
                         name="topic"
                         value="prices"
                       />
-                      <label htmlFor="prices">
-                      Prices
-                      </label>
+                      <label htmlFor="prices">Prices</label>
                     </div>
                     <div>
                       <input
@@ -120,9 +118,7 @@ const ContactMe = () => {
                         name="topic"
                         value="financial"
                       />
-                      <label htmlFor="financial">
-                        Financial Questions
-                      </label>
+                      <label htmlFor="financial">Financial Questions</label>
                     </div>
                     <div>
                       <input
@@ -138,7 +134,7 @@ const ContactMe = () => {
                   </div>
                 </form>
               </div>
-          
+
               <div className="main_container_second_contact_right-options-radio-2">
                 <form className="main_container_second_contact_right-options-radio-2-form">
                   <div className="main_container_second_contact_right-options-radio-2-form-content">
@@ -167,9 +163,7 @@ const ContactMe = () => {
                         name="payments"
                         value="Payments"
                       />
-                      <label htmlFor="payments">
-                        Payments
-                      </label>
+                      <label htmlFor="payments">Payments</label>
                     </div>
                     <div>
                       <input
@@ -178,9 +172,7 @@ const ContactMe = () => {
                         name="account"
                         value="Account"
                       />
-                      <label htmlFor="account">
-                        Account Problem
-                      </label>
+                      <label htmlFor="account">Account Problem</label>
                     </div>
                     <div>
                       <input
@@ -224,16 +216,19 @@ const ContactMe = () => {
                   placeholder="Message"
                   required
                   className="text-area"
-                  onchange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => setMessage(e.target.value)}
                   value={message}
                 />
-    
-           
+
                 <Wrapper>
-                <Grid item xs={12} sx={{ textAlign: "right" }}>
-                  <Button type="submit" variant="outlined" sx={{width:'3rem'}} >
-                    {buttonLoading ? <CircularProgress size={24} /> : "Send"}
-                  </Button>
+                  <Grid item xs={12} sx={{ textAlign: "right" }}>
+                    <Button
+                      type="submit"
+                      variant="outlined"
+                      sx={{ width: "3rem" }}
+                    >
+                      {buttonLoading ? <CircularProgress size={24} /> : "Send"}
+                    </Button>
                   </Grid>
                 </Wrapper>
               </form>

@@ -69,6 +69,7 @@ label {
 .main_container_second_contact_right-forminfo-input {
     width: 100%;
     margin: 0px 40;
+    
    
 
 }
@@ -77,8 +78,15 @@ label {
     display: flex;
     flex-direction: column;
     font-size: 18px;
+    text-transform: none;
 }
-
+input::placeholder {
+    text-transform: none;
+  }
+  input[value] {
+    text-transform: none;
+  }
+  
 .main_container_second_contact_right-forminfo-form :is(input), .text-area {
     color: var(--dark-gray) !important;
     outline: none;
