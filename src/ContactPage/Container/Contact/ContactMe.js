@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PhoneInput from "react-phone-number-input/input-mobile";
 import "react-phone-number-input/style.css";
 import { CircularProgress } from '@mui/material'
+import { SendEmail } from '../../Api/Api'
 
 
 const ContactMe = () => {
@@ -40,6 +41,7 @@ const ContactMe = () => {
             const[phone,setPhone]=useState('')
             const [buttonLoading, setButtonLoading] = useState(false);
             const [send, setSend] = useState();
+            const [error, setError] = useState();
 
             useEffect(()=>{
               if (send) {
@@ -54,6 +56,10 @@ const ContactMe = () => {
                  
                
               }
+              if (error){
+                toast.error(error);
+                setError();
+              }
           },[send]);
             
 
@@ -63,7 +69,7 @@ const ContactMe = () => {
               e.preventDefault();
               setButtonLoading(true);
           
-              SendEmail({ name ,email,phone, message, setSend }).then(
+              SendEmail({ name ,email,phone, message,setError,setSend }).then(
                 () => {
                   setButtonLoading(false);
                 }
