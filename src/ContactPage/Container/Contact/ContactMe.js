@@ -168,7 +168,7 @@ const ContactMe = () => {
                         value="Payments"
                       />
                       <label htmlFor="payments">
-                        I have a question about payments
+                        Payments
                       </label>
                     </div>
                     <div>
