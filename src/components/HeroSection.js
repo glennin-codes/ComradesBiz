@@ -17,7 +17,7 @@ const HeroSection = ({myData}) => {
              <NavLink to="/products" style={{marginRight:"4rem"}}>
                 <Button>Shop Now</Button>
              </NavLink>
-             <NavLink to="/addProduct">
+             <NavLink to="/login">
                 <Button>Be a Vender</Button>
              </NavLink>
             </div>

@@ -31,14 +31,14 @@ const Heading = styled.h1`
   margin-bottom: 20px;
 `;
 
-const UserProfileButton = styled(Button)`
-  margin-top: 20px;
-  background-color: #6c63ff;
-  color: #fff;
-  &:hover {
-    background-color: #514ec2;
-  }
-`;
+// const UserProfileButton = styled(Button)`
+//   margin-top: 20px;
+//   background-color: #6c63ff;
+//   color: #fff;
+//   &:hover {
+//     background-color: #514ec2;
+//   }
+// `;
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
