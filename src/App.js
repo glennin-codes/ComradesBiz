@@ -1,5 +1,5 @@
-import React from "react";
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import React, { useEffect } from "react";
+import {BrowserRouter,Routes,Route, useLocation} from 'react-router-dom'
 import About from "./About";
 import Home from "./Home";
 import Products from "./Products";
@@ -32,7 +32,7 @@ const App = () => {
       h4: "1.5rem",
       h5: "2rem",
       h6: "2rem",
-      p: "1rem",
+      p: "2rem",
       small: ".8rem",
       
     }
@@ -60,12 +60,22 @@ const App = () => {
       tab: "998px",
     },
   };
+  const ScrollToTop=({children})=>{
+    const location=useLocation()
+    useEffect(()=>{
+  window.scrollTo(0,0)
+    },[location])
+  return <>
+  {children}
+  </>
+  }
   return (
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <GlobalStyle/>
     <Header/>
     <Routes>
+      <ScrollToTop>
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
@@ -81,6 +91,7 @@ const App = () => {
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>
+      </ScrollToTop>
     </Routes>
     <Footer/>
     </BrowserRouter>
