@@ -18,6 +18,7 @@ import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
+import MuiTheme from "./components/adminParts/utils/MuiTheme";
 
 
 const App = () => {
@@ -72,6 +73,7 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <MuiTheme>
       <Route path="/admin" element={<AddItem />} />
       <Route path="/manage" element={<Manageproducts />} />
       <Route path="/login" element={<Login />} />
@@ -79,6 +81,7 @@ const App = () => {
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
       <Route path="/userprofile" element={<UserProfile />} />
+      </MuiTheme>
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>

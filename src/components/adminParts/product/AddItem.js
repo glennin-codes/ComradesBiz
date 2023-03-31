@@ -200,7 +200,7 @@ export default function AddItem() {
       });
   };
   return (
-    <Box>
+    <Box sx={{top:'70px'}}>
       <Toast time={time} />
 
       <Typography
