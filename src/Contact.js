@@ -1,8 +1,8 @@
-import { useAuth0 } from "@auth0/auth0-react";
+
 import styled from "styled-components";
 
 const Contact = () => {
-  const { isAuthenticated, user } = useAuth0();
+ 
 
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
@@ -45,7 +45,8 @@ const Contact = () => {
       src= 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3512.9774605186335!2d77.29678141435814!3d28.299006905849843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s-0.5659272502120657%2C37.32018609457084!5e0!3m2!1sen!2sin!4v1664815246439!5m2!1sen!2sin'
         width="100%"
         height="400"
-        style={{ border: 0 }}
+
+        style={{ border: 0,borderRadius:'15px',marginLeft:'20px',marginRight:'20px' }}
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"></iframe>
