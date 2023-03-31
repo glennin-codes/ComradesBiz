@@ -215,7 +215,7 @@ const ContactMe = () => {
                 <PhoneInput
                   placeholder="Enter phone number"
                   value={phone}
-                  onChange={phone}
+                  onChange={setPhone}
                   required
                 />
                 <textarea
