@@ -3,7 +3,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import About from "./About";
 import Home from "./Home";
 import Products from "./Products";
-import Contact from './Contact'
+import Contact from './ContactUs/ContactUs'
 import Cart from "./Cart";
 import SingleProduct from './SingleProduct'
 import Error from "./Error";
@@ -18,9 +18,6 @@ import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
-import { ThemeProvider as Mui,  } from "@mui/material";
-import MuiTheme from "./components/adminParts/utils/MuiTheme";
-
 const App = () => {
   const theme = {
     font:{
@@ -73,11 +70,10 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-     
-      <Route path="/admin" element={<AddItem />} />
-      <Route path="/manage" element={<Manageproducts />} />
       <Route path="/login" element={<Login />} />
       <Route path="/auth/signup" element={<SignUp />} />
+      <Route path="/admin" element={<AddItem />} />
+      <Route path="/manage" element={<Manageproducts />} />
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
       <Route path="/userprofile" element={<UserProfile />} />

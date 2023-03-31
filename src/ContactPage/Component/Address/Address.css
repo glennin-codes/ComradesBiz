@@ -1,0 +1,11 @@
+.main_container_address {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 20px;
+}
+
+.main_container_address-content-heading-para{
+    color: var(--white);
+    font-weight: 300;
+    font-size: 18px;
+}

@@ -1,0 +1,29 @@
+
+.main_container_info-contacts-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+
+}
+
+.main_container_info-lists{
+    margin: 6px 0;
+}
+.main_container_info-lists-h6{
+    color: var(--white);
+    font-weight: 500;
+    font-size: 18px;
+}
+.main_container_info-lists-para{
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* Media Query */
+@media screen and (max-width: 425px) { 
+    .main_container_second_contact {
+        margin: 10px;
+    }
+}

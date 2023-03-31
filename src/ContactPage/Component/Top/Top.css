@@ -1,0 +1,136 @@
+.top_main_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    background-color: var(--Dark-blue);
+    color: var(--white);
+
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.top_search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #07578180;
+    color: var(--white);
+    width: 330px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+
+}
+
+.top_search-container :is(input) {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-align: start;
+    margin-left: 20px;
+    background: none;
+    color: var(--white);
+}
+
+.top_search-container-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    margin-right: 5px;
+}
+
+.top_main_container_language {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+    justify-content: center;
+}
+
+.top_main_container_language-img {
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+p {
+    display: contents;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 0px;
+}
+
+.top_main_container-dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+/* Media Query */
+@media screen and (max-width: 425px) {
+    .top_main_container {
+        width: 100%;
+        margin: 0%;
+
+    }
+
+    .top_main_container-dark-para {
+        display: none;
+    }
+
+    .top_search-container {
+        width: 230px;
+        margin: 0;
+        margin-top: 10px;
+        margin-left: 3px;
+
+    }
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        display: flex;
+        justify-content: space-around;
+        gap: 1px;
+
+    }
+
+}
+
+@media screen and (max-width: 425px) {
+
+    .top_search-container {
+        width: 270px;
+        margin-top: 10px;
+
+    }
+
+    .top_main_container_language, .top_main_container-dark {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .top_main_container-dark-para {
+        display: none;
+    }
+
+    .dark-icon {
+        font-size: 2.3rem;
+    }
+
+}
