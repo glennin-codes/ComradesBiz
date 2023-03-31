@@ -60,7 +60,7 @@ const Contact = () => {
               type="text"
               placeholder="name"
               name="name"
-              value={ name}
+              value=''
               required
               autoComplete="off"
             />
@@ -70,7 +70,7 @@ const Contact = () => {
               name="Email"
               placeholder="Email"
               autoComplete="off"
-              value={email}
+              value=''
               required
             />
 
