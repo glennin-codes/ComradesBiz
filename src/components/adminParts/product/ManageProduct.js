@@ -11,9 +11,10 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
-import UpdateProductForm from "./UpdateProduct";
+
 import { Grid } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import UpdateProductForm from "./UpdateProductForm.js";
 
 export default function Manageproducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);

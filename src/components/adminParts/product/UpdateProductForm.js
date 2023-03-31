@@ -21,8 +21,8 @@ export default function UpdateProductForm({product, onClose,setRefresh}) {
   const[success,setSuccess]=useState("");
   const[error,setError]=useState("");
   const navigate=useNavigate();
-  console.log(product);
-  console.log(product._id)
+
+
 
   const handleSubmit = async (event) => {
 

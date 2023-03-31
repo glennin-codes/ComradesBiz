@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from '@emotion/react';
 import { Alert, CircularProgress, Grid, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -56,7 +56,7 @@ const UserProfile = () => {
   const config={
     headers: { Authorization: `Bearer ${token}` },
   }
-
+const navigate=useNavigate()
   const id =localStorage.getItem('id');
   console.log("id",id);
 
