@@ -30,8 +30,8 @@ const App = () => {
       h2: "2.5rem",
       h3: "2rem",
       h4: "1.5rem",
-      h5: "1.2rem",
-      h6: "1rem",
+      h5: "2rem",
+      h6: "2rem",
       p: "1rem",
       small: ".8rem",
       

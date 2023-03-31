@@ -9,11 +9,11 @@ const Star = ({stars,reviews}) => {
         return    (<span key ={i}>
         {
            stars >= i +1 ? (
-           <FaStar className="icon" />
+           <FaStar className="iconn" />
            ): stars >= number ? (
-            <FaStarHalfAlt className='icon' />
+            <FaStarHalfAlt className='iconn' />
            ): (
-            <AiOutlineStar className="icon" />
+            <AiOutlineStar className="iconn" />
            )
         }
       
@@ -23,7 +23,7 @@ const Star = ({stars,reviews}) => {
    
   return (
     <Wrapper>
-        <div className="icon-style">
+        <div className="icon-styl">
             {ratingStar}
             <p>({reviews} customer reviews)</p>
         </div>
@@ -32,12 +32,12 @@ const Star = ({stars,reviews}) => {
 }
 
 const Wrapper = styled.section`
-.icon-style{
+.icon-styl{
     display:flex;
     gap:0.2rem;
     align-items:center;
      justify-content:flex-start;
-.icon {
+.iconn {
     font-size:2rem;
     color:orange;
 }

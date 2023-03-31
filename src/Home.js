@@ -6,7 +6,7 @@ import Services from './components/Services';
 import Truested from './components/Truested';
 const Home = () => {
   const data={
-    name:"Shopify Store",
+    name:"ComradesBiz",
   }
   return (
      <>
