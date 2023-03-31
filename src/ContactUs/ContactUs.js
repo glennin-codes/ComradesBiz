@@ -12,7 +12,7 @@ const contact =()=>{
     <Header /> 
     <ContactMe />
     <Department />
-    <FooterContact />
+    {/* <FooterContact /> */}
 
         </>
     )

@@ -1,54 +1,53 @@
 
 const department = [
     {
-        title: "Commercial Assessor",
-        address: "Michael Flynn, M.A.A.",
-        phone: "(617) 745-7169"
+        title: "CEO",
+        name: "Glen Ayienda",
+        phone: "+254713322025",
+        email:"ayiendaglen@gmail.com"
     },
     {
-        title: "Property Inspections",
-        address: "Carol Czech",
-        phone: "(617) 745-7164"
+        title: "Software Engineer",
+        name: "Glen Ayeinda",
+        phone: "+254713322025"
     },
     {
-        title: "Assement Supervisor",
-        address: "Christine Chaudary",
-        phone: "(617) 745-7164"
+        title: " Sales Coordinator and Marketplace Manager",
+        name: "Salim Owidi ",
+        phone: "+254707859988",
+        email: "salimowidi@gmail.com"
     },
     {
-        title: "Priciplal Clerk 2",
-        address: "Ruth Nolan",
-        phone: "(617) 745-7164"
-    },
-    {
-        title: "Principal Clerk 1",
-        address: "Jenny Cheung",
-        phone: "(617) 745-7164"
-    },
-    {
-        title: "Head Clerk",
-        address: "Jacquelyn J. Reid",
-        phone: "(617) 376-1175"
+        title: "Customer Support",
+        name: "Mike mbugua",
+        phone: " +2547456-7890",
+        email:"mikembugua@gmail.com"
     },
 ]
+
+
+
 
 export const assessors = [
     {
-        title: "Chairperson",
-        address: "Colleen Healy, M.A.A",
-        phone: "(617) 376-1172"
-    },
-    {
-        title: "Board Member",
-        address: "John Rowland, M.A.A.",
-        phone: "(617) 376-1173"
-    },
-    {
-        title: "Board Member",
-        address: "Christopher R. Rooney",
-        phone: "(617) 376-2713"
-    },
+        title: "Vendor Relations Manager ",
+        name: "John Smith",
+        email: "john.smith@comradesbiz.com",
+        phone: "+25475454223"
+      },
+         {
+        title: "Secretary",
+        name: "Jane Doe",
+        email: "jane.doe@comradesbiz.com",
+        phone: "+25433335"
+      },
+      {
+        title: "Product Specialist",
+        name: "johnDoe",
+        email: "mark.johnson@comradesbiz.com",
+        phone: "+254723344443"
+}
 ]
 
 
-export default department
+export default department 

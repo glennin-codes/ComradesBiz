@@ -12,7 +12,8 @@ const Department = (props) => {
                             {props.title}
                         </h6>
                         <p className='main_container_department-lists-para'>
-                            {props.address} <br />
+                            {props.name} <br />
+                            {props.email} <br />
                             {props.phone}
                         </p>
 

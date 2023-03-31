@@ -12,7 +12,8 @@ const Assessorinfo = (props) => {
                            {props.title}
                         </h6>
                         <p className='main_container_info-lists-para'>
-                            {props.address} <br />
+                            {props.name} <br />
+                            {props.email} <br />
                             {props.phone}
                         </p>
 
