@@ -208,7 +208,7 @@ const ContactMe = () => {
                 />
                 <input
                   type="email"
-                  placeholder="Email"
+                  placeholder="email"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
