@@ -14,7 +14,7 @@ import {
   ThemeProvider,
 } from "@mui/material";
 
-import React, { useContext } from "react";
+import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "react-toastify";
