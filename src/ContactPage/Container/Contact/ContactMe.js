@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PhoneInput from "react-phone-number-input/input-mobile";
 import "react-phone-number-input/style.css";
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
 
@@ -98,19 +98,19 @@ const ContactMe = () => {
                         type="radio"
                         id="buying"
                         name="topic"
-                        value="buying"
+                        value="delivery"
                       />
-                      <label htmlFor="buying">Buying Secondhand Products</label>
+                      <label htmlFor="delivery">Issue on Delivery</label>
                     </div>
                     <div>
                       <input
                         type="radio"
-                        id="selling"
+                        id="prices"
                         name="topic"
-                        value="selling"
+                        value="prices"
                       />
-                      <label htmlFor="selling">
-                        Selling Secondhand Products
+                      <label htmlFor="prices">
+                      Prices
                       </label>
                     </div>
                     <div>
@@ -118,10 +118,10 @@ const ContactMe = () => {
                         type="radio"
                         id="accounting"
                         name="topic"
-                        value="accounting"
+                        value="financial"
                       />
-                      <label htmlFor="accounting">
-                        Accounting and Financial Questions
+                      <label htmlFor="financial">
+                        Financial Questions
                       </label>
                     </div>
                     <div>
@@ -227,11 +227,14 @@ const ContactMe = () => {
                   onchange={(e) => setMessage(e.target.value)}
                   value={message}
                 />
-
+    
+           
                 <Wrapper>
-                  <Button type="submit">
+                <Grid item xs={12} sx={{ textAlign: "right" }}>
+                  <Button type="submit" variant="outlined" >
                     {buttonLoading ? <CircularProgress size={24} /> : "Send"}
                   </Button>
+                  </Grid>
                 </Wrapper>
               </form>
             </div>
