@@ -16,16 +16,16 @@ import {
 import React, { useContext } from "react";
 import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import Toast from "../assets/utils/Toast";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { CSSTransition } from "react-transition-group";
+
 import "../style/product.css";
 import ImgComponent from "./ImgComponent";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { AuthContext } from "./context/AuthContext";
+// import { AuthContext } from "./context/AuthContext";
 import Typewriter from "typewriter-effect";
+import Toast from "../utils/Toast";
 
 
 export default function AddItem() {
@@ -39,7 +39,7 @@ export default function AddItem() {
   const [uploading, setIsUpLoading] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [selected, setIsSelected] = useState(0);
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
  
