@@ -60,7 +60,7 @@ const ContactMe = () => {
                 toast.error(error);
                 setError();
               }
-          },[send]);
+          },[send,error]);
             
 
 

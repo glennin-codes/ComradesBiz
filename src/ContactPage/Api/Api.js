@@ -7,6 +7,8 @@ export const SendEmail = async ({
   phone,
   message,
   setSend,
+  setError
+  
 }) => {
   try {
     const datas = { name, email,phone, message };
@@ -15,6 +17,6 @@ export const SendEmail = async ({
       setSend(res.data);
     }
   } catch (error) {
-    SetError(error.response.data.msg);
+    setError(error.response.data.msg);
   }
 };
