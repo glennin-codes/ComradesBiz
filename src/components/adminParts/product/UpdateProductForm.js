@@ -62,7 +62,7 @@ export default function UpdateProductForm({product, onClose,setRefresh}) {
        else if (error.response && error.response.status === 403) {
         setError('Access to this resource is forbidden. Please log in to continue.');
         setTimeout(()=>{
-          navigate('/');
+          navigate('/login');
         }
         ,3000
         )

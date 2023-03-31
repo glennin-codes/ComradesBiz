@@ -66,7 +66,7 @@ export default function Manageproducts() {
           "Access to this resource is forbidden. Please log in to continue."
         );
         setTimeout(() => {
-          navigate("/");
+          navigate("/login");
         }, 3000);
       } else if (error.response.status === 500) {
         console.log(error.response.data);

@@ -106,7 +106,7 @@ const VerifyEmail = () => {
           <h2>Email verified! You will be redirected shortly.</h2>
           <p>
             If you are not automatically redirected, click{" "}
-            <a href="/" onClick={handleRedirect}>
+            <a href="/admin" onClick={handleRedirect}>
               here
             </a>
             .

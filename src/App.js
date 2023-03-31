@@ -13,6 +13,11 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Manageproducts from "./components/adminParts/product/ManageProduct";
 import AddItem from "./components/adminParts/product/AddItem";
+import SignUp from "./components/adminParts/Auth/SignUp";
+import VerifyEmail from "./components/adminParts/Auth/VerifiCation";
+import LandingPage from "./components/adminParts/Auth/LandingPage";
+import UserProfile from "./components/adminParts/Auth/UserProfile";
+import Login from "./components/adminParts/Auth/Login";
 
 
 const App = () => {
@@ -67,8 +72,13 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/addProduct" element={<AddItem/>}/>
-      <Route path="/manageProduct" element={<Manageproducts/>}/>
+      <Route path="/admin" element={<Products />} />
+      <Route path="/manage" element={<Manageproducts />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/auth/signup" element={<SignUp />} />
+      <Route path="/verifycode" element={<VerifyEmail />} />
+      <Route path="/landingPage" element={<LandingPage />} />
+      <Route path="/userprofile" element={<UserProfile />} />
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>
