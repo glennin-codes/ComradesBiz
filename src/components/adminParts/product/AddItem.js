@@ -22,16 +22,16 @@ import "react-toastify/dist/ReactToastify.css";
 import "../style/product.css";
 import ImgComponent from "./ImgComponent";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { AuthContext } from "./context/AuthContext";
 import Typewriter from "typewriter-effect";
 import Toast from "../utils/Toast";
 
 
 export default function AddItem() {
-  {
+  
     /*states*/
-  }
+  
   const [values, setValues] = useState({});
   const [images, setImages] = useState([]);
   const [status, setStatus] = React.useState("");
@@ -42,7 +42,7 @@ export default function AddItem() {
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
- 
+ const navigate=useNavigate();
   const time = 1 * 60 * 1000; //waiting time to upload
   useEffect(() => {
     if (isSubmit) {
