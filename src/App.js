@@ -12,12 +12,12 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Manageproducts from "./components/adminParts/product/ManageProduct";
-import AddItem from "./components/adminParts/product/AddItem";
 import SignUp from "./components/adminParts/Auth/SignUp";
 import VerifyEmail from "./components/adminParts/Auth/VerifiCation";
 import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
+import AddItem from "./components/adminParts/product/AddItem";
 
 
 const App = () => {
@@ -72,7 +72,7 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/admin" element={<Products />} />
+      <Route path="/admin" element={<AddItem />} />
       <Route path="/manage" element={<Manageproducts />} />
       <Route path="/login" element={<Login />} />
       <Route path="/auth/signup" element={<SignUp />} />

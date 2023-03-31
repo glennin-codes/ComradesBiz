@@ -28,7 +28,7 @@ import { AuthContext } from "./context/AuthContext";
 import Typewriter from "typewriter-effect";
 
 
-export default function Products() {
+export default function AddItem() {
   {
     /*states*/
   }
