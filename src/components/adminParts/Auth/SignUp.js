@@ -16,6 +16,7 @@ import {
   Checkbox,
   MenuItem,
   CircularProgress,
+  ThemeProvider,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box } from "@mui/system";
@@ -26,6 +27,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useRef } from "react";
 import axios from "axios";
+import MuiTheme from "../utils/MuiTheme";
 // import { AuthContext } from '../context/AuthContext';
 const SignUp = () => {
   const navigate = useNavigate();
@@ -171,6 +173,7 @@ const SignUp = () => {
   };
 
   return (
+    <ThemeProvider theme={MuiTheme}>
     <div className="signUp-container">
       <div className="form-container">
         <Typography variant="h4" sx={{ textAlign: "center" }}>
@@ -436,6 +439,7 @@ const SignUp = () => {
         </Box>
       </div>
     </div>
+    </ThemeProvider>
   );
 };
 

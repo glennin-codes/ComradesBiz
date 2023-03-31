@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Box, Typography } from '@mui/material';
+import { Box, ThemeProvider, Typography } from '@mui/material';
 
 import { Link, useLocation } from 'react-router-dom';
+import MuiTheme from '../utils/MuiTheme';
 
 const Container = styled(Box)`
   display: flex;
@@ -28,6 +29,7 @@ const LandingPage = () => {
     const name = new URLSearchParams(search).get('name');
   return (
      <>
+     <ThemeProvider theme={MuiTheme}>
      <div className='wrapper'> 
      <Container sx={{ backgroundColor: '#f1f1f1', padding: '2rem' }}>
       <Message variant="h5" align="center">
@@ -54,6 +56,7 @@ const LandingPage = () => {
       </div>
     </Container>
     </div>
+    </ThemeProvider>
     </>
   );
 };

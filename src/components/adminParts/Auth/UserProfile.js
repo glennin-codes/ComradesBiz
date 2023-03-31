@@ -5,8 +5,9 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
-import { Alert, CircularProgress, Grid, Typography } from "@mui/material";
+import { Alert, CircularProgress, Grid,  ThemeProvider,  Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import MuiTheme from "../utils/MuiTheme";
 
 const Container = styled.div`
   display: flex;
@@ -149,6 +150,7 @@ const UserProfile = () => {
   };
 
   return (
+    <ThemeProvider theme={MuiTheme}>
     <Container>
       {error && <Alert severity="error">{error}</Alert>}
 
@@ -231,6 +233,7 @@ const UserProfile = () => {
         )
       )}
     </Container>
+    </ThemeProvider>
   );
 };
 

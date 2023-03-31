@@ -11,6 +11,7 @@ import {
   Typography,
   Box,
   Paper,
+  ThemeProvider,
 } from "@mui/material";
 
 import React, { useContext } from "react";
@@ -26,6 +27,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import { AuthContext } from "./context/AuthContext";
 import Typewriter from "typewriter-effect";
 import Toast from "../utils/Toast";
+import MuiTheme from "../utils/MuiTheme";
 
 
 export default function AddItem() {
@@ -200,6 +202,7 @@ export default function AddItem() {
       });
   };
   return (
+    <ThemeProvider theme={MuiTheme}>
     <Box sx={{top:'70px'}}>
       <Toast time={time} />
 
@@ -426,5 +429,6 @@ export default function AddItem() {
         </form>
       </Box>
     </Box>
+    </ThemeProvider>
   );
 }

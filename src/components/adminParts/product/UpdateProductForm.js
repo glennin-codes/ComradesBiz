@@ -7,9 +7,10 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import Stack from '@mui/material/Stack';
-import { Box } from "@mui/system";
+import { Box, ThemeProvider } from "@mui/system";
 import Alert from "@mui/material/Alert"
 import { useNavigate } from "react-router-dom";
+import MuiTheme from "../utils/MuiTheme";
 
 export default function UpdateProductForm({product, onClose,setRefresh}) {
   const [name, setName] = useState(product.name);
@@ -79,6 +80,7 @@ export default function UpdateProductForm({product, onClose,setRefresh}) {
   };
 
   return (
+    <ThemeProvider theme={MuiTheme}>
     <div>
         {success && <Alert severity='success'>{success}</Alert>}
         {error && <Alert severity='error'>{error}</Alert>}
@@ -132,5 +134,6 @@ export default function UpdateProductForm({product, onClose,setRefresh}) {
       </Dialog>
         </Box>
     </div>
+    </ThemeProvider>
   );
 }

@@ -12,9 +12,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 
-import { Grid } from "@mui/material";
+import { Grid, ThemeProvider } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import UpdateProductForm from "./UpdateProductForm.js";
+import MuiTheme from "../utils/MuiTheme.js";
 
 export default function Manageproducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -80,6 +81,7 @@ export default function Manageproducts() {
 
   return (
     <>
+     <ThemeProvider theme={MuiTheme}>
       {selectedProduct && (
         <UpdateProductForm
           product={selectedProduct}
@@ -191,6 +193,8 @@ export default function Manageproducts() {
           add more products to database
         </Typography>
       </Grid>
+      </ThemeProvider>
     </>
+    
   );
 }
