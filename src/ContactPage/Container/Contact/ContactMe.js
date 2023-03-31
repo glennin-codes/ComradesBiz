@@ -17,7 +17,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PhoneInput from "react-phone-number-input/input-mobile";
 import "react-phone-number-input/style.css";
-import { CircularProgress, Grid } from "@mui/material";
+import { Button, CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
 
@@ -96,7 +96,7 @@ const ContactMe = () => {
                     <div>
                       <input
                         type="radio"
-                        id="buying"
+                        id="delivery"
                         name="topic"
                         value="delivery"
                       />
@@ -145,20 +145,20 @@ const ContactMe = () => {
                     <div>
                       <input
                         type="radio"
-                        id="buying"
-                        name="buying"
-                        value="Buying"
+                        id="offers"
+                        name="offers"
+                        value="offers"
                       />
-                      <label htmlFor="buying">I want to buy something</label>
+                      <label htmlFor="offers">Trade Offers</label>
                     </div>
                     <div>
                       <input
                         type="radio"
-                        id="selling"
-                        name="selling"
-                        value="Selling"
+                        id="about"
+                        name="about"
+                        value="about"
                       />
-                      <label htmlFor="selling">I want to sell something</label>
+                      <label htmlFor="about">About Comradesbiz</label>
                     </div>
                     <div>
                       <input
@@ -179,7 +179,7 @@ const ContactMe = () => {
                         value="Account"
                       />
                       <label htmlFor="account">
-                        I need help with my account
+                        Account Problem
                       </label>
                     </div>
                     <div>
@@ -273,7 +273,7 @@ const ContactMe = () => {
             <div className="main_container_second_contact_left-third-main">
               <Icon />
               <div className="main_container_second_contact_left-third-heading">
-                <SubHeading heading="Board AdvisoryManagement" />
+                <SubHeading heading="Board Advisory Management" />
               </div>
             </div>
             <div className="main_container_second_contact_left-third-content">
