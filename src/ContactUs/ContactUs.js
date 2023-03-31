@@ -2,6 +2,7 @@ import Header from "../ContactPage/Component/Header/Header"
 import ContactMe from "../ContactPage/Container/Contact/ContactMe"
 import Department from "../ContactPage/Container/Department/Department"
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './ContactUs.css';
 const contact =()=>{
 
