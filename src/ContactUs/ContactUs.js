@@ -7,14 +7,14 @@ import './ContactUs.css';
 const contact =()=>{
 
     return(
-        <div>
+        <>
            {/* <Top /> */}
     <Header /> 
     <ContactMe />
     <Department />
     <Footer />
 
-        </div>
+        </>
     )
 }
 export default contact;
