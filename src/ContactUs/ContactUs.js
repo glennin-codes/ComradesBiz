@@ -3,6 +3,7 @@ import ContactMe from "../ContactPage/Container/Contact/ContactMe"
 import Department from "../ContactPage/Container/Department/Department";
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './ContactUs.css';
+import FooterContact from "../ContactPage/Component/Footer/Footer";
 const contact =()=>{
 
     return(
@@ -11,7 +12,7 @@ const contact =()=>{
     <Header /> 
     <ContactMe />
     <Department />
-    <Footer />
+    <FooterContact />
 
         </>
     )

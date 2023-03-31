@@ -7,7 +7,7 @@ import FooterSubHeading from '../FooterSubHeading/FooterSubHeading'
 
 import "./Footer.css"
 
-const Footer = () => {
+const FooterContact = () => {
     return (
         <>
             <div className='main_container_footer'>
@@ -97,4 +97,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default FooterContact
