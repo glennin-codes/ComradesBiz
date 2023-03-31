@@ -74,8 +74,9 @@ const App = () => {
     <BrowserRouter>
     <GlobalStyle/>
     <Header/>
+    <ScrollToTop>
     <Routes>
-      <ScrollToTop>
+      
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
@@ -91,8 +92,9 @@ const App = () => {
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>
-      </ScrollToTop>
+     
     </Routes>
+    </ScrollToTop>
     <Footer/>
     </BrowserRouter>
     </ThemeProvider>
