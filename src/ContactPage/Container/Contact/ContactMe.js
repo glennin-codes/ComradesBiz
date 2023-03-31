@@ -71,16 +71,16 @@ const ContactMe = () => {
 
   return (
     <>
-    <Toast time={3000} />
+    <Toast time={3000} /> 
       <div className="main_container_second_contact">
         <div className="main_container_second_contact_right">
           <div className="main_container_second_contact_right-mainHeading">
             <Heading title="Need to talk to us?" />
-            <p>
+            <h2>
               {" "}
               We're happy to help! Send us a message or give us a call at
               +254713322025
-            </p>
+            </h2>
           </div>
 
           <div className="main_container_second_contact_right-options">
@@ -138,7 +138,7 @@ const ContactMe = () => {
                   </div>
                 </form>
               </div>
-
+          
               <div className="main_container_second_contact_right-options-radio-2">
                 <form className="main_container_second_contact_right-options-radio-2-form">
                   <div className="main_container_second_contact_right-options-radio-2-form-content">
@@ -215,7 +215,7 @@ const ContactMe = () => {
                 <PhoneInput
                   placeholder="Enter phone number"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={phone}
                   required
                 />
                 <textarea
@@ -229,9 +229,9 @@ const ContactMe = () => {
                 />
 
                 <Wrapper>
-                  <button type="submit">
+                  <Button type="submit">
                     {buttonLoading ? <CircularProgress size={24} /> : "Send"}
-                  </button>
+                  </Button>
                 </Wrapper>
               </form>
             </div>

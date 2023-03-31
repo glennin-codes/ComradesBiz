@@ -203,7 +203,7 @@ export default function AddItem() {
   };
   return (
     <ThemeProvider theme={MuiTheme}>
-    <Box sx={{top:'70px'}}>
+    <Box sx={{top:'20%', margin:'50px'}}>
       <Toast time={time} />
 
       <Typography

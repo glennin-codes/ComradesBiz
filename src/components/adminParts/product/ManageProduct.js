@@ -93,7 +93,7 @@ export default function Manageproducts() {
         />
       )}
 
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{top:'20%'}}>
         {success && <Alert severity="success">{success}</Alert>}
         <Table
           sx={{
