@@ -7,17 +7,12 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { useState } from 'react';
 import axios from 'axios';
-import { AuthContext } from '../context/AuthContext';
-import { Cookies } from 'react-cookie';
+// import { AuthContext } from '../context/AuthContext';
 
-const cookies = new Cookies();
-
-// import useAuthContext from '../../../others/useAuthContext';
-// import LoadingSpinner from '../../Common/LoadingSpinner/LoadingSpinner';
 
 
 const Login = () => {
-const {setUser }=useContext(AuthContext)
+// const {setUser }=useContext(AuthContext)
     const navigate =useNavigate();
 const[error,setError]=useState(null);
 const[succes,setSucces]=useState(null);
@@ -83,7 +78,7 @@ const[loading,setIsLoading]=useState(false);
         if( response ){
             console.log(response.data);
             const{data,status}=response
-            setUser(data);
+            // setUser(data);
             setIsLoading(false);
             if(status===200){
                 const {token,name,email,id}=data;
