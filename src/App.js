@@ -73,7 +73,7 @@ const App = () => {
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Mui theme={MuiTheme}>
+     
       <Route path="/admin" element={<AddItem />} />
       <Route path="/manage" element={<Manageproducts />} />
       <Route path="/login" element={<Login />} />
@@ -81,7 +81,7 @@ const App = () => {
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
       <Route path="/userprofile" element={<UserProfile />} />
-      </Mui>
+    
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>
