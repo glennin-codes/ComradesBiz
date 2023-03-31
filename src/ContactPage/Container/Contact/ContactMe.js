@@ -231,7 +231,7 @@ const ContactMe = () => {
            
                 <Wrapper>
                 <Grid item xs={12} sx={{ textAlign: "right" }}>
-                  <Button type="submit" variant="outlined" >
+                  <Button type="submit" variant="outlined" sx={{width:'3rem'}} >
                     {buttonLoading ? <CircularProgress size={24} /> : "Send"}
                   </Button>
                   </Grid>
