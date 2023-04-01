@@ -4,7 +4,7 @@
     margin: auto;
 }
 
-.login-container .form-container, .signUp-container .form-container{
+.login-container .formmcontainer, .signUp-container .formmcontainer{
     padding: 50px;
     margin: 40px 0;
     border: 2px solid rgb(172, 172, 172);
@@ -12,5 +12,5 @@
 }
 
 @media screen and (max-width:899px) {
-    .login-container .form-container, .signUp-container .form-container{ padding: 30px }
+    .login-container .formmcontainer, .signUp-container .formmcontainer{ padding: 30px }
 }

@@ -305,7 +305,7 @@ const SignUp = () => {
               sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
             />
           </Grid>
-          {values.student && (
+          {values.student && 
             <FormControl
               sx={{ m: 1 }}
               color="primary"
@@ -321,7 +321,7 @@ const SignUp = () => {
                 autoComplete="Enter your School"
               />
             </FormControl>
-          )}
+          }
           <Grid item xs={12} sx={{ m: 1 }}>
             <InputLabel id="demo-multiple-name-label">location</InputLabel>
             <Select
@@ -350,7 +350,7 @@ const SignUp = () => {
               }}
               renderValue={() => locationText}
             >
-              <ListSubheader>
+              <ListSubheader sx={{marginBottom:'5px'}}>
                 <TextField
                   size="small"
                   // Autofocus on textfield
@@ -389,11 +389,20 @@ const SignUp = () => {
               ))}
             </Select>
           </Grid>
-          <Grid item xs={12}>
-            Before you signup, confirm that you have read, understood and agreed
+          <Grid item xs={12} sx={{marginBottom:'10px'}}>
+            <Typography 
+            sx={{ m: 1 }}
+            color="primary"
+            variant="standard"
+            fullWidth 
+             >
+                Before you signup, confirm that you have read, understood and agreed
             with our <a href="/terms"> Terms and conditions </a>
             And our <a href="/privacy">Privacy policy</a>
-            <Checkbox
+           
+
+            </Typography>
+           <Checkbox
               checked={checked}
               onChange={handleChecked}
               sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
