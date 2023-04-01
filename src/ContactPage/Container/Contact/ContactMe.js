@@ -86,7 +86,7 @@ const ContactMe = () => {
 
           <div className="main_container_second_contact_right-options">
             <div className="main_container_second_contact_right-options-h6">
-              <h5 style={{color:'magenta',fontSize:'18px' }}>Please select the topic you want to talk about:</h5>
+              <h5 style={{color:'#010101331',fontSize:'18px' }}>Please select the topic you want to talk about:</h5>
             </div>
 
             {/* Options */}
