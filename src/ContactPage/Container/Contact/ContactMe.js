@@ -20,6 +20,7 @@ import "react-phone-number-input/style.css";
 import { Button, CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
+import { fontSize } from "@mui/system";
 
 const ContactMe = () => {
   const Wrapper = styled.section`
@@ -76,7 +77,7 @@ const ContactMe = () => {
         <div className="main_container_second_contact_right">
           <div className="main_container_second_contact_right-mainHeading">
             <Heading title="Need to talk to us?" />
-            <h6 style={{ fontFamily: 'Raleway, sans-serif' ,fontSize:'18px' }}>
+            <h6 style={{ fontFamily: 'Raleway, sans-serif' ,fontSize:'18px',color:'#075781' }}>
               {" "}
               We're happy to help! Send us a message or give us a call at
               +254713322025
@@ -85,7 +86,7 @@ const ContactMe = () => {
 
           <div className="main_container_second_contact_right-options">
             <div className="main_container_second_contact_right-options-h6">
-              <h5>Please select the topic you want to talk about:</h5>
+              <h5 style={{color:' #0000',fontSize:'18px' }}>Please select the topic you want to talk about:</h5>
             </div>
 
             {/* Options */}
@@ -211,6 +212,7 @@ const ContactMe = () => {
                   required
                 />
                 <textarea
+                style={{textTransform:'none'}}
                   type="text"
                   name="message"
                   placeholder="Message"
