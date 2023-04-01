@@ -1,7 +1,7 @@
  /* MAin Container Start */
 .main_container_contact {
     height: 135px;
-    background: #8490ff;
+    background: url('../../ContactPage/assets/images/contactbg.png');
     background-size: cover;
     background-repeat: no-repeat;
 } 

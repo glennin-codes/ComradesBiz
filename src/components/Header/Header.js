@@ -38,9 +38,9 @@ const Header = () => {
                   <Link to="/contact" className='NavLink'>Contact Us</Link>
                   <Link to="/login" className='NavLink'>Profile</Link>
                   
-            <NavLink to="/cart" className="NavLink ">
+            <NavLink to="/cart" className="NavLink " style={{position:'relative'}}>
               <FiShoppingCart className="cart-trolley"  style={{fontSize : '3.2rem'}}/>
-              <span className="cart-total--item"> {total_item} </span>
+              <span className="cart-total--item" > {total_item} </span>
             </NavLink>
           
         
