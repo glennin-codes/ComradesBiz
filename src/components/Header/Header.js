@@ -38,8 +38,8 @@ const Header = () => {
                   <Link to="/contact" className='NavLink'>Contact Us</Link>
                   <Link to="/login" className='NavLink'>Profile</Link>
                   
-            <NavLink to="/cart" className="navbar-link cart-trolley--link">
-              <FiShoppingCart className="cart-trolley" />
+            <NavLink to="/cart" className="NavLink ">
+              <FiShoppingCart className="cart-trolley"  style={{fontSize : '3.2rem'}}/>
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>
           

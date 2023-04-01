@@ -165,6 +165,16 @@ const Nav = () => {
       }
     }
   `;
+  /* MAin Container Start */
+/* .main_container_contact {
+    height: 500px;
+    background: url('../../assets/images/contactbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+/* MAin Container End */
+/* MAin Container End */
   const navigate=useNavigate()
 
   return (

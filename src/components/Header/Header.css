@@ -1,15 +1,16 @@
-/* MAin Container Start */
-/* .main_container_contact {
-    height: 500px;
-    background: url('../../assets/images/contactbg.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
-
-/* MAin Container End */
-/* MAin Container End */
-
-/* Navabr Start */
+.cart-total--item {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    background-color: #000;
+    color: #000;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    top: -20%;
+    left: 70%;
+    background-color: #8490ff;
+  }
 .NavLink {
     padding: 0 20px;
     text-decoration: none;
@@ -118,6 +119,7 @@ button:focus{
     color: var(--white);
 }
 
+
 .main_container_contact_content-subHeading>h3 {
     text-align: center;
     font-weight: 700;
@@ -172,13 +174,32 @@ button:focus{
         display: block !important;
        
     }
+    .cart-trolley {
+        
+        font-size: 6.2rem;
+      }
+
+      .cart-total--item {
+        width: 5.2rem;
+        height: 5.2rem;
+        font-size: 3rem;
+      }
 }
 
 @media screen and (max-width: 425px) {
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.6rem;
     }
+    .cart-trolley {
+        
+        font-size: 4.2rem;
+      }
 
+      .cart-total--item {
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 2rem;
+      }
 
 }
 
@@ -186,4 +207,14 @@ button:focus{
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.3rem;
     }
+    .cart-trolley {
+        
+        font-size: 3.2rem;
+      }
+
+      .cart-total--item {
+        width: 2.2rem;
+        height: 2.2rem;
+        font-size: 1rem;
+      }
 }
