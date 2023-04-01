@@ -96,6 +96,13 @@ const UserProfile = () => {
     };
     fetchData();
   }, []);
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    localStorage.removeItem('id');
+    localStorage.removeItem('email');
+    window.location.href = '/';
+  }; 
 
   const handleUpdate = async () => {
     setSending(true);
@@ -224,6 +231,19 @@ const UserProfile = () => {
                 upload new Product
               </Typography>
             </Grid>
+            <Grid item xs={12} sx={{ textAlign: 'right' }}>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        onClick={handleLogout}
+        aria-label="Logout"
+        title="Click here to log out"
+      >
+          Logout
+       
+      </Button>
+    </Grid>
+            
             {success && (
               <Alert severity="success" position="right">
                 {success}

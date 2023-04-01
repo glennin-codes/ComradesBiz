@@ -18,6 +18,7 @@ import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
+import PrivateRoute from "./privateRoute/PrivateRoute";
 const App = () => {
   const theme = {
     font:{
@@ -83,11 +84,11 @@ const App = () => {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/login" element={<Login />} />
       <Route path="/auth/signup" element={<SignUp />} />
-      <Route path="/admin" element={<AddItem />} />
-      <Route path="/manage" element={<Manageproducts />} />
+      <PrivateRoute path="/admin" element={<AddItem />} />
+      <PrivateRoute path="/manage" element={<Manageproducts />} />
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
-      <Route path="/userprofile" element={<UserProfile />} />
+      <PrivateRoute path="/userprofile" element={<UserProfile />} />
     
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>

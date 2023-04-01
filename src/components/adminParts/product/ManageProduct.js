@@ -38,6 +38,13 @@ export default function Manageproducts() {
     setSelectedProduct(product);
     
   };
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('id');
+    window.location.href = '/';
+  };
   const deleteProduct = async (_id) => {
     try {
       setSuccess("");
@@ -189,10 +196,23 @@ export default function Manageproducts() {
         xs={12}
         sx={{ textAlign: "right", color: "magenta", fontSize: "2.5rem" }}
       >
-        <Typography component={Link} to="/admin">
+        <Typography component={Link} to="/admin" color='magenta' style={{fontSize
+        :'19px'}}>
           add more products to database
         </Typography>
       </Grid>
+      <Grid item xs={12} sx={{ textAlign: 'right' }}>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        onClick={handleLogout}
+        aria-label="Logout"
+        title="Click here to log out"
+      >
+          Logout
+       
+      </Button>
+    </Grid>
       </ThemeProvider>
     </>
     

@@ -145,7 +145,15 @@ export default function AddItem() {
     setImages((prevState) => prevState.filter((_, i) => i !== index));
     setIsSelected((prevCount) => prevCount - 1);
   };
-  console.log(images);
+  
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('id');
+    window.location.href = '/';
+  };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmit(true);
@@ -425,6 +433,18 @@ export default function AddItem() {
                 Profile Acount
               </Typography>
             </Grid>
+            <Grid item xs={12} sx={{ textAlign: 'right' }}>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        onClick={handleLogout}
+        aria-label="Logout"
+        title="Click here to log out"
+      >
+          Logout
+       
+      </Button>
+    </Grid>
           </Grid>
         </form>
       </Box>
