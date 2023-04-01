@@ -397,7 +397,7 @@ const SignUp = () => {
               </ListSubheader>
               {placeData.map(({ id, center, place_name, geometry }) => (
                 <MenuItem key={center} value={[place_name, center]}
-                style={{color:'black'}}
+                style={{color:'#01010133'}}
                 >
                   {place_name}
                 </MenuItem>
