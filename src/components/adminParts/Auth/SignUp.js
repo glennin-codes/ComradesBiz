@@ -352,8 +352,8 @@ const SignUp = () => {
             >
               <ListSubheader >
                 <TextField
-                sx={{marginBottom:'5px'}}
-                
+                sx={{marginTop:'5px'}}
+
                   size="small"
                   // Autofocus on textfield
                   autoFocus
