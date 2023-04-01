@@ -59,7 +59,7 @@ const SignUp = () => {
   };
 
   const locationRef = useRef();
-  const access_token='pk.eyJ1Ijoic2FtYXJ0aG9uIiwiYSI6ImNrc2J2Z2J0ZzB0Zm'
+  const access_token='pk.eyJ1IjoiZ2xlbm5pbiIsImEiOiJjbGZvbGUwZ2EwMDhnM3lwZmliMW5ldGp0In0.05klmls7gWBpEqsUVu9-YA'
   React.useEffect(() => {
     const fetchLocation = async () => {
       try {
@@ -393,7 +393,7 @@ const SignUp = () => {
           </Grid>
           <Grid item xs={12} sx={{marginBottom:'10px'}}>
             <Typography 
-            sx={{ m: 1, color :"#01010133",fontSize:'16px' }}
+            sx={{ m: 1,fontSize:'16px' }}
            
             variant="standard"
             fullWidth 
