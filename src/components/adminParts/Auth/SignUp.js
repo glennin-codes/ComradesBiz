@@ -350,8 +350,10 @@ const SignUp = () => {
               }}
               renderValue={() => locationText}
             >
-              <ListSubheader sx={{marginBottom:'5px'}}>
+              <ListSubheader >
                 <TextField
+                sx={{marginBottom:'5px'}}
+                
                   size="small"
                   // Autofocus on textfield
                   autoFocus
@@ -391,8 +393,8 @@ const SignUp = () => {
           </Grid>
           <Grid item xs={12} sx={{marginBottom:'10px'}}>
             <Typography 
-            sx={{ m: 1 }}
-            color="primary"
+            sx={{ m: 1, color :"#01010133",fontSize:'16px' }}
+           
             variant="standard"
             fullWidth 
              >
