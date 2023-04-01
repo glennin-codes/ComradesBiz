@@ -8,14 +8,15 @@ const department = [
     },
     {
         title: "Software Engineer",
-        name: "Glen Ayeinda",
+        name: "Glen Ayienda",
+        email:'ayiendaglen@gmail.com',
         phone: "+254713322025"
     },
     {
         title: " Sales Coordinator and Marketplace Manager",
         name: "Salim Owidi ",
         phone: "+254707859988",
-        email: "salimowidi@gmail.com"
+        email: "opikosalim@gmail.com"
     },
     {
         title: "Customer Support",

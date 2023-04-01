@@ -78,7 +78,7 @@
     display: flex !important;
     flex-direction: column !important;
     padding: 10px !important;
-    background: transparent;
+    background:#01010133;
 }
 
 .mobile_navlink {
