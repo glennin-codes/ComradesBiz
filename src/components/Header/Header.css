@@ -1,3 +1,10 @@
+ /* MAin Container Start */
+.main_container_contact {
+    height: 100px;
+    background: url('../../assets/images/contactbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
 .cart-total--item {
     width: 2.4rem;
     height: 2.4rem;
