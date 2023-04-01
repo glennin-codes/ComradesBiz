@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='main_container_contact'>
+      {/* <div className='main_container_contact'> */}
         <div className='main_container_navbar'>
           <Navbar expand="lg" sticky="top" className="navbar">
             <Container>
@@ -51,7 +51,7 @@ const Header = () => {
           </Navbar>
         </div>
 
-      </div>
+      {/* </div> */}
       <Offcanvas show={show}
         onHide={handleClose}
         placement="end"
@@ -70,6 +70,11 @@ const Header = () => {
             <Link to="/about" className='mobile_navlink'>About Us</Link>
             <Link to="/contact" className='mobile_navlink'>Contact Us</Link>
             <Link to="/login" className='mobile_navlink'>Profile</Link>
+            <NavLink to="/cart" className="mobile_navlink">
+              <FiShoppingCart className="cart-trolley"  />
+              <span className="cart-total--item"> {total_item} </span>
+            </NavLink>
+          
           </div>
 
 
