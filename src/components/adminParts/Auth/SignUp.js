@@ -456,7 +456,7 @@ const SignUp = () => {
         <Box>
           <Typography sx={{ textAlign: "center" }}>
             Already have an account?{" "}
-            <NavLink to="/" style={{ color: "red" }}>
+            <NavLink to="/login" style={{ color: "red" }}>
               Login
             </NavLink>
           </Typography>
