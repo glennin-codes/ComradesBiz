@@ -9,7 +9,7 @@ import SingleProduct from './SingleProduct'
 import Error from "./Error";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Manageproducts from "./components/adminParts/product/ManageProduct";
 import SignUp from "./components/adminParts/Auth/SignUp";
