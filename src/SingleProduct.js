@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useParams } from "react-router-dom";
 import {  useProductContext } from "./context/productContext";
 import FormatPrice from "./Helpers/FormatPrice";
@@ -10,22 +10,89 @@ import {TbReplace, TbTruckDelivery} from 'react-icons/tb'
 import {MdSecurity} from 'react-icons/md'
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
+import axios from 'axios';
 
+
+const override = css`
+display: block;
+margin: 0 auto;
+border-color: red;
+`;
 
 const SingleProduct = () => {
+  const [owner, setOwner] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
+  const [school, setSchool] = useState("");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+ 
  
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
    console.log('SingleProduct: ', singleProduct);
   const {id} = useParams();
   console.log('id: ', id);
    const {image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
-   const API=`https://shopifybackend.onrender.com/api/product/:`
+   const API=`https://comradesbizapi.azurewebsites.net/api/product/:`
    useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://comradesbizapi.azurewebsites.net/api/user/ayiendaglen@gmail.com`
+        );
+        if (response) {
+          const { name, phone, location, school ,email} = await response.data;
+        
+          setOwner(name);
+          setPhone(phone);
+          setLocation(location);
+          setSchool(school);
+          setEmail(email);
+          setError("");
+        }
+      } catch (error) {
+      
+        console.error(error);
+        if (error) {
+          if (error.response && error.response.status === 404) {
+            setError("User not found");
+          } else if (error.response && error.response.status === 500) {
+            console.log(error.response.data);
+            setError("Server error!");
+          } else {
+            setError(
+              "network error while trying to fetch!,check your connections and try again"
+            );
+          }
+        }
+      }
+    };
+    fetchData();
   }, []);
+    
+
+  
   
   if(isSingleLoading){
-    return <div className="page_loading">Loading.....</div>
+    return  (<div style={{ 
+      display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "10rem"
+    }}> 
+      <ClipLoader
+    color={"#36D7B7"}
+    loading={isSingleLoading}
+    css={override}
+    size={150}
+  />
+  </div>)
+  
+    //  <div className="page_loading">Loading.....</div>
   }
   return <Wrapper>
     <PageNavigation title={name} />
@@ -62,7 +129,7 @@ const SingleProduct = () => {
               </div>
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon"/>
-                <p>Shopify Store Delivered</p>
+                <p>comradesBiz Store Delivered</p>
               </div>
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon"/>
@@ -71,8 +138,12 @@ const SingleProduct = () => {
             </div>
             <div className="product-data-info">
               <p>Available: <span>{stock > 0 ? "In Stock" : "Not Available"}</span></p>
-              <p>ID : <span> {id} </span></p>
+           
               <p>Brand : <span> {company} </span></p>
+              <p> Seller : <span> {owner}</span></p>
+              <p> Phone Number : <span> {phone}</span></p>
+              <p> School: <span> {school}</span></p>
+              <p> Location: <span> {location}</span></p>
             </div>
             <hr />
             {stock > 0 && <AddToCart product={singleProduct}/>}

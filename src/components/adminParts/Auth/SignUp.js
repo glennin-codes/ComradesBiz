@@ -130,7 +130,7 @@ const SignUp = () => {
 
     try {
       const datas = await axios.post(
-        "https://comradesbizapi.azurewebsites.net/api/user/login",
+        "https://comradesbizapi.azurewebsites.net/api/user/",
         values
       );
       console.log("data", datas);
@@ -296,7 +296,10 @@ const SignUp = () => {
             />
           </FormControl>
           <Grid item xs={12} sx={{ m: 1 }}>
-            Are you a Student?
+            <Typography sx={{fontSize:'16px'}}
+             variant="standard"
+             fullWidth 
+            > Are you a Student?</Typography> 
             <Checkbox
               checked={values.student}
               onChange={(event) => {
@@ -306,21 +309,29 @@ const SignUp = () => {
             />
           </Grid>
           {values.student && 
-            <FormControl
-              sx={{ m: 1 }}
-              color="primary"
-              variant="standard"
-              fullWidth
-            >
-              <InputLabel htmlFor="signUp-School">School</InputLabel>
-              <Input
-                id="School"
-                type="text"
-                defaultValue={values.school}
-                onChange={handleChange("school")}
-                autoComplete="Enter your School"
-              />
-            </FormControl>
+        <FormControl
+        sx={{ m: 1 }}
+        color="primary"
+        variant="standard"
+        fullWidth
+      >
+        <InputLabel htmlFor="signUp-School">School</InputLabel>
+        <Input
+          id="School"
+          type="text"
+          defaultValue={values.school}
+          onChange={(event) => {
+            const additionalValues = { ...values };
+            additionalValues.school = event.target.value;
+            if (event.target.value !== '') {
+              additionalValues.student = true;
+            }
+            setValues(additionalValues);
+          }}
+          autoComplete="Enter your School"
+        />
+      </FormControl>
+      
           }
           <Grid item xs={12} sx={{ m: 1 }}>
             <InputLabel id="demo-multiple-name-label">location</InputLabel>
@@ -385,7 +396,9 @@ const SignUp = () => {
                 />
               </ListSubheader>
               {placeData.map(({ id, center, place_name, geometry }) => (
-                <MenuItem key={center} value={[place_name, center]}>
+                <MenuItem key={center} value={[place_name, center]}
+                style={{color:'#01010133'}}
+                >
                   {place_name}
                 </MenuItem>
               ))}
@@ -443,7 +456,7 @@ const SignUp = () => {
         <Box>
           <Typography sx={{ textAlign: "center" }}>
             Already have an account?{" "}
-            <NavLink to="/" style={{ color: "red" }}>
+            <NavLink to="/login" style={{ color: "red" }}>
               Login
             </NavLink>
           </Typography>
