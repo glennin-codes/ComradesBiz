@@ -35,14 +35,14 @@ const SingleProduct = () => {
    console.log('SingleProduct: ', singleProduct);
   const {id} = useParams();
   console.log('id: ', id);
-   const {image,name,company, description,category,stock,stars,reviews,price,user} = singleProduct;
+   const {image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
    const API=`https://comradesbizapi.azurewebsites.net/api/product/:`
    useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://comradesbizapi.azurewebsites.net/api/user/${user}`
+          `https://comradesbizapi.azurewebsites.net/api/user/ayiendaglen@gmail.com`
         );
         if (response) {
           const { name, phone, location, school ,email} = await response.data;
@@ -78,7 +78,7 @@ const SingleProduct = () => {
   
   
   if(isSingleLoading){
-    return  <div style={{ 
+    return  (<div style={{ 
       display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -90,7 +90,7 @@ const SingleProduct = () => {
     css={override}
     size={150}
   />
-  </div>
+  </div>)
   
     //  <div className="page_loading">Loading.....</div>
   }
