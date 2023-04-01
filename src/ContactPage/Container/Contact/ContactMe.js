@@ -76,11 +76,11 @@ const ContactMe = () => {
         <div className="main_container_second_contact_right">
           <div className="main_container_second_contact_right-mainHeading">
             <Heading title="Need to talk to us?" />
-            <h2>
+            <h6>
               {" "}
               We're happy to help! Send us a message or give us a call at
               +254713322025
-            </h2>
+            </h6>
           </div>
 
           <div className="main_container_second_contact_right-options">
