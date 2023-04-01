@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Nav, Navbar, Container, Offcanvas } from 'react-bootstrap'
 
 // import Logo from '../../assets/images/logo.png'
 import Logo from '../../ContactPage/assets/images/logo.png'
 import "./Header.css"
 import { HumBurgerIcon } from './Icon/Icon';
-
+import { FiShoppingCart } from "react-icons/fi";
+import { useCartContext } from '../../context/cart_context';
 
 const Header = () => {
+  const { total_item } = useCartContext();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -35,6 +37,13 @@ const Header = () => {
                   <Link to="/about" className='NavLink'>About Us </Link>
                   <Link to="/contact" className='NavLink'>Contact Us</Link>
                   <Link to="/login" className='NavLink'>Profile</Link>
+                  
+            <NavLink to="/cart" className="navbar-link cart-trolley--link">
+              <FiShoppingCart className="cart-trolley" />
+              <span className="cart-total--item"> {total_item} </span>
+            </NavLink>
+          
+        
 
                 </Nav>
               </Navbar.Collapse>
