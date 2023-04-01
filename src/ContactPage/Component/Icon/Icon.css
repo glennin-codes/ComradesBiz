@@ -1,0 +1,14 @@
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Vivid-orange);
+    font-size: 1.9rem;
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    /* margin-top: 40px; */
+    margin: 40px 0px;
+}

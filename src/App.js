@@ -1,15 +1,15 @@
-import React from "react";
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import React, { useEffect } from "react";
+import {BrowserRouter,Routes,Route, useLocation} from 'react-router-dom'
 import About from "./About";
 import Home from "./Home";
 import Products from "./Products";
-import Contact from './Contact'
+import Contact from './ContactUs/ContactUs'
 import Cart from "./Cart";
 import SingleProduct from './SingleProduct'
 import Error from "./Error";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Footer from "./components/Footer";
 import Manageproducts from "./components/adminParts/product/ManageProduct";
 import SignUp from "./components/adminParts/Auth/SignUp";
@@ -18,8 +18,6 @@ import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
-
-
 const App = () => {
   const theme = {
     font:{
@@ -32,9 +30,9 @@ const App = () => {
       h2: "2.5rem",
       h3: "2rem",
       h4: "1.5rem",
-      h5: "1.2rem",
-      h6: "1rem",
-      p: "1rem",
+      h5: "2rem",
+      h6: "2rem",
+      p: "2rem",
       small: ".8rem",
       
     }
@@ -62,27 +60,41 @@ const App = () => {
       tab: "998px",
     },
   };
+  const ScrollToTop=({children})=>{
+    const location=useLocation()
+    useEffect(()=>{
+  window.scrollTo(0,0)
+    },[location])
+  return <>
+  {children}
+  </>
+  }
   return (
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <GlobalStyle/>
     <Header/>
+    <ScrollToTop>
     <Routes>
+      
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/products" element={<Products/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/admin" element={<AddItem />} />
-      <Route path="/manage" element={<Manageproducts />} />
       <Route path="/login" element={<Login />} />
       <Route path="/auth/signup" element={<SignUp />} />
+      <Route path="/admin" element={<AddItem />} />
+      <Route path="/manage" element={<Manageproducts />} />
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
       <Route path="/userprofile" element={<UserProfile />} />
+    
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
       <Route path="*" element={<Error/>}/>
+     
     </Routes>
+    </ScrollToTop>
     <Footer/>
     </BrowserRouter>
     </ThemeProvider>

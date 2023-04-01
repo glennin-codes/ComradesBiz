@@ -11,9 +11,11 @@ import axios from "axios";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
-import UpdateProductForm from "./UpdateProduct";
-import { Grid } from "@mui/material";
+
+import { Grid, ThemeProvider } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
+import UpdateProductForm from "./UpdateProductForm.js";
+import MuiTheme from "../utils/MuiTheme.js";
 
 export default function Manageproducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -35,6 +37,13 @@ export default function Manageproducts() {
     const product = products.find((p) => p._id === productId);
     setSelectedProduct(product);
     
+  };
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('id');
+    window.location.href = '/';
   };
   const deleteProduct = async (_id) => {
     try {
@@ -79,6 +88,7 @@ export default function Manageproducts() {
 
   return (
     <>
+     <ThemeProvider theme={MuiTheme}>
       {selectedProduct && (
         <UpdateProductForm
           product={selectedProduct}
@@ -90,7 +100,7 @@ export default function Manageproducts() {
         />
       )}
 
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{top:'20%'}}>
         {success && <Alert severity="success">{success}</Alert>}
         <Table
           sx={{
@@ -186,10 +196,25 @@ export default function Manageproducts() {
         xs={12}
         sx={{ textAlign: "right", color: "magenta", fontSize: "2.5rem" }}
       >
-        <Typography component={Link} to="/admin">
+        <Typography component={Link} to="/admin" color='magenta' style={{fontSize
+        :'19px'}}>
           add more products to database
         </Typography>
       </Grid>
+      <Grid item xs={12} sx={{ textAlign: 'right' }}>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        onClick={handleLogout}
+        aria-label="Logout"
+        title="Click here to log out"
+      >
+          Logout
+       
+      </Button>
+    </Grid>
+      </ThemeProvider>
     </>
+    
   );
 }

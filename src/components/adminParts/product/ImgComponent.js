@@ -11,9 +11,11 @@ import {
   TextField,
   Typography,
   Box,
+  ThemeProvider,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
+import MuiTheme from "../utils/MuiTheme";
 export default function ImgComponent({
   images,
   handleColorChange,
@@ -21,6 +23,7 @@ export default function ImgComponent({
 }) {
   return (
     <>
+    <ThemeProvider theme={MuiTheme}>
       <Grid item xs={12}>
         {images.map((image, index) => (
           <Box
@@ -66,6 +69,7 @@ export default function ImgComponent({
           </Box>
         ))}
       </Grid>
+      </ThemeProvider>
     </>
   );
 }

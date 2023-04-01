@@ -1,0 +1,10 @@
+.app-btn{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--Quincy-blue);
+    color: var(--white);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}

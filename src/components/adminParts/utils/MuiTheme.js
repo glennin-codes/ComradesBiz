@@ -11,15 +11,17 @@ const MuiTheme = createTheme({
      
 
   },
+  body:{
+    margin:0,
+    padding:0,
+    boxSizing:'border-box',
+    fontFamily: 'ubuntu',},
   
   typography: {
     fontFamily: [
-      "Roboto",
-      "Helvetica",
-      "Arial",
-      "sans-serif",
+      "ubuntu",
     ].join(","),
-    fontSize: 20,
+    fontSize: 25,
 
       
       // add any other typography-related properties you want to apply to all components

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
@@ -165,6 +165,17 @@ const Nav = () => {
       }
     }
   `;
+  /* MAin Container Start */
+/* .main_container_contact {
+    height: 500px;
+    background: url('../../assets/images/contactbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
+/* MAin Container End */
+/* MAin Container End */
+  const navigate=useNavigate()
 
   return (
     <Nav>
@@ -202,20 +213,16 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
-          {isAuthenticated && <p>{user.name}</p>}
+        
 
-          {isAuthenticated ? (
+           
             <li>
               <Button
-                onClick={() => logout({ returnTo: window.location.origin })}>
-                Log Out
+                onClick={() => navigate('/login')}>
+                   Profile
               </Button>
             </li>
-          ) : (
-            <li>
-              <Button onClick={() => loginWithRedirect()}>Log In</Button>
-            </li>
-          )}
+          
 
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">

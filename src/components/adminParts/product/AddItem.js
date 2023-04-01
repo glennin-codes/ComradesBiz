@@ -11,9 +11,10 @@ import {
   Typography,
   Box,
   Paper,
+  ThemeProvider,
 } from "@mui/material";
 
-import React, { useContext } from "react";
+import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { toast } from "react-toastify";
@@ -22,16 +23,17 @@ import "react-toastify/dist/ReactToastify.css";
 import "../style/product.css";
 import ImgComponent from "./ImgComponent";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { AuthContext } from "./context/AuthContext";
 import Typewriter from "typewriter-effect";
 import Toast from "../utils/Toast";
+import MuiTheme from "../utils/MuiTheme";
 
 
 export default function AddItem() {
-  {
+  
     /*states*/
-  }
+  
   const [values, setValues] = useState({});
   const [images, setImages] = useState([]);
   const [status, setStatus] = React.useState("");
@@ -42,7 +44,7 @@ export default function AddItem() {
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
- 
+ const navigate=useNavigate();
   const time = 1 * 60 * 1000; //waiting time to upload
   useEffect(() => {
     if (isSubmit) {
@@ -143,7 +145,15 @@ export default function AddItem() {
     setImages((prevState) => prevState.filter((_, i) => i !== index));
     setIsSelected((prevCount) => prevCount - 1);
   };
-  console.log(images);
+  
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('name');
+    localStorage.removeItem('email');
+    localStorage.removeItem('id');
+    window.location.href = '/';
+  };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmit(true);
@@ -200,7 +210,8 @@ export default function AddItem() {
       });
   };
   return (
-    <Box>
+    <ThemeProvider theme={MuiTheme}>
+    <Box sx={{top:'20%', margin:'50px'}}>
       <Toast time={time} />
 
       <Typography
@@ -422,9 +433,22 @@ export default function AddItem() {
                 Profile Acount
               </Typography>
             </Grid>
+            <Grid item xs={12} sx={{ textAlign: 'right' }}>
+      <Button 
+        variant="contained" 
+        color="secondary" 
+        onClick={handleLogout}
+        aria-label="Logout"
+        title="Click here to log out"
+      >
+          Logout
+       
+      </Button>
+    </Grid>
           </Grid>
         </form>
       </Box>
     </Box>
+    </ThemeProvider>
   );
 }

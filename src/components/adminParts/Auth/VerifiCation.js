@@ -3,7 +3,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
-import { Alert } from "@mui/material";
+import { Alert, ThemeProvider } from "@mui/material";
+
+import MuiTheme from "../utils/MuiTheme";
 
 const override = css`
   display: block;
@@ -81,6 +83,8 @@ const VerifyEmail = () => {
   };
 
   return (
+    <>
+    <ThemeProvider theme={MuiTheme}>
     <div
       css={{
         display: "flex",
@@ -115,6 +119,8 @@ const VerifyEmail = () => {
       )}
     
     </div>
+    </ThemeProvider>
+    </>
   );
 };
 

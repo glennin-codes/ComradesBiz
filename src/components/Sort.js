@@ -13,13 +13,13 @@ const Sort = () => {
         <button
           className={grid_view ? "active sort-btn" : "sort-btn"}
           onClick={setGridView}>
-          <BsFillGridFill className="icon" />
+          <BsFillGridFill className="iconn" />
         </button>
 
         <button
           className={!grid_view ? "active sort-btn" : " sort-btn"}
           onClick={setListView}>
-          <BsList className="icon" />
+          <BsList className="iconn" />
         </button>
       </div>
       {/* 2nd column  */}
@@ -68,7 +68,7 @@ const Wrapper = styled.section`
       cursor: pointer;
     }
 
-    .icon {
+    .iconn {
       font-size: 1.6rem;
     }
     .active {

@@ -113,11 +113,17 @@ const filterReducer = (state, action) => {
         );
       }
 
+      // if (company !== "all") {
+      //   tempFilterProduct = tempFilterProduct.filter(
+      //     (curElem) => curElem.company.toLowerCase() === company.toLowerCase()
+      //   );
+      // }
       if (company !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
-          (curElem) => curElem.company.toLowerCase() === company.toLowerCase()
+          (curElem) => curElem.company && curElem.company.toLowerCase() === company.toLowerCase()
         );
       }
+      
 
       if (color !== "all") {
         tempFilterProduct = tempFilterProduct.filter((curElem) =>

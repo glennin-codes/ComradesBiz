@@ -1,12 +1,13 @@
 import React, { useContext, useEffect } from 'react';
-import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress } from '@mui/material';
+import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress, ThemeProvider } from '@mui/material';
 import "./Login.css";
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box } from '@mui/system';
+import { Box, } from '@mui/system';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { useState } from 'react';
 import axios from 'axios';
+import MuiTheme from '../utils/MuiTheme';
 // import { AuthContext } from '../context/AuthContext';
 
 
@@ -129,8 +130,10 @@ console.log(id);
     }
 }    
     return (
+
+    <ThemeProvider theme={MuiTheme}>
         <div className="login-container">
-            <div className="form-container">
+            <div className="formmcontainer">
                 <Typography variant="h3" sx={{textAlign:'center'}} >
                     <Typewriter
                         options={{ loop: true }}
@@ -202,6 +205,7 @@ console.log(id);
                 </Box>
             </div>
         </div>
+        </ThemeProvider>
     );
 
 }
