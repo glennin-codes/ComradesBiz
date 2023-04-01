@@ -18,7 +18,7 @@ const Header = () => {
         <div className='main_container_contact_content'>
           <div className='main_container_contact_content-subHeading'>
             <h3>CONTACT US</h3>
-            <h1 style={{color:'white'}}>Talk To The<span className='main_container_contact_content-subHeading-span'>Advisory Product  Managers </span></h1>
+            <h1 >Talk To The<span className='main_container_contact_content-subHeading-span'>Advisory Product  Managers </span></h1>
           </div>
         </div>
         </div>
