@@ -296,7 +296,7 @@ const SignUp = () => {
             />
           </FormControl>
           <Grid item xs={12} sx={{ m: 1 }}>
-            Are you a Student?
+            <Typography sx={{fontSize:'1rem'}}> Are you a Student?</Typography> 
             <Checkbox
               checked={values.student}
               onChange={(event) => {
