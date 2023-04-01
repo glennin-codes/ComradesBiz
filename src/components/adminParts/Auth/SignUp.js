@@ -306,21 +306,29 @@ const SignUp = () => {
             />
           </Grid>
           {values.student && 
-            <FormControl
-              sx={{ m: 1 }}
-              color="primary"
-              variant="standard"
-              fullWidth
-            >
-              <InputLabel htmlFor="signUp-School">School</InputLabel>
-              <Input
-                id="School"
-                type="text"
-                defaultValue={values.school}
-                onChange={handleChange("school")}
-                autoComplete="Enter your School"
-              />
-            </FormControl>
+        <FormControl
+        sx={{ m: 1 }}
+        color="primary"
+        variant="standard"
+        fullWidth
+      >
+        <InputLabel htmlFor="signUp-School">School</InputLabel>
+        <Input
+          id="School"
+          type="text"
+          defaultValue={values.school}
+          onChange={(event) => {
+            const additionalValues = { ...values };
+            additionalValues.school = event.target.value;
+            if (event.target.value !== '') {
+              additionalValues.student = true;
+            }
+            setValues(additionalValues);
+          }}
+          autoComplete="Enter your School"
+        />
+      </FormControl>
+      
           }
           <Grid item xs={12} sx={{ m: 1 }}>
             <InputLabel id="demo-multiple-name-label">location</InputLabel>
