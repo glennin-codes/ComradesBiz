@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import { useParams } from "react-router-dom";
 import {  useProductContext } from "./context/productContext";
 import FormatPrice from "./Helpers/FormatPrice";
@@ -55,7 +55,7 @@ const SingleProduct = () => {
           setError("");
         }
       } catch (error) {
-        setLoading(false);
+      
         console.error(error);
         if (error) {
           if (error.response && error.response.status === 404) {
