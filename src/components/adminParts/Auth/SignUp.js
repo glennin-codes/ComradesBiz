@@ -59,13 +59,13 @@ const SignUp = () => {
   };
 
   const locationRef = useRef();
+  const access_token='pk.eyJ1Ijoic2FtYXJ0aG9uIiwiYSI6ImNrc2J2Z2J0ZzB0Zm'
   React.useEffect(() => {
     const fetchLocation = async () => {
       try {
         const { data } = await axios.get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=ke,ug&types=poi,address,neighborhood,locality,place,district,postcode&limit=100&access_token=
-            pk.eyJ1IjoiZ2xlbm5pbiIsImEiOiJjbGZvbGUwZ2EwMDhnM3lwZmliMW5ldGp0In0.05klmls7gWBpEqsUVu9-YA`
-          
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=ke,ug&types=poi,address,neighborhood,locality,place,district,postcode&limit=100&access_token=${access_token}
+          `
         );
         const { features } = data;
         setPlaceData(features); // an array
