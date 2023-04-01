@@ -63,9 +63,9 @@ const SignUp = () => {
     const fetchLocation = async () => {
       try {
         const { data } = await axios.get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=ke,ug&types=poi,address,neighborhood,locality,place,district,postcode&limit=100&access_token=${
-            import.meta.env.VITE_APP_MAPBOX_TOKEN
-          }`
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/${search}.json?country=ke,ug&types=poi,address,neighborhood,locality,place,district,postcode&limit=100&access_token=
+            pk.eyJ1IjoiZ2xlbm5pbiIsImEiOiJjbGZvbGUwZ2EwMDhnM3lwZmliMW5ldGp0In0.05klmls7gWBpEqsUVu9-YA`
+          
         );
         const { features } = data;
         setPlaceData(features); // an array
