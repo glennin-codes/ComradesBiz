@@ -12,6 +12,7 @@ import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
+import axios from 'axios';
 
 
 const override = css`
@@ -25,6 +26,7 @@ const SingleProduct = () => {
   const [phone, setPhone] = useState("");
   const [location, setLocation] = useState("");
   const [school, setSchool] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
  
