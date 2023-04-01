@@ -13,6 +13,13 @@ import AddToCart from "./components/AddToCart";
 import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 
+
+const override = css`
+display: block;
+margin: 0 auto;
+border-color: red;
+`;
+
 const SingleProduct = () => {
   const [owner, setOwner] = useState("");
   const [phone, setPhone] = useState("");
@@ -20,12 +27,7 @@ const SingleProduct = () => {
   const [school, setSchool] = useState("");
   const [error, setError] = useState("");
 
-  const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-`;
-
+ 
  
   const {getSingleProduct,isSingleLoading,singleProduct} = useProductContext();
    console.log('SingleProduct: ', singleProduct);
@@ -82,7 +84,7 @@ const SingleProduct = () => {
     }}> 
       <ClipLoader
     color={"#36D7B7"}
-    loading={verifying}
+    loading={isSingleLoading}
     css={override}
     size={150}
   />
