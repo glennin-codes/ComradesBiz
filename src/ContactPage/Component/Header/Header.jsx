@@ -15,31 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <div className='main_container_contact'>
-        <div className='main_container_navbar'>
-          <Navbar expand="lg" sticky="top" className="navbar">
-            <Container>
-              <Link to="/">
-                <img src={Logo} alt="logo" width="130px" height="130px" className="nav-img" />
-              </Link>
-
-              <button onClick={handleShow} className="mobile__navbar"  >
-                <HumBurgerIcon onClick={handleShow} className="me-2" />
-              </button>
-
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto NavLink-all">
-                  <Link to="home" className='NavLink' >Accessor's Home</Link>
-                  <Link to="property" className='NavLink'>Property Inspection</Link>
-                  <Link to="forms" className='NavLink'>Forms & Requests</Link>
-                  <Link to="accessor" className='NavLink'>Accessor's Tools</Link>
-                  <Link to="/" className='NavLink'>Contact Us</Link>
-
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </div>
+    z
 
         <div className='main_container_contact_content'>
           <div className='main_container_contact_content-subHeading'>
