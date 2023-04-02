@@ -7,6 +7,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { fontFamily, fontSize } from '@mui/system';
 
 
 const style = {
@@ -45,7 +46,12 @@ const handleSubmit=(e)=>{
   const handleMessageChange = (e) => setMessage(e.target.value);
 
   return (
-    <div>
+    <div style={{
+        fontFamily:'ubuntu',
+        fontSize:"14px",
+        color:'#06243F',
+        fontWeight:'400'
+    }}>
   <Modal
       open={open}
       onClose={handleClose}
@@ -61,11 +67,11 @@ const handleSubmit=(e)=>{
 
 
         <Fade in={open}>
-          <Box sx={style}>
+          <Box component="form" onSubmit={handleSubmit} sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
               Notify Sellers
             </Typography>
-            <Box component="form" onSubmit={handleSubmit}  sx={{ mt: 2 }}>
+            <Box   sx={{ mt: 2 }}>
               <TextField
                 label="Name"
                 fullWidth
