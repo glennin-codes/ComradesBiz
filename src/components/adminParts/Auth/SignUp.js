@@ -297,6 +297,7 @@ const SignUp = () => {
   lable='Phone'
   fullWidth
   label="Mobile Number"
+  placeholder='Mobile Number'
   id="phone"
   defaultCountry="KE"
   value={values.phone} // Use the value from the "values" state variable
