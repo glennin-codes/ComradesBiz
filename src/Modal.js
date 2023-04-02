@@ -110,7 +110,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 inputStyle={{
                   padding: "0.5rem 1rem",
                   textIndent: "28px",
-                  fontSize: "1rem",
+                  fontSize: "18px",
                 }}
                 dropdownStyle={{ top: "70px" }}
                 specialLabel="Phone"
