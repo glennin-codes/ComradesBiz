@@ -144,14 +144,14 @@ console.log(id);
                     />
                 </Typography>
                 <Box component='form'  style={{ margin: '20px 0 0' }} onSubmit={handleSubmit}>
-                <TextField sx={{ m: 1 }} color="primary" variant="standard" fullWidth 
+                <TextField sx={{ m: 1 }} color="primary"  fullWidth 
                         label="Email"
                             id="login-email"
                             type='email'
                             defaultValue={values.email}
                             onChange={handleChange('email')} />
                 
-                    <TextField  sx={{ m: 1 }} color="primary" variant="standard" fullWidth 
+                    <TextField  sx={{ m: 1 }} color="primary"  fullWidth 
 
                         label="Password"
                             id="login-passwordField"
