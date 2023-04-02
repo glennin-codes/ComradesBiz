@@ -6,6 +6,7 @@ import { Button } from "./styles/Button";
 import FormatPrice from "./Helpers/FormatPrice";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
+import MyModal from "./Modal";
 
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
