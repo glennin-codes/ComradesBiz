@@ -11,7 +11,7 @@ const AppContext = createContext();
 
 
 
-const APIal = `https://shopifybackend.onrender.com/api/products/all`;
+const APIal = `https://comradesbizapi.azurewebsites.net/api/products/all`;
 
 const initialState = {
   isLoading: false,
