@@ -17,9 +17,10 @@ import {
   MenuItem,
   CircularProgress,
   ThemeProvider,
+  CssBaseline,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { Box } from "@mui/system";
+import { Box, Container } from "@mui/system";
 import { NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
@@ -176,7 +177,17 @@ const SignUp = () => {
   return (
     <ThemeProvider theme={MuiTheme}>
     <div className="signUp-container">
-      <div className="form-container">
+      <div className="formmcontainer">
+          <Container sx={{marginTop:'150px'}} component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop:'150px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
         <Typography variant="h4" sx={{ textAlign: "center" }}>
           <Typewriter
             options={{ loop: true }}
@@ -464,7 +475,8 @@ const SignUp = () => {
           </Typography>
         </Box>
       </Box>
-     
+     </Box>
+     </Container>
       </div>
     </div>
     </ThemeProvider>
