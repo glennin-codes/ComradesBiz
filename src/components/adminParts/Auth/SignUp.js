@@ -24,6 +24,7 @@ import { NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
+import PhoneInput from 'react-phone-number-input';
 
 import { useRef } from "react";
 import axios from "axios";
@@ -271,19 +272,22 @@ const SignUp = () => {
           </Grid>
           <Grid item xs={12}>
 
-          <TextField
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-              label="Mobile Number"
-              id="phone"
-              type="text"
-              defaultValue={values.phone}
-              required
-              onChange={handleChange("phone")}
-              autoComplete="Enter your mobile number"
-            />
+          <PhoneInput
+  sx={{ m: 1 }}
+  color="primary"
+  variant="standard"
+  fullWidth
+  label="Mobile Number"
+  id="phone"
+  defaultCountry="KE"
+  value={values.phone} // Use the value from the "values" state variable
+  required
+  onChange={(value, country) => {
+    handleChange('phone')({ target: { value: value } }); // Pass the new phone number value to the "handleChange" function
+  }}
+  autoComplete="Enter your mobile number"
+/>
+
           </Grid>
 
           <Grid item xs={12} sx={{ m: 1 }}>
