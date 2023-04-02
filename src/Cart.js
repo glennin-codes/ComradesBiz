@@ -59,11 +59,11 @@ const Cart = () => {
           <NavLink to="/products">
             <Button> continue Shopping </Button>
           </NavLink>
-          <Button className="btn btn-clear" onClick={clearCart}>
-            clear cart
-          </Button>
           <Button  onClick={handleNotifySellers}>
             Notify Sellers
+          </Button>
+          <Button className="btn btn-clear" onClick={clearCart}>
+            clear cart
           </Button>
           <MyModal
         open={open}
