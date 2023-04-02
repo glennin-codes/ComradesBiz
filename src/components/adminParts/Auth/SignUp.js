@@ -199,6 +199,9 @@ const SignUp = () => {
             <Grid container spacing={2}>
               <Grid item xs={12}>
             <TextField
+              fullWidth
+              label="Name"
+           
               id="signUp-name"
               type="text"
               defaultValue={values.name}
@@ -249,7 +252,7 @@ const SignUp = () => {
           <TextField
             sx={{ m: 1 }}
             color="primary"
-            variant="standard"
+          
             fullWidth
               label="Confirm Password"
               id="signUp-passwordField2"
@@ -273,7 +276,7 @@ const SignUp = () => {
           <Grid item xs={12}>
 
           <PhoneInput
-  sx={{ m: 1 }}
+  sx={{ m: 1 ,fontSize:'16px' }}
   color="primary"
   variant="standard"
   fullWidth
@@ -391,7 +394,7 @@ const SignUp = () => {
               </ListSubheader>
               {placeData.map(({ id, center, place_name, geometry }) => (
                 <MenuItem key={center} value={[place_name, center]}
-                style={{color:'#01010133'}}
+                style={{color:'black'}}
                 >
                   {place_name}
                 </MenuItem>
