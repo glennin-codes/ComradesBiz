@@ -68,7 +68,7 @@ const Cart = () => {
         open={open}
         setOpen={setOpen}
         confirmedFunction={handleConfirmed}
-        products={products}
+        products={cart}
       />
         </div>
 
