@@ -177,7 +177,7 @@ const SignUp = () => {
   return (
     <ThemeProvider theme={MuiTheme}>
     
-          <Container sx={{marginTop:'120px'}} component="main" maxWidth="md">
+          <Container sx={{marginTop:'100px'}} component="main" maxWidth="md">
         <CssBaseline />
         <Box
           sx={{
