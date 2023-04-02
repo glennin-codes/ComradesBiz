@@ -219,6 +219,9 @@ const SignUp = () => {
                   name="email"
                   autoComplete="email"
                   defaultValue={values.email}
+                  
+                   
+
              
               onChange={handleChange('email')}
             />
@@ -238,6 +241,7 @@ const SignUp = () => {
               endAdornment={
                 <InputAdornment position="end">
                   <IconButton
+                  style={{background:'black'}}
                     aria-label="toggle password visibility"
                     onClick={handleClickShowPassword}
                     onMouseDown={handleMouseDownPassword}
@@ -276,9 +280,10 @@ const SignUp = () => {
           <Grid item xs={12}>
 
           <PhoneInput
-  sx={{ m: 1 ,fontSize:'16px' }}
+  
+  style={{m: 1 ,fontSize:'16px'}}
   color="primary"
-  variant="standard"
+  lable='Phone'
   fullWidth
   label="Mobile Number"
   id="phone"
