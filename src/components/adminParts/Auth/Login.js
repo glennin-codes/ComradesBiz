@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
-import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress, ThemeProvider } from '@mui/material';
+import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress, ThemeProvider, CssBaseline } from '@mui/material';
 import "./Login.css";
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box, } from '@mui/system';
+import { Box, Container, } from '@mui/system';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { useState } from 'react';
@@ -130,6 +130,16 @@ console.log(id);
     return (
 
     <ThemeProvider theme={MuiTheme}>
+          <Container sx={{marginTop:'30px'}} component="main" maxWidth="md">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop:'30px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+     >
         <div className="login-container">
             <div className="formmcontainer">
                 <Typography variant="h3" sx={{textAlign:'center'}} >
@@ -202,7 +212,11 @@ console.log(id);
                 </Box>
             </div>
         </div>
+        </Box>
+        </Container>
+
         </ThemeProvider>
+         
     );
 
 }
