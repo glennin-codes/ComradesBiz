@@ -21,7 +21,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   fontFamily: "ubuntu",
-  fontSize: "14px",
+  fontSize: "16px",
   color: "#06243F",
   fontWeight: "400",
 };
@@ -107,7 +107,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 containerClass="relative"
                 inputStyle={{
                   padding: "0.5rem 1rem",
-                  textIndent: "10px",
+                  textIndent: "18px",
                   fontSize: "1rem",
                 }}
                 dropdownStyle={{ top: "70px" }}
@@ -128,7 +128,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
             </Box>
             <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>
               <Button variant="contained" color="secondary" type="submit">
-                {products && products.length > 0
+                {products && products.length > 1
                   ? `Notify 
         ${products.length} Sellers`
                   : "Notify The Seller"}
