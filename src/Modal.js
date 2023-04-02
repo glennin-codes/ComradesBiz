@@ -107,7 +107,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 containerClass="relative"
                 inputStyle={{
                   padding: "0.5rem 1rem",
-                  textIndent: "18px",
+                  textIndent: "28px",
                   fontSize: "1rem",
                 }}
                 dropdownStyle={{ top: "70px" }}
