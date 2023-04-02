@@ -293,7 +293,7 @@ const SignUp = () => {
 
           <PhoneInput
   
-  style={{m: 1 ,fontSize:'16px'}}
+  style={{m: 1 ,fontSize:'14px'}}
   color="primary"
   lable='Phone'
   fullWidth
@@ -312,8 +312,10 @@ const SignUp = () => {
           </Grid>
 
           <Grid item xs={12} sx={{ m: 1 }}>
-            <Typography sx={{fontSize:'16px'}}
-          
+            <Typography sx={{
+            m:1,
+            fontSize:'16px'}}
+             variant='standard'
                    fullWidth 
             > Are you a Student?</Typography> 
             <Checkbox
