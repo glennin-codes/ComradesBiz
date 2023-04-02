@@ -33,12 +33,14 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const confirmed = () => {
     const buyerInfo = { name, email, phone, message, products };
     confirmedFunction(buyerInfo);
+    console.log(buyerInfo);
     handleClose();
   };
   const handleSubmit = (e) => {
     handleClose();
     confirmed();
-    
+    e.preventDefault();
+
   };
   const handleNameChange = (e) => setName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
