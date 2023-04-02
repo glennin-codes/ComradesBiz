@@ -7,7 +7,8 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { fontFamily, fontSize } from "@mui/system";
+import { fontFamily, fontSize, ThemeProvider } from "@mui/system";
+import MuiTheme from "./components/adminParts/utils/MuiTheme";
 
 const style = {
   position: "absolute",
@@ -51,6 +52,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const handleMessageChange = (e) => setMessage(e.target.value);
 
   return (
+    <ThemeProvider theme={MuiTheme}>
     <div
       style={{
         fontFamily: "ubuntu",
@@ -138,6 +140,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
         </Fade>
       </Modal>
     </div>
+    </ThemeProvider>
   );
 };
 export default MyModal;
