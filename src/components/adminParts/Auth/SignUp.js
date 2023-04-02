@@ -176,18 +176,19 @@ const SignUp = () => {
 
   return (
     <ThemeProvider theme={MuiTheme}>
-    <div className="signUp-container">
-      <div className="formmcontainer">
+    
           <Container sx={{marginTop:'150px'}} component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop:'180px',
+            marginTop:'150px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
+          <div className="signUp-container">
+      <div className="formmcontainer">
         <Typography variant="h4" sx={{ textAlign: "center" }}>
           <Typewriter
             options={{ loop: true }}
@@ -476,10 +477,11 @@ const SignUp = () => {
           </Typography>
         </Box>
       </Box>
-     </Box>
-     </Container>
       </div>
     </div>
+     </Box>
+     </Container>
+      
     </ThemeProvider>
   );
 };
