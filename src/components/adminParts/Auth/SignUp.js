@@ -311,8 +311,8 @@ const SignUp = () => {
 
           <Grid item xs={12} sx={{ m: 1 }}>
             <Typography sx={{fontSize:'16px'}}
-             variant="standard"
-             fullWidth 
+          
+                   fullWidth 
             > Are you a Student?</Typography> 
             <Checkbox
               checked={values.student}
@@ -327,7 +327,7 @@ const SignUp = () => {
         <TextField
         sx={{ m: 1 }}
         color="primary"
-        variant="standard"
+      
         fullWidth
           label="School"
           id="School"
