@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Backdrop from '@mui/material/Backdrop';
-import Box from '@mui/material/Box';
+
 import { Modal, Box, Typography, Button } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
