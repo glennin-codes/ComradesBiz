@@ -20,6 +20,10 @@ const style = {
   borderRadius: "10px",
   boxShadow: 24,
   p: 4,
+  fontFamily: "ubuntu",
+  fontSize: "14px",
+  color: "#06243F",
+  fontWeight: "400",
 };
 
 const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
@@ -40,7 +44,6 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
     handleClose();
     confirmed();
     e.preventDefault();
-
   };
   const handleNameChange = (e) => setName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
@@ -105,7 +108,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 inputStyle={{
                   padding: "0.5rem 1rem",
                   textIndent: "10px",
-                  textAlign: "center",
+                  fontSize: "1rem",
                 }}
                 dropdownStyle={{ top: "70px" }}
                 specialLabel="Phone"
@@ -123,9 +126,12 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 onChange={handleMessageChange}
               />
             </Box>
-            <Box sx={{ mt: 2 }}>
-              <Button variant="contained" color="primary" type="submit">
-                Notify Sellers
+            <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>
+              <Button variant="contained" color="secondary" type="submit">
+                {products && products.length > 0
+                  ? `Notify 
+        ${products.length} Sellers`
+                  : "Notify The Seller"}
               </Button>
             </Box>
           </Box>
