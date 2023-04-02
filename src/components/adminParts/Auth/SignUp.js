@@ -193,45 +193,39 @@ const SignUp = () => {
             }}
           />
         </Typography>
-        <form onSubmit={handleSubmit} style={{ margin: "20px 0 0" }}>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-          >
-            <InputLabel htmlFor="signUp-name">Name</InputLabel>
-            <Input
+
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+            <TextField
               id="signUp-name"
               type="text"
               defaultValue={values.name}
               required
               onChange={handleChange("name")}
             />
-          </FormControl>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-          >
-            <InputLabel htmlFor="signUp-email">Email</InputLabel>
-            <Input
-              id="signUp-email"
-              type="email"
-              defaultValue={values.email}
-              required
-              onChange={handleChange("email")}
+        </Grid>
+
+         <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  defaultValue={values.email}
+             
+              onChange={handleChange('email')}
             />
-          </FormControl>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
+                  
+                
+              </Grid>
+              <Grid item xs={12}>
+            
+            <TextField
             fullWidth
-          >
-            <InputLabel htmlFor="signUp-passwordField">Password</InputLabel>
-            <Input
+             label="Password"
               id="signUp-passwordField"
               type={values.showPassword ? "text" : "password"}
               defaultValue={values.password}
@@ -249,17 +243,14 @@ const SignUp = () => {
                 </InputAdornment>
               }
             />
-          </FormControl>
-          <FormControl
+          </Grid>
+          <Grid item xs={12}>
+          <TextField
             sx={{ m: 1 }}
             color="primary"
             variant="standard"
             fullWidth
-          >
-            <InputLabel htmlFor="signUp-passwordField">
-              Confirm Password
-            </InputLabel>
-            <Input
+              label="Confirm Password"
               id="signUp-passwordField2"
               type={values.showPassword ? "text" : "password"}
               defaultValue={values.confirmPassword}
@@ -277,16 +268,15 @@ const SignUp = () => {
                 </InputAdornment>
               }
             />
-          </FormControl>
+          </Grid>
+          <Grid item xs={12}>
 
-          <FormControl
+          <TextField
             sx={{ m: 1 }}
             color="primary"
             variant="standard"
             fullWidth
-          >
-            <InputLabel htmlFor="signUp-name">phone</InputLabel>
-            <Input
+              label="Mobile Number"
               id="phone"
               type="text"
               defaultValue={values.phone}
@@ -294,7 +284,8 @@ const SignUp = () => {
               onChange={handleChange("phone")}
               autoComplete="Enter your mobile number"
             />
-          </FormControl>
+          </Grid>
+
           <Grid item xs={12} sx={{ m: 1 }}>
             <Typography sx={{fontSize:'16px'}}
              variant="standard"
@@ -309,14 +300,13 @@ const SignUp = () => {
             />
           </Grid>
           {values.student && 
-        <FormControl
+          <Grid Grid item xs={12}>
+        <TextField
         sx={{ m: 1 }}
         color="primary"
         variant="standard"
         fullWidth
-      >
-        <InputLabel htmlFor="signUp-School">School</InputLabel>
-        <Input
+          label="School"
           id="School"
           type="text"
           defaultValue={values.school}
@@ -330,7 +320,7 @@ const SignUp = () => {
           }}
           autoComplete="Enter your School"
         />
-      </FormControl>
+      </Grid>
       
           }
           <Grid item xs={12} sx={{ m: 1 }}>
@@ -451,7 +441,7 @@ const SignUp = () => {
           >
             {loading ? <CircularProgress size={24} /> : "Sign Up"}
           </Button>
-        </form>
+        </Grid>
 
         <Box>
           <Typography sx={{ textAlign: "center" }}>
@@ -461,6 +451,8 @@ const SignUp = () => {
             </NavLink>
           </Typography>
         </Box>
+      </Box>
+     
       </div>
     </div>
     </ThemeProvider>
