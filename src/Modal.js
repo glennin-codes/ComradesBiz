@@ -36,6 +36,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [loading,setLoading]=useState(false);
+  const [error,setError]=useState(false);
   
     // define state for snackbar
     const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -75,13 +76,17 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
       const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails', confirmed());
       if (res && res.data.status === 200) {
         // show success snackbar
+        setError("sent")
         setSnackbarOpen(true);
         setSnackbarSeverity('success');
         setSnackbarMessage('Your request has been sent successfully and the process has been initiated.Please stay put, you will be contacted shortly.');
+         
         handleClose();
       }
     } catch (error) {
       // handle error and show error snackbar
+      console.error(error);
+      setError('')
       setSnackbarOpen(true);
       setSnackbarSeverity('error');
       setSnackbarMessage(error && error.response.message ? error.response.message : 'Network error, kindly check your network and try again.');
@@ -190,11 +195,11 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   : "Notify The Seller"
             }
               </Button>
-              <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+              {/* <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
     <Alert severity={snackbarSeverity} onClose={handleSnackbarClose}>
       {snackbarMessage}
     </Alert>
-  </Snackbar>
+  </Snackbar> */}
             </Box>
           </Box>
         </Fade>
