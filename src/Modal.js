@@ -84,7 +84,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
         "https://comradesbizapi.azurewebsites.net/api/notify/emails",
         data
       );
-     if (res){
+      if (res) {
         setLoading(false);
         handleClose();
         // show success snackbar
@@ -93,10 +93,10 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
         setSnackbarMessage(
           "Your request has been sent successfully and the process has been initiated.Please stay put, you will be contacted shortly."
         );
-
-      
       }
     } catch (error) {
+      handleClose();
+      setLoading(false);
       // handle error and show error snackbar
       if (error && error.response.status === 500) {
         setSnackbarOpen(true);
@@ -109,8 +109,6 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
           "An error occured might be a network issue or firewall restriction, please try again later"
         );
       }
-
-      handleClose();
     }
 
     // define snackbar onClose handler
