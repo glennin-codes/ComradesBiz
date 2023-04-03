@@ -17,13 +17,15 @@ import {
   MenuItem,
   CircularProgress,
   ThemeProvider,
+  CssBaseline,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { Box } from "@mui/system";
+import { Box, Container } from "@mui/system";
 import { NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
+import PhoneInput from 'react-phone-number-input';
 
 import { useRef } from "react";
 import axios from "axios";
@@ -174,8 +176,19 @@ const SignUp = () => {
 
   return (
     <ThemeProvider theme={MuiTheme}>
-    <div className="signUp-container">
-      <div className="form-container">
+    
+          <Container sx={{marginTop:'80px'}} component="main" maxWidth="md">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop:'80px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <div className="signUp-container">
+      <div className="formmcontainer">
         <Typography variant="h4" sx={{ textAlign: "center" }}>
           <Typewriter
             options={{ loop: true }}
@@ -193,112 +206,120 @@ const SignUp = () => {
             }}
           />
         </Typography>
-        <form onSubmit={handleSubmit} style={{ margin: "20px 0 0" }}>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-          >
-            <InputLabel htmlFor="signUp-name">Name</InputLabel>
-            <Input
+
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+            <TextField
+              fullWidth
+              label="Name"
+           
               id="signUp-name"
               type="text"
               defaultValue={values.name}
               required
               onChange={handleChange("name")}
             />
-          </FormControl>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-          >
-            <InputLabel htmlFor="signUp-email">Email</InputLabel>
-            <Input
-              id="signUp-email"
-              type="email"
-              defaultValue={values.email}
-              required
-              onChange={handleChange("email")}
+        </Grid>
+
+         <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                  defaultValue={values.email}
+                  
+                   
+
+             
+              onChange={handleChange('email')}
             />
-          </FormControl>
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
+                  
+                
+              </Grid>
+              <Grid item xs={12}>
+            
+            <TextField
             fullWidth
-          >
-            <InputLabel htmlFor="signUp-passwordField">Password</InputLabel>
-            <Input
+             label="Password"
               id="signUp-passwordField"
               type={values.showPassword ? "text" : "password"}
               defaultValue={values.password}
               required
               onChange={handleChange("password")}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
-          </FormControl>
-          <FormControl
+          </Grid>
+          <Grid item xs={12}>
+          <TextField
             sx={{ m: 1 }}
             color="primary"
-            variant="standard"
+          
             fullWidth
-          >
-            <InputLabel htmlFor="signUp-passwordField">
-              Confirm Password
-            </InputLabel>
-            <Input
+              label="Confirm Password"
               id="signUp-passwordField2"
               type={values.showPassword ? "text" : "password"}
               defaultValue={values.confirmPassword}
               required
               onChange={handleChange("confirmPassword")}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                )
+              }}
             />
-          </FormControl>
+          </Grid>
+          <Grid item xs={12}>
 
-          <FormControl
-            sx={{ m: 1 }}
-            color="primary"
-            variant="standard"
-            fullWidth
-          >
-            <InputLabel htmlFor="signUp-name">phone</InputLabel>
-            <Input
-              id="phone"
-              type="text"
-              defaultValue={values.phone}
-              required
-              onChange={handleChange("phone")}
-              autoComplete="Enter your mobile number"
-            />
-          </FormControl>
+          <PhoneInput
+  
+  style={{m: 1 ,fontSize:'14px'}}
+  color="primary"
+  lable='Phone'
+  fullWidth
+  label="Mobile Number"
+  placeholder='Mobile Number'
+  id="phone"
+  defaultCountry="KE"
+  value={values.phone} // Use the value from the "values" state variable
+  required
+  onChange={(value, country) => {
+    handleChange('phone')({ target: { value: value } }); // Pass the new phone number value to the "handleChange" function
+  }}
+  autoComplete="Enter your mobile number"
+/>
+
+          </Grid>
+
           <Grid item xs={12} sx={{ m: 1 }}>
-            <Typography sx={{fontSize:'16px'}}
-             variant="standard"
-             fullWidth 
+            <Typography sx={{
+            m:1,
+            fontSize:'16px'}}
+             variant='standard'
+                   fullWidth 
             > Are you a Student?</Typography> 
             <Checkbox
               checked={values.student}
@@ -309,14 +330,13 @@ const SignUp = () => {
             />
           </Grid>
           {values.student && 
-        <FormControl
+          <Grid Grid item xs={12}>
+        <TextField
         sx={{ m: 1 }}
         color="primary"
-        variant="standard"
+      
         fullWidth
-      >
-        <InputLabel htmlFor="signUp-School">School</InputLabel>
-        <Input
+          label="School"
           id="School"
           type="text"
           defaultValue={values.school}
@@ -330,7 +350,7 @@ const SignUp = () => {
           }}
           autoComplete="Enter your School"
         />
-      </FormControl>
+      </Grid>
       
           }
           <Grid item xs={12} sx={{ m: 1 }}>
@@ -397,7 +417,7 @@ const SignUp = () => {
               </ListSubheader>
               {placeData.map(({ id, center, place_name, geometry }) => (
                 <MenuItem key={center} value={[place_name, center]}
-                style={{color:'#01010133'}}
+                style={{color:'black'}}
                 >
                   {place_name}
                 </MenuItem>
@@ -451,7 +471,7 @@ const SignUp = () => {
           >
             {loading ? <CircularProgress size={24} /> : "Sign Up"}
           </Button>
-        </form>
+        </Grid>
 
         <Box>
           <Typography sx={{ textAlign: "center" }}>
@@ -461,8 +481,12 @@ const SignUp = () => {
             </NavLink>
           </Typography>
         </Box>
+      </Box>
       </div>
     </div>
+     </Box>
+     </Container>
+      
     </ThemeProvider>
   );
 };

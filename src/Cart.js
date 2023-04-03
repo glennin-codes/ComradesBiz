@@ -5,10 +5,21 @@ import { NavLink } from "react-router-dom";
 import { Button } from "./styles/Button";
 import FormatPrice from "./Helpers/FormatPrice";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
+import MyModal from "./Modal";
 
 const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
   // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart);
+  const [open, setOpen] = useState(false);
+
+  const handleNotifySellers = () => {
+    setOpen(true);
+  };
+
+  const handleConfirmed = (buyerInfo) => {
+    console.log('Buyer Info:', buyerInfo);
+  };
 
   const { isAuthenticated, user } = useAuth0();
 
@@ -48,9 +59,18 @@ const Cart = () => {
           <NavLink to="/products">
             <Button> continue Shopping </Button>
           </NavLink>
+          <Button  onClick={handleNotifySellers}>
+            Notify Sellers
+          </Button>
           <Button className="btn btn-clear" onClick={clearCart}>
             clear cart
           </Button>
+          <MyModal
+        open={open}
+        setOpen={setOpen}
+        confirmedFunction={handleConfirmed}
+        products={cart}
+      />
         </div>
 
         {/* order total_amount */}

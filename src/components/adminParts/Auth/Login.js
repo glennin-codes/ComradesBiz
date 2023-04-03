@@ -1,17 +1,15 @@
 import React, { useContext, useEffect } from 'react';
-import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress, ThemeProvider } from '@mui/material';
+import { Typography, FormControl, InputLabel, InputAdornment, IconButton, Input, Button, FormHelperText, CircularProgress, ThemeProvider, CssBaseline } from '@mui/material';
 import "./Login.css";
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Box, } from '@mui/system';
+import { Box, Container, } from '@mui/system';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import { useState } from 'react';
 import axios from 'axios';
 import MuiTheme from '../utils/MuiTheme';
 // import { AuthContext } from '../context/AuthContext';
-
-
-
+import {TextField} from '@mui/material'
 const Login = () => {
 // const {setUser }=useContext(AuthContext)
     const navigate =useNavigate();
@@ -132,6 +130,16 @@ console.log(id);
     return (
 
     <ThemeProvider theme={MuiTheme}>
+          <Container sx={{marginTop:'30px'}} component="main" maxWidth="md">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop:'30px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+     >
         <div className="login-container">
             <div className="formmcontainer">
                 <Typography variant="h3" sx={{textAlign:'center'}} >
@@ -145,18 +153,17 @@ console.log(id);
                         }}
                     />
                 </Typography>
-                <form style={{ margin: '20px 0 0' }} onSubmit={handleSubmit}>
-                    <FormControl sx={{ m: 1 }} color="primary" variant="standard" fullWidth >
-                        <InputLabel htmlFor="login-email">Email</InputLabel>
-                        <Input
+                <Box component='form'  style={{ margin: '20px 0 0' }} onSubmit={handleSubmit}>
+                <TextField sx={{ m: 1 }} color="primary"  fullWidth 
+                        label="Email"
                             id="login-email"
                             type='email'
                             defaultValue={values.email}
                             onChange={handleChange('email')} />
-                    </FormControl>
-                    <FormControl sx={{ m: 1 }} color="primary" variant="standard" fullWidth >
-                        <InputLabel htmlFor="login-passwordField">Password</InputLabel>
-                        <Input
+                
+                    <TextField  sx={{ m: 1 }} color="primary"  fullWidth 
+
+                        label="Password"
                             id="login-passwordField"
                             type={values.showPassword ? 'text' : 'password'}
                             defaultValue={values.password}
@@ -173,8 +180,8 @@ console.log(id);
                                 </InputAdornment>
                             }
                         />
-                    </FormControl>
-
+                    
+ 
 
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                         <FormHelperText sx={{
@@ -195,7 +202,7 @@ console.log(id);
                         {loading?<CircularProgress size={24} />: 'Login'}
                     </Button>
 
-                </form>
+                </Box>
                 <Box>
                     <Typography sx={{ textAlign: 'center' }}>
                         Don't have account? <NavLink to="/auth/signup"
@@ -205,7 +212,11 @@ console.log(id);
                 </Box>
             </div>
         </div>
+        </Box>
+        </Container>
+
         </ThemeProvider>
+         
     );
 
 }
