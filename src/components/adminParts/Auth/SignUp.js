@@ -320,6 +320,8 @@ const SignUp = () => {
                         dropdownStyle={{
                           
                           maxHeight: "200px",
+                          height: '200px',
+                          overflowY: "scroll"
                          
                         }}
                         value={values.phone}

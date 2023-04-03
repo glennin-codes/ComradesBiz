@@ -15,8 +15,8 @@ import Assessorinfo from "../../Component/Assesorinfo/Assesorinfo";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "react-phone-number-input/input-mobile";
+import "react-phone-number-input/style.css";
 import { Button, CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
@@ -226,13 +226,16 @@ const ContactMe = () => {
                         dropdownStyle={{
                           
                           maxHeight: "200px",
+                          overflow: "auto",
                          
                         }}
                         value={phone}
                         onChange={(phone) => {
-                          setPhone(phone);
+                            setPhone(phone)
                         }}
-          />
+                        autoComplete="Enter your mobile number"
+                      />
+          
 
                 <textarea
                 style={{textTransform:'none'}}

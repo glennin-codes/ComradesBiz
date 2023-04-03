@@ -16,8 +16,7 @@ const Cart = () => {
   const handleNotifySellers = () => {
     setOpen(true);
   };
-console.log('cart Items',cart);
-console.log(typeof cart);
+
   const handleConfirmed = () => {
     console(typeof cart);
 

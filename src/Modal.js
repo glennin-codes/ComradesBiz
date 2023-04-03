@@ -11,8 +11,8 @@ import Fade from "@mui/material/Fade";
 
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-number-input/input-mobile";
+import "react-phone-number-input/style.css";
 import { fontFamily, fontSize, ThemeProvider } from "@mui/system";
 import MuiTheme from "./components/adminParts/utils/MuiTheme";
 import axios from "axios";
@@ -84,17 +84,17 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
         "https://comradesbizapi.azurewebsites.net/api/notify/emails",
         data
       );
-      if (res && res.data.status === 200) {
-        setLoading(true);
+     if (res){
+        setLoading(false);
+        handleClose();
         // show success snackbar
-        setError("sent");
         setSnackbarOpen(true);
         setSnackbarSeverity("success");
         setSnackbarMessage(
           "Your request has been sent successfully and the process has been initiated.Please stay put, you will be contacted shortly."
         );
 
-        handleClose();
+      
       }
     } catch (error) {
       // handle error and show error snackbar
@@ -189,6 +189,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   }}
                   dropdownStyle={{
                     maxHeight: "200px",
+                    overflow: "scroll",
                   }}
                   value={phone}
                   onChange={handlePhoneChange}
