@@ -228,7 +228,7 @@ const ContactMe = () => {
   specialLabelClassName="text-gray-500"
   specialLabelStyle={{ marginBottom: "0.5rem" }}
   defaultCountry="KE"
-  value={values.phone}
+  value={phone}
   onChange={(phone) => {
     setPhone(phone)
   }}
