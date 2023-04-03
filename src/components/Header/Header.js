@@ -79,7 +79,9 @@ const Header = () => {
         className="mobile_version_offcanvas_nav"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className="mobile_version_offcanvas_nav-title">
+          <Offcanvas.Title className="mobile_version_offcanvas_nav-title" 
+           style={{color:'white'}}
+           >
             Comradesbiz
           </Offcanvas.Title>
         </Offcanvas.Header>
