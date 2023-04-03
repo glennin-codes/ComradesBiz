@@ -304,21 +304,15 @@ const SignUp = () => {
                         placeholder="Enter phone number"
                         style={{
                           fontSize: "16px",
-                          backgroundColor: "#1a237e",
-                          color: "#bdbdbd",
+                        
                           border: "none",
-                          borderBottom: "2px solid #bdbdbd",
-                          borderRadius: "0",
-                          outline: "none",
-                          margin: "0 10px 10px 0",
-                          padding: "10px 0",
+                         
                         }}
                         inputStyle={{
                           fontSize: "16px",
-                          backgroundColor: "#fff",
-                          color: "#333",
-                          border: "none",
-                          borderRadius: "0",
+                         
+                          border: "0",
+                          borderRadius: "2px",
                           outline: "none",
                           margin: "0",
                           padding: "10px",
