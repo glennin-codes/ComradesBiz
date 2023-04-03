@@ -52,7 +52,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const handleClose = () => setOpen(false);
 
   const confirmed = () => {
-    buyer = { name, email, phone, message };
+    const buyer = { name, email, phone, message };
     confirmedFunction(buyer);
   };
 
