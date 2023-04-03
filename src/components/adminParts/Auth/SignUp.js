@@ -319,6 +319,7 @@ const SignUp = () => {
           margin: "0 10px 10px 0",
           padding: "10px 0",
         }}
+        countrySelectComponent={CountrySelect}
         inputStyle={{
           fontSize: "16px",
           backgroundColor: "#fff",
