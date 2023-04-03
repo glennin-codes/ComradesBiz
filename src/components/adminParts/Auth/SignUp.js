@@ -21,8 +21,7 @@ import {
 } from "@mui/material";
 import PhoneInput from "react-phone-number-input";
 
-import "react-phone-number-input/style.css";
-import "react-phone-number-input/extra/style.css";
+
 
 import { CountrySelect } from "react-phone-number-input";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
@@ -308,7 +307,7 @@ const SignUp = () => {
       <PhoneInput
         defaultCountry="KE"
         placeholder="Enter phone number"
-        
+
         style={{
           fontSize: "16px",
           backgroundColor: "#1a237e",
