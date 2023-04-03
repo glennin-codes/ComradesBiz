@@ -298,9 +298,7 @@ const SignUp = () => {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <div
-                      style={{ backgroundColor: "#1a237e", padding: "20px" }}
-                    >
+                   
                       <PhoneInput
                         defaultCountry="KE"
                         placeholder="Enter phone number"
@@ -325,23 +323,24 @@ const SignUp = () => {
                           margin: "0",
                           padding: "10px",
                         }}
-                        dropdownStyle={{
-                          fontSize: "16px",
-                          backgroundColor: "#1a237e",
-                          color: "#bdbdbd",
-                          maxHeight: "200px",
-                          overflowY: "auto",
-                          borderRadius: "0",
-                          boxShadow: "none",
-                          border: "none",
-                        }}
+                        // dropdownStyle={{
+                        //   fontSize: "16px",
+                        //   backgroundColor: "#a9a9a9",
+                        //   color: "#bdbdbd",
+                        //   maxHeight: "200px",
+                        //   overflowY: "auto",
+                        //   borderRadius: "0",
+                        //   boxShadow: "none",
+                        //   border: "none",
+                        // }}
                         value={values.phone}
                         onChange={(phone) => {
                           handleChange("phone")({ target: { value: phone } });
+                         console.log(values.phone);
                         }}
                         autoComplete="Enter your mobile number"
                       />
-                    </div>
+                  
                   </Grid>
 
                   <Grid item xs={12} sx={{ m: 1 }}>
