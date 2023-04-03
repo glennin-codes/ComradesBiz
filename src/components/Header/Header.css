@@ -91,6 +91,7 @@
     background-color: var(--Medium-blue) !important;
     background-color: var(--white) !important;
     width: 40vw;
+    height: 40vh;
   }
   
 .mobile_version_links {
