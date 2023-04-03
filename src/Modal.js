@@ -30,7 +30,7 @@ const style = {
   fontWeight: "400",
 };
 
-const MyModal = ({ open, setOpen, confirmedFunction, product }) => {
+const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -71,10 +71,10 @@ const MyModal = ({ open, setOpen, confirmedFunction, product }) => {
   
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
-    const buyerInfo = { name, email, phone, message} 
+    const buyer= { name, email, phone, message} 
     e.preventDefault();
     try {
-      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails',buyerInfo,product );
+      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails',buyer,products );
       if (res && res.data.status === 200) {
         // show success snackbar
         setError("sent")
