@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Modal, Box, Typography, Button } from "@mui/material";
+import { Modal, Box, Typography, Button, CircularProgress } from "@mui/material";
 import Fade from "@mui/material/Fade";
 
 import TextField from "@mui/material/TextField";
@@ -72,7 +72,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('', confirmed());
+      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails', confirmed());
       if (res && res.data.status === 200) {
         // show success snackbar
         setSnackbarOpen(true);
@@ -184,10 +184,11 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
             </Box>
             <Box sx={{ mt: 2, display: "flex", justifyContent: "flex-end" }}>
               <Button variant="contained" color="secondary" type="submit">
-                {products && products.length > 1
+             {loading?<CircularProgress size={24} /> : products && products.length > 1
                   ? `Notify 
         ${products.length} Sellers`
-                  : "Notify The Seller"}
+                  : "Notify The Seller"
+            }
               </Button>
               <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
     <Alert severity={snackbarSeverity} onClose={handleSnackbarClose}>
