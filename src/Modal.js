@@ -46,7 +46,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const handleClose = () => setOpen(false);
 
   const confirmed = () => {
-    const buyerInfo = { name, email, phone, message, products };
+    
     confirmedFunction(buyerInfo);
    return buyerInfo;
   
@@ -71,9 +71,10 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
+    const buyerInfo = { name, email, phone, message} 
     e.preventDefault();
     try {
-      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails', confirmed());
+      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails',buyerInfo,products );
       if (res && res.data.status === 200) {
         // show success snackbar
         setError("sent")
