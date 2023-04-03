@@ -27,18 +27,16 @@
   }
   
   .Mobile_cart-total--item {
-    position: absolute;
-    top: -20%;
-    right: -10%;
     width: 2.4rem;
     height: 2.4rem;
+    position: absolute;
+
     border-radius: 50%;
+    display: grid;
+    place-items: center;
+    top: -20%;
+    left: 70%;
     background-color: #8490ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #fff;
   }
   
 .NavLink {
