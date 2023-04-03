@@ -21,8 +21,7 @@ const Header = () => {
                     justifyContent: 'center',
                     marginTop: '40px',
                     color:'#01010133'}}>
-          <div className='main_content-subHeading' style={{marginBottom
-          :'25px'}}>
+          <div className='main_content-subHeading'>
             <h3>CONTACT US</h3>
             <h1 >Talk To The <span className='main_content-subHeading-span'>Advisory Product  Managers </span></h1>
           </div>
