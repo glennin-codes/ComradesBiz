@@ -304,7 +304,7 @@ const SignUp = () => {
                         required: true,
                       }}
                       sx={{color:'primary'}}
-                      style={{ width: "100%" }}
+                      style={{ width: "80%" }}
                       color="primary"
                       label="Mobile Number"
                       fullWidth
@@ -318,9 +318,13 @@ const SignUp = () => {
                         fontSize: "20px",
                       }}
                       dropdownStyle={{
-                        backgroundColor: "black",
-                        color: "white",
+                        backgroundColor: "#1a237e",
+                        maxHeight: "200px",
+                        overflowY: "scroll",
+                        top: "20px",
+                        bottom: "20px"
                       }}
+                      dropdownClass="rounded-md shadow-lg country-dropdown"
                       specialLabel="Phone"
                       specialLabelClassName="text-gray-500"
                       specialLabelStyle={{ marginBottom: "0.5rem" }}
