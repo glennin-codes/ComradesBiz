@@ -219,12 +219,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   autoHideDuration={6000}
                   onClose={handleSnackbarClose}
                 >
-                  <Alert
-                    severity={snackbarSeverity}
-                    onClose={handleSnackbarClose}
-                  >
-                    {snackbarMessage}
-                  </Alert>
+                  <Alert severity={snackbarSeverity}>{snackbarMessage}</Alert>
                 </Snackbar>
               </Box>
             </Box>

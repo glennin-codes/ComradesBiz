@@ -28,7 +28,7 @@ export default function Manageproducts() {
   const [products, setProducts] = useState([]);
   const [success, setSuccess] = React.useState("");
   const [refresh, setRefresh] = useState(false);
-  const email= localStorage.get('email');
+  const email=localStorage.getItem('email');
    // define the Snackbar Alert component
    function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
