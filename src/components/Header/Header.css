@@ -9,8 +9,7 @@
     width: 2.4rem;
     height: 2.4rem;
     position: absolute;
-    background-color: #000;
-    color: #000;
+
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -22,6 +21,26 @@
     position: relative;
     font-size: 3.2rem;
   }
+  .Mobile_cart-trolley {
+    position: relative;
+    font-size: 3.2rem;
+  }
+  
+  .Mobile_cart-total--item {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: #8490ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
 .NavLink {
     padding: 0 20px;
     text-decoration: none;
@@ -29,6 +48,7 @@
     font-weight: 400;
     font-size: 18px;
 }
+
 
 .NavLink:hover {
     border-bottom: 2px solid var(--Vivid-orange);
@@ -72,8 +92,9 @@
 .mobile_version_offcanvas_nav {
     background-color: var(--Medium-blue) !important;
     background-color: var(--white) !important;
-}
-
+    width: 50vw;
+  }
+  
 .mobile_version_links {
     display: flex !important;
     flex-direction: column !important;
@@ -195,6 +216,7 @@ button:focus{
         width: 5.2rem;
         height: 5.2rem;
         font-size: 3rem;
+       
       }
 }
 
@@ -214,6 +236,7 @@ button:focus{
           width: 4.2rem;
           height: 4.2rem;
           font-size: 2rem;
+          
         }
 
 }
