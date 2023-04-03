@@ -232,11 +232,12 @@ const ContactMe = () => {
                       specialLabelClassName="text-gray-500"
                       specialLabelStyle={{ marginBottom: "0.5rem" }}
                       defaultCountry="ke"
-                      value={values.phone}
+                      value={phone}
                       onChange={(phone) => {
-                        handleChange("phone")({ target: { value: phone } });
-                      }}
-                      autoComplete="Enter your mobile number"
+                        setPhone(phone);
+                      }
+                      
+}
                     />
 
                 <textarea
