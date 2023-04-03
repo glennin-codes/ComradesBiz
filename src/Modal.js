@@ -74,12 +74,13 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
     const buyer = { name, email, phone, message };
+    const data={buyer,products};
     e.preventDefault();
     try {
+      
       const res = await axios.post(
         "https://comradesbizapi.azurewebsites.net/api/notify/emails",
-        buyer,
-        products
+       data
       );
       if (res && res.data.status === 200) {
         // show success snackbar
