@@ -303,14 +303,13 @@ const SignUp = () => {
                         name: "phone",
                         required: true,
                       }}
-                      sx={{color:'primary'}}
+                      sx={{ color: "primary" }}
                       style={{ width: "80%" }}
                       color="primary"
                       label="Mobile Number"
                       fullWidth
                       placeholder="Mobile Number"
                       inputClass="w-full form-input rounded-md shadow-sm"
-                      dropdownClass="rounded-md shadow-lg"
                       containerClass="relative"
                       inputStyle={{
                         padding: "2rem 2rem",
@@ -322,7 +321,7 @@ const SignUp = () => {
                         maxHeight: "200px",
                         overflowY: "scroll",
                         top: "20px",
-                        bottom: "20px"
+                        bottom: "20px",
                       }}
                       dropdownClass="rounded-md shadow-lg country-dropdown"
                       specialLabel="Phone"
