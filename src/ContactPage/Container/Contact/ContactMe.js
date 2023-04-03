@@ -228,7 +228,7 @@ const ContactMe = () => {
                           maxHeight: "200px",
                          
                         }}
-                        value={values.phone}
+                        value={phone}
                         onChange={(phone) => {
                             setPhone(phone)
                         }}
