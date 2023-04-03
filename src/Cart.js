@@ -25,9 +25,15 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
+      <>
       <EmptyDiv>
+        
         <h3>No Cart in Item </h3>
       </EmptyDiv>
+      <NavLink to="/products">
+            <Button>Browse Products</Button>
+          </NavLink>
+      </>
     );
   }
 
