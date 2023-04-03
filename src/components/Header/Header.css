@@ -9,8 +9,7 @@
     width: 2.4rem;
     height: 2.4rem;
     position: absolute;
-    background-color: #000;
-    color: #000;
+
     border-radius: 50%;
     display: grid;
     place-items: center;
@@ -72,8 +71,9 @@
 .mobile_version_offcanvas_nav {
     background-color: var(--Medium-blue) !important;
     background-color: var(--white) !important;
-}
-
+    width: 50vw;
+  }
+  
 .mobile_version_links {
     display: flex !important;
     flex-direction: column !important;
@@ -195,6 +195,8 @@ button:focus{
         width: 5.2rem;
         height: 5.2rem;
         font-size: 3rem;
+        background-color: #000;
+        color: #000;
       }
 }
 

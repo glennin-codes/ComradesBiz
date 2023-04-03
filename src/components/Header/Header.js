@@ -37,19 +37,19 @@ const Header = () => {
 
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto NavLink-all"  >
-                  <Link to="/" className="NavLink" onClick={handleClose}  >
+                  <Link to="/" className="NavLink"   >
                     Home
                   </Link>
-                  <Link to="/products" className="NavLink" onClick={handleClose} >
+                  <Link to="/products" className="NavLink"  >
                     Products On Sale
                   </Link>
-                  <Link to="/about" className="NavLink" onClick={handleClose} >
+                  <Link to="/about" className="NavLink"  >
                     About Us{" "}
                   </Link>
-                  <Link to="/contact" className="NavLink" onClick={handleClose} >
+                  <Link to="/contact" className="NavLink"  >
                     Contact Us
                   </Link>
-                  <Link to="/login" className="NavLink" onClick={handleClose} >
+                  <Link to="/login" className="NavLink"  >
                     Profile
                   </Link>
 
@@ -57,7 +57,7 @@ const Header = () => {
                     to="/cart"
                     className="NavLink "
                     style={{ position: "relative" }}
-                    onClick={handleClose}
+                    
                   >
                     <FiShoppingCart
                       className="cart-trolley"
@@ -85,22 +85,22 @@ const Header = () => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="mobile_version_links">
-            <Link to="/" className="mobile_navlink">
+            <Link to="/" className="mobile_navlink" onClick={handleClose}>
               Home
             </Link>
-            <Link to="/products" className="mobile_navlink">
+            <Link to="/products" className="mobile_navlink" onClick={handleClose}>
               Product On Sale
             </Link>
-            <Link to="/about" className="mobile_navlink">
+            <Link to="/about" className="mobile_navlink" onClick={handleClose}>
               About Us
             </Link>
-            <Link to="/contact" className="mobile_navlink">
+            <Link to="/contact" className="mobile_navlink" onClick={handleClose}>
               Contact Us
             </Link>
-            <Link to="/login" className="mobile_navlink">
+            <Link to="/login" className="mobile_navlink" onClick={handleClose}>
               Profile
             </Link>
-            <NavLink to="/cart" className="mobile_navlink">
+            <NavLink to="/cart" className="mobile_navlink" onClick={handleClose}>
               <FiShoppingCart className="cart-trolley" />
               <span className="cart-total--item"> {total_item} </span>
             </NavLink>
