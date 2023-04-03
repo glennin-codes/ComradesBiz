@@ -62,7 +62,8 @@ const SignUp = () => {
   };
 
   const locationRef = useRef();
-  const access_token='pk.eyJ1IjoiZ2xlbm5pbiIsImEiOiJjbGZvbGUwZ2EwMDhnM3lwZmliMW5ldGp0In0.05klmls7gWBpEqsUVu9-YA'
+  const access_token =
+    "pk.eyJ1IjoiZ2xlbm5pbiIsImEiOiJjbGZvbGUwZ2EwMDhnM3lwZmliMW5ldGp0In0.05klmls7gWBpEqsUVu9-YA";
   React.useEffect(() => {
     const fetchLocation = async () => {
       try {
@@ -177,330 +178,337 @@ const SignUp = () => {
 
   return (
     <ThemeProvider theme={MuiTheme}>
-    
-          <Container sx={{marginTop:'80px'}} component="main" maxWidth="md">
+      <Container sx={{ marginTop: "80px" }} component="main" maxWidth="md">
         <CssBaseline />
         <Box
           sx={{
-            marginTop:'80px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            marginTop: "80px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <div className="signUp-container">
-      <div className="formmcontainer">
-        <Typography variant="h4" sx={{ textAlign: "center" }}>
-          <Typewriter
-            options={{ loop: true }}
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("Create an account")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Sign up")
-                .pauseFor(2500)
-                .deleteAll()
-                .typeString("Register New Account")
-                .pauseFor(2500)
-                .start();
-            }}
-          />
-        </Typography>
-
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Name"
-           
-              id="signUp-name"
-              type="text"
-              defaultValue={values.name}
-              required
-              onChange={handleChange("name")}
-            />
-        </Grid>
-
-         <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  defaultValue={values.email}
-                  
-                   
-
-             
-              onChange={handleChange('email')}
-            />
-                  
-                
-              </Grid>
-              <Grid item xs={12}>
-            
-            <TextField
-            fullWidth
-             label="Password"
-              id="signUp-passwordField"
-              type={values.showPassword ? "text" : "password"}
-              defaultValue={values.password}
-              required
-              onChange={handleChange("password")}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                    >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
-            />
-          </Grid>
-          <Grid item xs={12}>
-          <TextField
-            sx={{ m: 1 }}
-            color="primary"
-          
-            fullWidth
-              label="Confirm Password"
-              id="signUp-passwordField2"
-              type={values.showPassword ? "text" : "password"}
-              defaultValue={values.confirmPassword}
-              required
-              onChange={handleChange("confirmPassword")}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                    >
-                      {values.showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                )
-              }}
-            />
-          </Grid>
-          <Grid item xs={12}>
-
-          <PhoneInput
-  inputProps={{
-    name: "phone",
-    required: true,
-  }}
-  style={{ m: 1, fontSize: '14px' }}
-  color="primary"
-  label="Mobile Number"
-  fullWidth
-  placeholder='Mobile Number'
-  inputClass="w-full form-input rounded-md shadow-sm"
-  dropdownClass="rounded-md shadow-lg"
-  containerClass="relative"
-  inputStyle={{
-    padding: "0.5rem 1rem",
-    textIndent: "28px",
-    fontSize: "20px",
-  }}
-  dropdownStyle={{ top: "70px" }}
-  specialLabel="Phone"
-  specialLabelClassName="text-gray-500"
-  specialLabelStyle={{ marginBottom: "0.5rem" }}
-  defaultCountry="KE"
-  value={values.phone}
-  onChange={(phone) => {
-    handleChange('phone')({ target: { value: phone } });
-  }}
-  autoComplete="Enter your mobile number"
-/>
-
-
-          </Grid>
-
-          <Grid item xs={12} sx={{ m: 1 }}>
-            <Typography sx={{
-            m:1,
-            fontSize:'16px'}}
-             variant='standard'
-                   fullWidth 
-            > Are you a Student?</Typography> 
-            <Checkbox
-              checked={values.student}
-              onChange={(event) => {
-                setValues({ ...values, student: event.target.checked });
-              }}
-              sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
-            />
-          </Grid>
-          {values.student && 
-          <Grid Grid item xs={12}>
-        <TextField
-        sx={{ m: 1 }}
-        color="primary"
-      
-        fullWidth
-          label="School"
-          id="School"
-          type="text"
-          defaultValue={values.school}
-          onChange={(event) => {
-            const additionalValues = { ...values };
-            additionalValues.school = event.target.value;
-            if (event.target.value !== '') {
-              additionalValues.student = true;
-            }
-            setValues(additionalValues);
-          }}
-          autoComplete="Enter your School"
-        />
-      </Grid>
-      
-          }
-          <Grid item xs={12} sx={{ m: 1 }}>
-            <InputLabel id="demo-multiple-name-label">location</InputLabel>
-            <Select
-              sx={{ width: "100%" }}
-              MenuProps={{ autoFocus: false }}
-              labelId="search-select-label"
-              id="search-select"
-              value={locationText}
-              label="Search location"
-              input={<OutlinedInput label="Location" />}
-              onChange={(event) => {
-                locationRef.current.value = event.target.value[0];
-                setLocationText(locationRef.current.value);
-                console.log("selected", event.target.value[1]);
-                // setCenter(event.target.value[1]);
-
-                setValues({
-                  ...values,
-                  location: event.target.value[0],
-                  longitude: event.target.value[1][0].toString(),
-                  latitude: event.target.value[1][1].toString(),
-                });
-              }}
-              onClose={() => {
-                setSearch("");
-              }}
-              renderValue={() => locationText}
-            >
-              <ListSubheader >
-                <TextField
-                sx={{marginTop:'5px'}}
-
-                  size="small"
-                  // Autofocus on textfield
-                  autoFocus
-                  required
-                  fullWidth
-                  name="location"
-                  label="Search Location"
-                  type="text"
-                  id="location"
-                  placeholder={locationText}
-                  inputRef={locationRef}
-                  autoComplete={locationText}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <SearchIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                  onChange={(e) => {
-                    setSearch(e.target.value);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key !== "Escape") {
-                      // Prevents autoselecting item while typing (default Select behaviour)
-                      e.stopPropagation();
-                    }
+            <div className="formmcontainer">
+              <Typography variant="h4" sx={{ textAlign: "center" }}>
+                <Typewriter
+                  options={{ loop: true }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Create an account")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Sign up")
+                      .pauseFor(2500)
+                      .deleteAll()
+                      .typeString("Register New Account")
+                      .pauseFor(2500)
+                      .start();
                   }}
                 />
-              </ListSubheader>
-              {placeData.map(({ id, center, place_name, geometry }) => (
-                <MenuItem key={center} value={[place_name, center]}
-                style={{color:'black'}}
-                >
-                  {place_name}
-                </MenuItem>
-              ))}
-            </Select>
-          </Grid>
-          <Grid item xs={12} sx={{marginBottom:'10px'}}>
-            <Typography 
-            sx={{ m: 1,fontSize:'16px' }}
-           
-            variant="standard"
-            fullWidth 
-             >
-                Before you signup, confirm that you have read, understood and agreed
-            with our <a href="/terms"> Terms and conditions </a>
-            And our <a href="/privacy">Privacy policy</a>
-           
+              </Typography>
 
-            </Typography>
-           <Checkbox
-              checked={checked}
-              onChange={handleChecked}
-              sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
-            />
-          </Grid>
+              <Box
+                component="form"
+                noValidate
+                onSubmit={handleSubmit}
+                sx={{ mt: 3 }}
+              >
+                <Grid container spacing={2}>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Name"
+                      id="signUp-name"
+                      type="text"
+                      defaultValue={values.name}
+                      required
+                      onChange={handleChange("name")}
+                    />
+                  </Grid>
 
-          {error && (
-            <FormHelperText
-              sx={{
-                color: "red",
-                mx: 1,
-                textTransform: "capitalize",
-                height: "15px",
-                marginBottom: "2rem",
-              }}
-            >
-              {error}
-            </FormHelperText>
-          )}
-          {/* <Box sx={{ height: '30px' }}>
+                  <Grid item xs={12}>
+                    <TextField
+                      required
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      autoComplete="email"
+                      defaultValue={values.email}
+                      onChange={handleChange("email")}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      fullWidth
+                      label="Password"
+                      id="signUp-passwordField"
+                      type={values.showPassword ? "text" : "password"}
+                      defaultValue={values.password}
+                      required
+                      onChange={handleChange("password")}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                            >
+                              {values.showPassword ? (
+                                <VisibilityOff />
+                              ) : (
+                                <Visibility />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <TextField
+                      sx={{ m: 1 }}
+                      color="primary"
+                      fullWidth
+                      label="Confirm Password"
+                      id="signUp-passwordField2"
+                      type={values.showPassword ? "text" : "password"}
+                      defaultValue={values.confirmPassword}
+                      required
+                      onChange={handleChange("confirmPassword")}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                            >
+                              {values.showPassword ? (
+                                <VisibilityOff />
+                              ) : (
+                                <Visibility />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <PhoneInput
+                      inputProps={{
+                        name: "phone",
+                        required: true,
+                      }}
+                      sx={{color:'primary'}}
+                      style={{ width: "100%" }}
+                      color="primary"
+                      label="Mobile Number"
+                      fullWidth
+                      placeholder="Mobile Number"
+                      inputClass="w-full form-input rounded-md shadow-sm"
+                      dropdownClass="rounded-md shadow-lg"
+                      containerClass="relative"
+                      inputStyle={{
+                        padding: "2rem 2rem",
+                        textIndent: "28px",
+                        fontSize: "20px",
+                      }}
+                      dropdownStyle={{
+                        backgroundColor: "black",
+                        color: "white",
+                      }}
+                      specialLabel="Phone"
+                      specialLabelClassName="text-gray-500"
+                      specialLabelStyle={{ marginBottom: "0.5rem" }}
+                      defaultCountry="ke"
+                      value={values.phone}
+                      onChange={(phone) => {
+                        handleChange("phone")({ target: { value: phone } });
+                      }}
+                      autoComplete="Enter your mobile number"
+                    />
+                  </Grid>
+
+                  <Grid item xs={12} sx={{ m: 1 }}>
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      {" "}
+                      Are you a Student?
+                    </Typography>
+                    <Checkbox
+                      checked={values.student}
+                      onChange={(event) => {
+                        setValues({ ...values, student: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    />
+                  </Grid>
+                  {values.student && (
+                    <Grid Grid item xs={12}>
+                      <TextField
+                        sx={{ m: 1 }}
+                        color="primary"
+                        fullWidth
+                        label="School"
+                        id="School"
+                        type="text"
+                        defaultValue={values.school}
+                        onChange={(event) => {
+                          const additionalValues = { ...values };
+                          additionalValues.school = event.target.value;
+                          if (event.target.value !== "") {
+                            additionalValues.student = true;
+                          }
+                          setValues(additionalValues);
+                        }}
+                        autoComplete="Enter your School"
+                      />
+                    </Grid>
+                  )}
+                  <Grid item xs={12} sx={{ m: 1 }}>
+                    <InputLabel id="demo-multiple-name-label">
+                      location
+                    </InputLabel>
+                    <Select
+                      sx={{ width: "100%" }}
+                      MenuProps={{ autoFocus: false }}
+                      labelId="search-select-label"
+                      id="search-select"
+                      value={locationText}
+                      label="Search location"
+                      input={<OutlinedInput label="Location" />}
+                      onChange={(event) => {
+                        locationRef.current.value = event.target.value[0];
+                        setLocationText(locationRef.current.value);
+                        console.log("selected", event.target.value[1]);
+                        // setCenter(event.target.value[1]);
+
+                        setValues({
+                          ...values,
+                          location: event.target.value[0],
+                          longitude: event.target.value[1][0].toString(),
+                          latitude: event.target.value[1][1].toString(),
+                        });
+                      }}
+                      onClose={() => {
+                        setSearch("");
+                      }}
+                      renderValue={() => locationText}
+                    >
+                      <ListSubheader>
+                        <TextField
+                          sx={{ marginTop: "5px" }}
+                          size="small"
+                          // Autofocus on textfield
+                          autoFocus
+                          required
+                          fullWidth
+                          name="location"
+                          label="Search Location"
+                          type="text"
+                          id="location"
+                          placeholder={locationText}
+                          inputRef={locationRef}
+                          autoComplete={locationText}
+                          InputProps={{
+                            startAdornment: (
+                              <InputAdornment position="start">
+                                <SearchIcon />
+                              </InputAdornment>
+                            ),
+                          }}
+                          onChange={(e) => {
+                            setSearch(e.target.value);
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key !== "Escape") {
+                              // Prevents autoselecting item while typing (default Select behaviour)
+                              e.stopPropagation();
+                            }
+                          }}
+                        />
+                      </ListSubheader>
+                      {placeData.map(({ id, center, place_name, geometry }) => (
+                        <MenuItem
+                          key={center}
+                          value={[place_name, center]}
+                          style={{ color: "black" }}
+                        >
+                          {place_name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </Grid>
+                  <Grid item xs={12} sx={{ marginBottom: "10px" }}>
+                    <Typography
+                      sx={{ m: 1, fontSize: "16px" }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      Before you signup, confirm that you have read, understood
+                      and agreed with our{" "}
+                      <a href="/terms"> Terms and conditions </a>
+                      And our <a href="/privacy">Privacy policy</a>
+                    </Typography>
+                    <Checkbox
+                      checked={checked}
+                      onChange={handleChecked}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    />
+                  </Grid>
+
+                  {error && (
+                    <FormHelperText
+                      sx={{
+                        color: "red",
+                        mx: 1,
+                        textTransform: "capitalize",
+                        height: "15px",
+                        marginBottom: "2rem",
+                      }}
+                    >
+                      {error}
+                    </FormHelperText>
+                  )}
+                  {/* <Box sx={{ height: '30px' }}>
                         {authLoading && <LoadingSpinner width="30px" height="30px" />}
                     </Box> */}
 
-          <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            type="submit"
-            sx={{ width: "100%", mt: 1.5, mb: 4 }}
-            disabled={loading}
-          >
-            {loading ? <CircularProgress size={24} /> : "Sign Up"}
-          </Button>
-        </Grid>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    color="primary"
+                    type="submit"
+                    sx={{ width: "100%", mt: 1.5, mb: 4 }}
+                    disabled={loading}
+                  >
+                    {loading ? <CircularProgress size={24} /> : "Sign Up"}
+                  </Button>
+                </Grid>
 
-        <Box>
-          <Typography sx={{ textAlign: "center" }}>
-            Already have an account?{" "}
-            <NavLink to="/login" style={{ color: "red" }}>
-              Login
-            </NavLink>
-          </Typography>
+                <Box>
+                  <Typography sx={{ textAlign: "center" }}>
+                    Already have an account?{" "}
+                    <NavLink to="/login" style={{ color: "red" }}>
+                      Login
+                    </NavLink>
+                  </Typography>
+                </Box>
+              </Box>
+            </div>
+          </div>
         </Box>
-      </Box>
-      </div>
-    </div>
-     </Box>
-     </Container>
-      
+      </Container>
     </ThemeProvider>
   );
 };
