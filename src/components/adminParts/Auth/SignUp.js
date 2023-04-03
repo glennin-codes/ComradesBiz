@@ -19,14 +19,19 @@ import {
   ThemeProvider,
   CssBaseline,
 } from "@mui/material";
+import PhoneInput from "react-phone-number-input";
+
+import "react-phone-number-input/style.css";
+import "react-phone-number-input/extra/style.css";
+
+import { CountrySelect } from "react-phone-number-input";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box, Container } from "@mui/system";
 import { NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
-import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
+
 
 import { useRef } from "react";
 import axios from "axios";
@@ -54,7 +59,7 @@ const SignUp = () => {
     location: "",
     longitude: "",
     latitude: "",
-    phone:'+254'
+    
   });
   const [checked, setChecked] = React.useState(false);
 
@@ -299,42 +304,52 @@ const SignUp = () => {
                     />
                   </Grid>
                   <Grid item xs={12}>
-                    <PhoneInput
-                      inputProps={{
-                        name: "phone",
-                        required: true,
-                      }}
-                      sx={{ color: "primary" }}
-                      style={{ width: "80%" }}
-                      color="primary"
-                      label="Mobile Number"
-                      fullWidth
-                      placeholder="Mobile Number"
-                      inputClass="w-full form-input rounded-md shadow-sm"
-                      containerClass="relative"
-                      inputStyle={{
-                        padding: "2rem 2rem",
-                        textIndent: "28px",
-                        fontSize: "20px",
-                      }}
-                      dropdownStyle={{
-                        backgroundColor: "#1a237e !important",
-                        maxHeight: "300px",
-                        overflowY: "scroll",
-                        top: "70px",
-                      }}
-                      
-                      dropdownClass="rounded-md shadow-lg country-dropdown"
-                      specialLabel="Phone"
-                      specialLabelClassName="text-gray-500"
-                      specialLabelStyle={{ marginBottom: "0.5rem" }}
-                      defaultCountry="ke"
-                      value={values.phone}
+                  <div style={{ backgroundColor: "#1a237e", padding: "20px" }}>
+      <PhoneInput
+        defaultCountry="KE"
+        placeholder="Enter phone number"
+        
+        style={{
+          fontSize: "16px",
+          backgroundColor: "#1a237e",
+          color: "#bdbdbd",
+          border: "none",
+          borderBottom: "2px solid #bdbdbd",
+          borderRadius: "0",
+          outline: "none",
+          margin: "0 10px 10px 0",
+          padding: "10px 0",
+        }}
+        inputStyle={{
+          fontSize: "16px",
+          backgroundColor: "#fff",
+          color: "#333",
+          border: "none",
+          borderRadius: "0",
+          outline: "none",
+          margin: "0",
+          padding: "10px",
+        }}
+        dropdownStyle={{
+          fontSize: "16px",
+          backgroundColor: "#1a237e",
+          color: "#bdbdbd",
+          maxHeight: "200px",
+          overflowY: "auto",
+          borderRadius: "0",
+          boxShadow: "none",
+          border: "none",
+        }}
+        value={values.phone}
                       onChange={(phone) => {
                         handleChange("phone")({ target: { value: phone } });
                       }}
                       autoComplete="Enter your mobile number"
-                    />
+      />
+    </div>
+  
+                      
+                    
                   </Grid>
 
                   <Grid item xs={12} sx={{ m: 1 }}>
