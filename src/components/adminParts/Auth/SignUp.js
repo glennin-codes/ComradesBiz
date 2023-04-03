@@ -317,16 +317,11 @@ const SignUp = () => {
                           margin: "0",
                           padding: "10px",
                         }}
-                        // dropdownStyle={{
-                        //   fontSize: "16px",
-                        //   backgroundColor: "#a9a9a9",
-                        //   color: "#bdbdbd",
-                        //   maxHeight: "200px",
-                        //   overflowY: "auto",
-                        //   borderRadius: "0",
-                        //   boxShadow: "none",
-                        //   border: "none",
-                        // }}
+                        dropdownStyle={{
+                          
+                          maxHeight: "200px",
+                         
+                        }}
                         value={values.phone}
                         onChange={(phone) => {
                           handleChange("phone")({ target: { value: phone } });
