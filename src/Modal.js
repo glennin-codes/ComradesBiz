@@ -47,8 +47,8 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
 
   const confirmed = () => {
     
-    confirmedFunction(buyerInfo);
-   return buyerInfo;
+    confirmedFunction();
+   
   
   };
  
