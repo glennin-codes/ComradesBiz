@@ -30,7 +30,7 @@ const style = {
   fontWeight: "400",
 };
 
-const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
+const MyModal = ({ open, setOpen, confirmedFunction, product }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -74,7 +74,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
     const buyerInfo = { name, email, phone, message} 
     e.preventDefault();
     try {
-      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails',buyerInfo,products );
+      const res = await axios.post('https://comradesbizapi.azurewebsites.net/api/notify/emails',buyerInfo,product );
       if (res && res.data.status === 200) {
         // show success snackbar
         setError("sent")
