@@ -52,7 +52,8 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const handleClose = () => setOpen(false);
 
   const confirmed = () => {
-    confirmedFunction();
+    buyer = { name, email, phone, message };
+    confirmedFunction(buyer);
   };
 
   const handleNameChange = (e) => setName(e.target.value);
@@ -70,19 +71,21 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
     }
     setSnackbarOpen(false);
   };
-  console.log('producst in the modal', products);
+
+  console.log("producst in the modal", products);
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
     const buyer = { name, email, phone, message };
-    const data={buyer,products};
+    const data = { buyer, products };
     e.preventDefault();
     try {
-      
+      setLoading(true);
       const res = await axios.post(
         "https://comradesbizapi.azurewebsites.net/api/notify/emails",
-       data
+        data
       );
       if (res && res.data.status === 200) {
+        setLoading(true);
         // show success snackbar
         setError("sent");
         setSnackbarOpen(true);
@@ -95,15 +98,18 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
       }
     } catch (error) {
       // handle error and show error snackbar
-      console.error(error);
-      setError("");
-      setSnackbarOpen(true);
-      setSnackbarSeverity("error");
-      setSnackbarMessage(
-        error && error.response.message
-          ? error.response.message
-          : "Network error, kindly check your network and try again."
-      );
+      if (error && error.response.status === 500) {
+        setSnackbarOpen(true);
+        setSnackbarSeverity("error");
+        setSnackbarMessage(error.response.message);
+      } else {
+        setSnackbarOpen(true);
+        setSnackbarSeverity("error");
+        setSnackbarMessage(
+          "An error occured might be a network issue or firewall restriction, please try again later"
+        );
+      }
+
       handleClose();
     }
 
@@ -165,26 +171,27 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
               </Box>
               <Box sx={{ mt: 2 }}>
                 <PhoneInput
-                  inputProps={{
-                    name: "phone",
-                    required: true,
+                  defaultCountry="KE"
+                  placeholder="Enter phone number"
+                  style={{
+                    fontSize: "16px",
+
+                    border: "none",
                   }}
-                  defaultCountry={"ke"}
-                  fullWidth
+                  inputStyle={{
+                    fontSize: "16px",
+
+                    border: "0",
+                    borderRadius: "2px",
+                    outline: "none",
+                    margin: "0",
+                    padding: "10px",
+                  }}
+                  dropdownStyle={{
+                    maxHeight: "200px",
+                  }}
                   value={phone}
                   onChange={handlePhoneChange}
-                  inputClass="w-full form-input rounded-md shadow-sm"
-                  dropdownClass="rounded-md shadow-lg"
-                  containerClass="relative"
-                  inputStyle={{
-                    padding: "0.5rem 1rem",
-                    textIndent: "28px",
-                    fontSize: "20px",
-                  }}
-                  dropdownStyle={{ top: "70px" }}
-                  specialLabel="Phone"
-                  specialLabelClassName="text-gray-500"
-                  specialLabelStyle={{ marginBottom: "0.5rem" }}
                 />
               </Box>
               <Box sx={{ mt: 2 }}>
@@ -208,11 +215,18 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     "Notify The Seller"
                   )}
                 </Button>
-                {/* <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
-    <Alert severity={snackbarSeverity} onClose={handleSnackbarClose}>
-      {snackbarMessage}
-    </Alert>
-  </Snackbar> */}
+                <Snackbar
+                  open={snackbarOpen}
+                  autoHideDuration={6000}
+                  onClose={handleSnackbarClose}
+                >
+                  <Alert
+                    severity={snackbarSeverity}
+                    onClose={handleSnackbarClose}
+                  >
+                    {snackbarMessage}
+                  </Alert>
+                </Snackbar>
               </Box>
             </Box>
           </Fade>
