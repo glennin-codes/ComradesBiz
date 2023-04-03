@@ -154,6 +154,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   required: true,
                 }}
                 defaultCountry={"ke"}
+                fullWidth
                 
                 value={phone}
                 onChange={handlePhoneChange}
@@ -163,7 +164,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                 inputStyle={{
                   padding: "0.5rem 1rem",
                   textIndent: "28px",
-                  fontSize: "18px",
+                  fontSize: "20px",
                 }}
                 dropdownStyle={{ top: "70px" }}
                 specialLabel="Phone"

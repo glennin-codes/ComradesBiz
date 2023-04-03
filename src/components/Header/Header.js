@@ -36,20 +36,20 @@ const Header = () => {
               </button>
 
               <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto NavLink-all">
-                  <Link to="/" className="NavLink">
+                <Nav className="me-auto NavLink-all"  >
+                  <Link to="/" className="NavLink" onClick={handleClose}  >
                     Home
                   </Link>
-                  <Link to="/products" className="NavLink">
+                  <Link to="/products" className="NavLink" onClick={handleClose} >
                     Products On Sale
                   </Link>
-                  <Link to="/about" className="NavLink">
+                  <Link to="/about" className="NavLink" onClick={handleClose} >
                     About Us{" "}
                   </Link>
-                  <Link to="/contact" className="NavLink">
+                  <Link to="/contact" className="NavLink" onClick={handleClose} >
                     Contact Us
                   </Link>
-                  <Link to="/login" className="NavLink">
+                  <Link to="/login" className="NavLink" onClick={handleClose} >
                     Profile
                   </Link>
 
@@ -57,6 +57,7 @@ const Header = () => {
                     to="/cart"
                     className="NavLink "
                     style={{ position: "relative" }}
+                    onClick={handleClose}
                   >
                     <FiShoppingCart
                       className="cart-trolley"

@@ -164,14 +164,14 @@ const ContactMe = () => {
                         name="payments"
                         value="Payments"
                       />
-                      <label htmlFor="payments">Payments</label>
+                      <label htmlFor="payments">Report a fraud</label>
                     </div>
                     <div>
                       <input
                         type="radio"
-                        id="account"
-                        name="account"
-                        value="Account"
+                        id="report"
+                        name="report"
+                        value="report"
                       />
                       <label htmlFor="account">Account Problem</label>
                     </div>
@@ -205,12 +205,36 @@ const ContactMe = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
-                <PhoneInput
-                  placeholder="Enter phone number"
-                  value={phone}
-                  onChange={setPhone}
-                  required
-                />
+               <PhoneInput
+  inputProps={{
+    name: "phone",
+    required: true,
+  }}
+  style={{ m: 1, fontSize: '14px' }}
+  color="primary"
+  label="Mobile Number"
+  fullWidth
+  placeholder='Mobile Number'
+  inputClass="w-full form-input rounded-md shadow-sm"
+  dropdownClass="rounded-md shadow-lg"
+  containerClass="relative"
+  inputStyle={{
+    padding: "0.5rem 1rem",
+    textIndent: "28px",
+    fontSize: "20px",
+  }}
+  dropdownStyle={{ top: "70px" }}
+  specialLabel="Phone"
+  specialLabelClassName="text-gray-500"
+  specialLabelStyle={{ marginBottom: "0.5rem" }}
+  defaultCountry="KE"
+  value={values.phone}
+  onChange={(phone) => {
+    setPhone(phone)
+  }}
+  autoComplete="Enter your mobile number"
+/>
+
                 <textarea
                 style={{textTransform:'none'}}
                   type="text"

@@ -214,6 +214,9 @@ button:focus{
           width: 4.2rem;
           height: 4.2rem;
           font-size: 2rem;
+          top: -20%;
+          left: 70%;
+          position: absolute;
         }
 
 }
