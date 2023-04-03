@@ -21,6 +21,26 @@
     position: relative;
     font-size: 3.2rem;
   }
+  .Mobile_cart-trolley {
+    position: relative;
+    font-size: 3.2rem;
+  }
+  
+  .Mobile_cart-total--item {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: #8490ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  
 .NavLink {
     padding: 0 20px;
     text-decoration: none;
@@ -28,6 +48,7 @@
     font-weight: 400;
     font-size: 18px;
 }
+
 
 .NavLink:hover {
     border-bottom: 2px solid var(--Vivid-orange);
@@ -195,8 +216,7 @@ button:focus{
         width: 5.2rem;
         height: 5.2rem;
         font-size: 3rem;
-        background-color: #000;
-        color: #000;
+       
       }
 }
 
@@ -216,9 +236,7 @@ button:focus{
           width: 4.2rem;
           height: 4.2rem;
           font-size: 2rem;
-          top: -20%;
-          left: 70%;
-          position: absolute;
+          
         }
 
 }

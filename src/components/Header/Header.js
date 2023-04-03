@@ -101,8 +101,8 @@ const Header = () => {
               Profile
             </Link>
             <NavLink to="/cart" className="mobile_navlink" onClick={handleClose}>
-              <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> {total_item} </span>
+              <FiShoppingCart className="Mobile_cart-trolley" />
+              <span className="Mobile_cart-total--item"> {total_item} </span>
             </NavLink>
           </div>
         </Offcanvas.Body>
