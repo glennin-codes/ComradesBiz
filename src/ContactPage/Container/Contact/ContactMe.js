@@ -205,40 +205,36 @@ const ContactMe = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
-    <PhoneInput
-                      inputProps={{
-                        name: "phone",
-                        required: true,
-                      }}
-                      sx={{color:'primary'}}
-                      style={{ width: "100%" }}
-                      color="primary"
-                      label="Mobile Number"
-                      fullWidth
-                      placeholder="Mobile Number"
-                      inputClass="w-full form-input rounded-md shadow-sm"
-                      dropdownClass="rounded-md shadow-lg"
-                      containerClass="relative"
-                      inputStyle={{
-                        padding: "2rem 2rem",
-                        textIndent: "28px",
-                        fontSize: "20px",
-                      }}
-                      dropdownStyle={{
-                        backgroundColor: "black",
-                        color: "white",
-                      }}
-                      specialLabel="Phone"
-                      specialLabelClassName="text-gray-500"
-                      specialLabelStyle={{ marginBottom: "0.5rem" }}
-                      defaultCountry="ke"
-                      value={phone}
-                      onChange={(phone) => {
-                        setPhone(phone);
-                      }
-                      
-}
-                    />
+          <PhoneInput
+                        defaultCountry="KE"
+                        placeholder="Enter phone number"
+                        style={{
+                          fontSize: "16px",
+                        
+                          border: "none",
+                         
+                        }}
+                        inputStyle={{
+                          fontSize: "16px",
+                         
+                          border: "0",
+                          borderRadius: "2px",
+                          outline: "none",
+                          margin: "0",
+                          padding: "10px",
+                        }}
+                        dropdownStyle={{
+                          
+                          maxHeight: "200px",
+                         
+                        }}
+                        value={values.phone}
+                        onChange={(phone) => {
+                            setPhone(phone)
+                        }}
+                        autoComplete="Enter your mobile number"
+                      />
+          
 
                 <textarea
                 style={{textTransform:'none'}}
