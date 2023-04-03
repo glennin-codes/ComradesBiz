@@ -54,6 +54,7 @@ const SignUp = () => {
     location: "",
     longitude: "",
     latitude: "",
+    phone:'+254'
   });
   const [checked, setChecked] = React.useState(false);
 
