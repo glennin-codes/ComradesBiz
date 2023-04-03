@@ -317,12 +317,12 @@ const SignUp = () => {
                         fontSize: "20px",
                       }}
                       dropdownStyle={{
-                        backgroundColor: "#1a237e",
-                        maxHeight: "200px",
+                        backgroundColor: "#1a237e !important",
+                        maxHeight: "300px",
                         overflowY: "scroll",
-                        top: "20px",
-                        bottom: "20px",
+                        top: "70px",
                       }}
+                      
                       dropdownClass="rounded-md shadow-lg country-dropdown"
                       specialLabel="Phone"
                       specialLabelClassName="text-gray-500"
