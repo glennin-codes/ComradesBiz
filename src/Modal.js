@@ -70,7 +70,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
     }
     setSnackbarOpen(false);
   };
-  console.log(typeof products);
+  console.log('producst in the modal', products);
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
     const buyer = { name, email, phone, message };
