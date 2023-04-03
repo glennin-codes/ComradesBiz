@@ -16,9 +16,11 @@ const Cart = () => {
   const handleNotifySellers = () => {
     setOpen(true);
   };
+console.log('cart Items',cart);
+console.log(typeof cart);
+  const handleConfirmed = () => {
+    console(typeof cart);
 
-  const handleConfirmed = (buyerInfo) => {
-    console.log('Buyer Info:', buyerInfo);
   };
 
   const { isAuthenticated, user } = useAuth0();
@@ -26,13 +28,12 @@ const Cart = () => {
   if (cart.length === 0) {
     return (
       <>
-      <EmptyDiv>
-        
-        <h3>No Cart in Item </h3>
-      </EmptyDiv>
-      <NavLink to="/products">
-            <Button>Browse Products</Button>
-          </NavLink>
+        <EmptyDiv>
+          <h3>No Cart in Item </h3>
+        </EmptyDiv>
+        <NavLink to="/products">
+          <Button>Browse Products</Button>
+        </NavLink>
       </>
     );
   }
@@ -65,18 +66,16 @@ const Cart = () => {
           <NavLink to="/products">
             <Button> continue Shopping </Button>
           </NavLink>
-          <Button  onClick={handleNotifySellers}>
-            Notify Sellers
-          </Button>
+          <Button onClick={handleNotifySellers}>Notify Sellers</Button>
           <Button className="btn btn-clear" onClick={clearCart}>
             clear cart
           </Button>
           <MyModal
-        open={open}
-        setOpen={setOpen}
-        confirmedFunction={handleConfirmed}
-        products={cart}
-      />
+            open={open}
+            setOpen={setOpen}
+            confirmedFunction={handleConfirmed}
+            products={cart}
+          />
         </div>
 
         {/* order total_amount */}
@@ -92,7 +91,7 @@ const Cart = () => {
               <p>shipping fee:</p>
               <p>
                 {/* <FormatPrice price={shipping_fee} /> */}
-                  absolutely free
+                absolutely free
               </p>
             </div>
             <hr />
