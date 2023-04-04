@@ -59,11 +59,12 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   console.log("id", id);
-
+   
   useEffect(() => {
-    setLoading(true);
+   ;
     // Fetch user data from API
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `https://comradesbizapi.azurewebsites.net/api/user/${id}`
