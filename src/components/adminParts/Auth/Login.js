@@ -168,7 +168,7 @@ console.log(id);
                             type={values.showPassword ? 'text' : 'password'}
                             defaultValue={values.password}
                             onChange={handleChange('password')}
-                           inputProps={{
+                           InputProps={{
                             endAdornment:(
                                 <InputAdornment position="end">
                                     <IconButton
