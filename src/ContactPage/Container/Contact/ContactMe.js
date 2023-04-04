@@ -238,7 +238,7 @@ const ContactMe = () => {
           
 
                 <textarea
-                style={{textTransform:'none'}}
+                style={{ textTransform:'none'}}
                   type="text"
                   name="message"
                   placeholder="Message"
