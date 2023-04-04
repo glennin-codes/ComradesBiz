@@ -13,12 +13,15 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 
 import PhoneInput from "react-phone-number-input";
+  
 import { fontFamily, fontSize, ThemeProvider } from "@mui/system";
 import MuiTheme from "./components/adminParts/utils/MuiTheme";
 import axios from "axios";
 import Toast from "./components/adminParts/utils/Toast";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "react-phone-number-input/style.css";
+
 
 const style = {
   position: "absolute",
@@ -179,7 +182,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     padding: "10px",
                   }}
                   dropdownStyle={{
-                    maxHeight: "200px",
+                   
                     overflow: "scroll",
                   }}
                   value={phone}
