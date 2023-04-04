@@ -40,7 +40,9 @@ export default function Manageproducts() {
       }
      
       }catch(error){
-       alert(error && error.response.message ? error.response.message : 'Network error, kindly check your network and try again.');
+      if (error && error.response.status===404){
+        alert('no products found with your name in the database,please add products or if its an issue email us')
+      }
 
       }
     };

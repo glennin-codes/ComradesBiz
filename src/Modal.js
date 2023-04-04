@@ -174,15 +174,14 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   }}
                   inputStyle={{
                     fontSize: "16px",
-
-                    border: "0",
+                  
                     borderRadius: "2px",
                     outline: "none",
                     margin: "0",
                     padding: "10px",
                   }}
                   dropdownStyle={{
-                   
+                    maxHeight:'100px',
                     overflow: "scroll",
                   }}
                   value={phone}
