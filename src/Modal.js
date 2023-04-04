@@ -98,7 +98,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
       setLoading(false);
 
       if (error && error.response.status === 500) {
-        setError(error.response.message);
+        setError("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
       } else {
         setError(
           "An error occured might be a network issue or firewall restriction, please try again later"

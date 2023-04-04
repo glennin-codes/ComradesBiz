@@ -41,7 +41,11 @@ export default function Manageproducts() {
      
       }catch(error){
       if (error && error.response.status===404){
-        alert('no products found with your name in the database,please add products or if its an issue email us')
+        alert('no products found linking your name in the database,please add some  products or forward this issue to us')
+      }else if(error && error.response.status===500){
+        alert("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.")
+      }else{
+        alert("We're having trouble accessing the network. Please check your internet connection and try again later.")
       }
 
       }
@@ -87,24 +91,24 @@ export default function Manageproducts() {
       alert('Product not found');
         
         
-      } else if (error.response.status === 401) {
+      } else if ( error && error.response.status === 401) {
        
         alert('You are not authorized to access this resource!');
         
-      } else if (error.response.status === 403) {
+      } else if (error && error.response.status === 403) {
       
        alert('Access to this resource is forbidden. Please log in to continue.');
         
         setTimeout(() => {
           navigate("/login");
         }, 3000);
-      } else if (error.response.status === 500) {
+      } else if ( error && error.response.status === 500) {
         console.log(error.response.data);
-       alert('There was an Error,engineers have been reported');
+       alert("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
         
         
       } else {
-        alert("network error!,check your network and try again");
+        alert("We're having trouble accessing the network. Please check your internet connection and try again later.");
         
       }
     }
