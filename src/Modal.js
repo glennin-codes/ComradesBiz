@@ -11,13 +11,14 @@ import Fade from "@mui/material/Fade";
 
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import PhoneInput from "react-phone-number-input/input-mobile";
-import "react-phone-number-input/style.css";
+
+import PhoneInput from "react-phone-number-input";
 import { fontFamily, fontSize, ThemeProvider } from "@mui/system";
 import MuiTheme from "./components/adminParts/utils/MuiTheme";
 import axios from "axios";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
+import Toast from "./components/adminParts/utils/Toast";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const style = {
   position: "absolute",
@@ -35,17 +36,6 @@ const style = {
   color: "#06243F",
   fontWeight: "400",
 };
-const snackbarStyle = {
-  position: "fixed",
-  bottom: "20px",
-  left: "50%",
-  transform: "translateX(-50%)",
-  zIndex: 9999,
-  backgroundColor: "#f44336",
-  color: "#fff",
-  borderRadius: "4px",
-  padding: "16px",
-};
 
 const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [name, setName] = useState("");
@@ -54,36 +44,29 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-
-  // define state for snackbar
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarSeverity, setSnackbarSeverity] = useState("success");
-  const [snackbarMessage, setSnackbarMessage] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const handleClose = () => setOpen(false);
-
-  const confirmed = () => {
-    const buyer = { name, email, phone, message };
-    confirmedFunction(buyer);
-  };
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePhoneChange = (phone) => setPhone(phone);
   const handleMessageChange = (e) => setMessage(e.target.value);
+  useEffect(() => {
+    if (success) {
+      toast.success(success);
+      setName("");
 
-  // define the Snackbar Alert component
-  function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
-  const handleSnackbarClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setSuccess();
     }
-    setSnackbarOpen(false);
-  };
-
-  console.log("producst in the modal", products);
+    if (error) {
+      toast.error(error);
+      setError();
+    }
+  }, [success, error]);
   // inside your handleSubmit function
   const handleSubmit = async (e) => {
     const buyer = { name, email, phone, message };
@@ -98,25 +81,18 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
       if (res) {
         setLoading(false);
         handleClose();
-        // show success snackbar
-        setSnackbarOpen(true);
-        setSnackbarSeverity("success");
-        setSnackbarMessage(
+        setSuccess(
           "Your request has been sent successfully and the process has been initiated.Please stay put, you will be contacted shortly."
         );
       }
     } catch (error) {
       handleClose();
       setLoading(false);
-      // handle error and show error snackbar
+
       if (error && error.response.status === 500) {
-        setSnackbarOpen(true);
-        setSnackbarSeverity("error");
-        setSnackbarMessage(error.response.message);
+        setError(error.response.message);
       } else {
-        setSnackbarOpen(true);
-        setSnackbarSeverity("error");
-        setSnackbarMessage(
+        setError(
           "An error occured might be a network issue or firewall restriction, please try again later"
         );
       }
@@ -135,6 +111,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
           fontWeight: "400",
         }}
       >
+        <Toast time={3000} />
         <Modal
           open={open}
           onClose={handleClose}
@@ -225,14 +202,6 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     "Notify The Seller"
                   )}
                 </Button>
-                <Snackbar
-                  open={snackbarOpen}
-                  autoHideDuration={6000}
-                  onClose={handleSnackbarClose}
-                  style={snackbarStyle}
-                >
-                  <Alert severity={snackbarSeverity}>{snackbarMessage}</Alert>
-                </Snackbar>
               </Box>
             </Box>
           </Fade>

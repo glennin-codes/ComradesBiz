@@ -15,8 +15,8 @@ import Assessorinfo from "../../Component/Assesorinfo/Assesorinfo";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PhoneInput from "react-phone-number-input/input-mobile";
-import "react-phone-number-input/style.css";
+
+import PhoneInput from "react-phone-number-input";
 import { Button, CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
@@ -253,7 +253,7 @@ const ContactMe = () => {
                     <Button
                       type="submit"
                       variant="outlined"
-                      style={{ width: "2rem" }}
+                      style={{ padding:'20px'}}
                     >
                       {buttonLoading ? <CircularProgress size={24} /> : "Send"}
                     </Button>
