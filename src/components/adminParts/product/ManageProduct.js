@@ -19,9 +19,7 @@ import UpdateProductForm from "./UpdateProductForm.js";
 import MuiTheme from "../utils/MuiTheme.js";
 
 export default function Manageproducts() {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const [snackbarSeverity, setSnackbarSeverity] = useState('success');
-  const [snackbarMessage, setSnackbarMessage] = useState('');
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
@@ -29,16 +27,8 @@ export default function Manageproducts() {
   const [success, setSuccess] = React.useState("");
   const [refresh, setRefresh] = useState(false);
   const email=localStorage.getItem('email');
-   // define the Snackbar Alert component
-   function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
-  const handleSnackbarClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    setSnackbarOpen(false);
-  };
+
+
   useEffect(() => {
     const fetchproducts = async () => {
       try{
@@ -51,10 +41,7 @@ export default function Manageproducts() {
       }
      
       }catch(error){
-        console.log(error)
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage(error && error.response.message ? error.response.message : 'Network error, kindly check your network and try again.');
+       alert(error && error.response.message ? error.response.message : 'Network error, kindly check your network and try again.');
 
       }
     };
@@ -76,9 +63,7 @@ export default function Manageproducts() {
     try {
       setSuccess("");
    
-      setSnackbarOpen(true);
-      setSnackbarSeverity('warning');
-      setSnackbarMessage(`Are you sure you want to delete product with ${_id} id? This action is irreversible!`);
+      alert(`Are you sure you want to delete product with ${_id} id? This action is irreversible!`);
       
       const token=localStorage.getItem('token'); // Get token from local storage
       const config = {
@@ -90,7 +75,7 @@ export default function Manageproducts() {
         config
       );
       if (res.status === 200) {
-        setSuccess("");
+        setSuccess("Product deleted successfully");
  
         setRefresh((prevState) => !prevState);
       }
@@ -98,38 +83,27 @@ export default function Manageproducts() {
       console.error(error);
       if (error.response && error.response.status === 404) {
     
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage('Product not found');
+      alert('Product not found');
         
         
       } else if (error.response.status === 401) {
        
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage('You are not authorized to access this resource!');
+        alert('You are not authorized to access this resource!');
         
       } else if (error.response.status === 403) {
       
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage('Access to this resource is forbidden. Please log in to continue.');
+       alert('Access to this resource is forbidden. Please log in to continue.');
         
         setTimeout(() => {
           navigate("/login");
         }, 3000);
       } else if (error.response.status === 500) {
         console.log(error.response.data);
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage('There was an Error,engineers have been reported');
+       alert('There was an Error,engineers have been reported');
         
         
       } else {
         alert("network error!,check your network and try again");
-        setSnackbarOpen(true);
-        setSnackbarSeverity('error');
-        setSnackbarMessage('Network error!,check your network connection and try again');
         
       }
     }
@@ -148,7 +122,7 @@ export default function Manageproducts() {
           setRefresh={setRefresh}
         />
       )}
-
+    { success && <Alert severity="success"  fullwidth >{success}</Alert>}
       <TableContainer component={Paper} sx={{top:'20%'}}>
         {success && <Alert severity="success">{success}</Alert>}
         <Table
@@ -239,11 +213,7 @@ export default function Manageproducts() {
           </TableBody>
         </Table>
       </TableContainer>
-      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
-    <Alert severity={snackbarSeverity} onClose={handleSnackbarClose}>
-      {snackbarMessage}
-    </Alert>
-  </Snackbar>
+   
       <Grid
         item
         xs={12}
