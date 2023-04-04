@@ -37,16 +37,21 @@ const style = {
   fontWeight: "400",
 };
 
-const MyModal = ({  products }) => {
+const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const handleClose = () => setOpen(false);
+  // const confirm=()=>{
+
+  //   confirmedFunction();
+
+  // }
 
   const handleNameChange = (e) => setName(e.target.value);
   const handleEmailChange = (e) => setEmail(e.target.value);
