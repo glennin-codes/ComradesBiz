@@ -59,11 +59,12 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   console.log("id", id);
-
+   
   useEffect(() => {
-    setLoading(true);
+   ;
     // Fetch user data from API
     const fetchData = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `https://comradesbizapi.azurewebsites.net/api/user/${id}`
@@ -80,18 +81,18 @@ const UserProfile = () => {
       } catch (error) {
         setLoading(false);
         console.error(error);
-        if (error) {
-          if (error.response && error.response.status === 404) {
+        
+          if (error && error.response.status === 404) {
             setError("User not found");
-          } else if (error.response && error.response.status === 500) {
+          } else if (error && error.response.status === 500) {
             console.log(error.response.data);
-            setError("Server error!");
+            setError("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
           } else {
             setError(
-              "network error while trying to fetch!,check your connections and try again"
+              "We're having trouble accessing the network. Please check your internet connection and try again later."
             );
           }
-        }
+        
       }
     };
     fetchData();
@@ -136,22 +137,22 @@ const UserProfile = () => {
     } catch (error) {
       console.error(error);
       setSending(false);
-      if (error.response && error.response.status === 404) {
+      if (error && error.response.status === 404) {
         setError("User not found");
-      } else if (error.response && error.response.status === 401) {
+      } else if (error && error.response.status === 401) {
         setError("You are not authorized to access this resource.");
-      } else if (error.response && error.response.status === 403) {
+      } else if (error && error.response.status === 403) {
         setError(
           "Access to this resource is forbidden. Please log in to continue."
         );
         setTimeout(() => {
           navigate("/login");
         }, 3000);
-      } else if (error.response && error.response.status === 500) {
+      } else if (error && error.response.status === 500) {
         console.log(error.response.data);
-        setError("Server error!");
+        setError("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
       } else {
-        setError("network error!,check your connections and try again");
+        setError("We're having trouble accessing the network. Please check your internet connection and try again later.");
       }
     }
   };

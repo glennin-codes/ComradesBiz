@@ -15,8 +15,8 @@ import Assessorinfo from "../../Component/Assesorinfo/Assesorinfo";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import PhoneInput from "react-phone-number-input/input-mobile";
-import "react-phone-number-input/style.css";
+
+import PhoneInput from "react-phone-number-input";
 import { Button, CircularProgress, Grid } from "@mui/material";
 import { SendEmail } from "../../Api/Api";
 import Toast from "../../../components/adminParts/utils/Toast";
@@ -205,38 +205,40 @@ const ContactMe = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
                 />
-               <PhoneInput
-  inputProps={{
-    name: "phone",
-    required: true,
-  }}
-  style={{ m: 1, fontSize: '14px' }}
-  color="primary"
-  label="Mobile Number"
-  fullWidth
-  placeholder='Mobile Number'
-  inputClass="w-full form-input rounded-md shadow-sm"
-  dropdownClass="rounded-md shadow-lg"
-  containerClass="relative"
-  inputStyle={{
-    padding: "0.5rem 1rem",
-    textIndent: "28px",
-    fontSize: "20px",
-  }}
-  dropdownStyle={{ top: "70px" }}
-  specialLabel="Phone"
-  specialLabelClassName="text-gray-500"
-  specialLabelStyle={{ marginBottom: "0.5rem" }}
-  defaultCountry="KE"
-  value={phone}
-  onChange={(phone) => {
-    setPhone(phone)
-  }}
-  autoComplete="Enter your mobile number"
-/>
+          <PhoneInput
+                        defaultCountry="KE"
+                        placeholder="Enter phone number"
+                        style={{
+                          fontSize: "16px",
+                        
+                          border: "none",
+                         
+                        }}
+                        inputStyle={{
+                          fontSize: "16px",
+                         
+                          border: "0",
+                          borderRadius: "2px",
+                          outline: "none",
+                          margin: "0",
+                          padding: "10px",
+                        }}
+                        dropdownStyle={{
+                          
+                          maxHeight: "200px",
+                          overflow: "auto",
+                         
+                        }}
+                        value={phone}
+                        onChange={(phone) => {
+                            setPhone(phone)
+                        }}
+                        autoComplete="Enter your mobile number"
+                      />
+          
 
                 <textarea
-                style={{textTransform:'none'}}
+                style={{ textTransform:'none'}}
                   type="text"
                   name="message"
                   placeholder="Message"
@@ -251,7 +253,7 @@ const ContactMe = () => {
                     <Button
                       type="submit"
                       variant="outlined"
-                      style={{ width: "2rem" }}
+                      style={{ padding:'20px'}}
                     >
                       {buttonLoading ? <CircularProgress size={24} /> : "Send"}
                     </Button>

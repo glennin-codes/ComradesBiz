@@ -27,18 +27,16 @@
   }
   
   .Mobile_cart-total--item {
-    position: absolute;
-    top: -20%;
-    right: -10%;
     width: 2.4rem;
     height: 2.4rem;
+    position: absolute;
+
     border-radius: 50%;
+    display: grid;
+    place-items: center;
+    top: -20%;
+    left: 70%;
     background-color: #8490ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #fff;
   }
   
 .NavLink {
@@ -91,19 +89,21 @@
 
 .mobile_version_offcanvas_nav {
     background-color: var(--Medium-blue) !important;
-    background-color: var(--white) !important;
-    width: 50vw;
+    background-color: #1E1E2F !important;
+    
+    width: 40vw;
+    height: 80vh;
   }
   
 .mobile_version_links {
     display: flex !important;
     flex-direction: column !important;
     padding: 10px !important;
-    background:#01010133;
+   
 }
 
 .mobile_navlink {
-    color: var(--Quincy-blue);
+    color: #3b8dbf;
     padding: 10px;
     text-decoration: none;
     font-size: 1.4rem;
@@ -111,6 +111,7 @@
 }
 
 .mobile_version_offcanvas_nav-title {
+    color:#fff;
     font-size: 1.8rem !important;
 }
 
