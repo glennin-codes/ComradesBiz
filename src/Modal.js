@@ -35,6 +35,17 @@ const style = {
   color: "#06243F",
   fontWeight: "400",
 };
+const snackbarStyle = {
+  position: "fixed",
+  bottom: "20px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  zIndex: 9999,
+  backgroundColor: "#f44336",
+  color: "#fff",
+  borderRadius: "4px",
+  padding: "16px",
+};
 
 const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
   const [name, setName] = useState("");
@@ -218,6 +229,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   open={snackbarOpen}
                   autoHideDuration={6000}
                   onClose={handleSnackbarClose}
+                  style={snackbarStyle}
                 >
                   <Alert severity={snackbarSeverity}>{snackbarMessage}</Alert>
                 </Snackbar>
