@@ -201,9 +201,12 @@ button:focus{
         font-size: 15px;
         font-weight: 500;
     }
-    nav
-}
-
+}   
+@media only screen and (max-width: 768px) { /* Breakpoint for mobile screens */
+   .nav-img {
+      width: 150px;
+    }
+  }
 @media screen and (max-width: 981px) {
     body {
         margin: 0%;
