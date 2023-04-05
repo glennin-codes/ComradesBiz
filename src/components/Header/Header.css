@@ -53,6 +53,7 @@ max-height: 200px;
     color: var(--white);
     font-weight: 400;
     font-size: 18px;
+    font-family: 'ubuntu' !important;;
 }
 
 
