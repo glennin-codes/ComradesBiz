@@ -27,8 +27,9 @@ const Header = () => {
                   alt="logo"
                
         
-                  style={{   width: '200px',
-                  height:'60px',
+                  style={{   width: '220px',
+                  height:'70px',
+                  marginLeft:'20px',
                  
                     }}
                   className="nav-img"

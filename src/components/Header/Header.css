@@ -13,10 +13,7 @@ max-height: 200px;
     justify-content: space-between;
     align-items: center;
 } 
-.main_container_navbar{
-    
-    margin-right: 20px;
-}
+
 .cart-total--item {
     width: 2.4rem;
     height: 2.4rem;
