@@ -4,15 +4,18 @@
     background: url('../../ContactPage/assets/images/contactbg.png');
     background-size: cover;
     background-repeat: no-repeat;
-max-height: 200px;
-    box-shadow: initial;
-    overflow: hidden;
-    transition:500ms ease;
-    
+
+} 
+.navbar{
+  
+    padding: 0px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-} 
+    position: relative;
+    z-index: 100;
+    height: 80px;
+}
 
 .cart-total--item {
     width: 2.4rem;
@@ -198,6 +201,7 @@ button:focus{
         font-size: 15px;
         font-weight: 500;
     }
+    nav
 }
 
 @media screen and (max-width: 981px) {
