@@ -25,8 +25,8 @@ const Header = () => {
                 <img
                   src={Logo}
                   alt="logo"
-                  width="130px"
-                  height="130px"
+             
+                  
                   className="nav-img"
                 />
               </Link>
@@ -36,20 +36,20 @@ const Header = () => {
               </button>
 
               <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto NavLink-all"  >
-                  <Link to="/" className="NavLink"   >
+                <Nav className="me-auto NavLink-all">
+                  <Link to="/" className="NavLink">
                     Home
                   </Link>
-                  <Link to="/products" className="NavLink"  >
+                  <Link to="/products" className="NavLink">
                     Products On Sale
                   </Link>
-                  <Link to="/about" className="NavLink"  >
+                  <Link to="/about" className="NavLink">
                     About Us{" "}
                   </Link>
-                  <Link to="/contact" className="NavLink"  >
+                  <Link to="/contact" className="NavLink">
                     Contact Us
                   </Link>
-                  <Link to="/login" className="NavLink"  >
+                  <Link to="/login" className="NavLink">
                     Profile
                   </Link>
 
@@ -57,7 +57,6 @@ const Header = () => {
                     to="/cart"
                     className="NavLink "
                     style={{ position: "relative" }}
-                    
                   >
                     <FiShoppingCart
                       className="cart-trolley"
@@ -79,9 +78,10 @@ const Header = () => {
         className="mobile_version_offcanvas_nav"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className="mobile_version_offcanvas_nav-title" 
-           style={{color:'white'}}
-           >
+          <Offcanvas.Title
+            className="mobile_version_offcanvas_nav-title"
+            style={{ color: "white" }}
+          >
             Comradesbiz
           </Offcanvas.Title>
         </Offcanvas.Header>
@@ -90,19 +90,31 @@ const Header = () => {
             <Link to="/" className="mobile_navlink" onClick={handleClose}>
               Home
             </Link>
-            <Link to="/products" className="mobile_navlink" onClick={handleClose}>
+            <Link
+              to="/products"
+              className="mobile_navlink"
+              onClick={handleClose}
+            >
               Product On Sale
             </Link>
             <Link to="/about" className="mobile_navlink" onClick={handleClose}>
               About Us
             </Link>
-            <Link to="/contact" className="mobile_navlink" onClick={handleClose}>
+            <Link
+              to="/contact"
+              className="mobile_navlink"
+              onClick={handleClose}
+            >
               Contact Us
             </Link>
             <Link to="/login" className="mobile_navlink" onClick={handleClose}>
               Profile
             </Link>
-            <NavLink to="/cart" className="mobile_navlink" onClick={handleClose}>
+            <NavLink
+              to="/cart"
+              className="mobile_navlink"
+              onClick={handleClose}
+            >
               <FiShoppingCart className="Mobile_cart-trolley" />
               <span className="Mobile_cart-total--item"> {total_item} </span>
             </NavLink>

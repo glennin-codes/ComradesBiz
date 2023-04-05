@@ -4,7 +4,33 @@
     background: url('../../ContactPage/assets/images/contactbg.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: var(--white);
+
+
+
+
 } 
+.navbar{
+  
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+   
+  
+
+
+}
+
 .cart-total--item {
     width: 2.4rem;
     height: 2.4rem;
@@ -43,8 +69,9 @@
     padding: 0 20px;
     text-decoration: none;
     color: var(--white);
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 450;
+    font-size: 20px;
+    font-family: 'ubuntu' !important;
 }
 
 
@@ -85,6 +112,8 @@
 
 .nav-img {
     cursor: pointer;
+     
+    width: 320px;
 }
 
 .mobile_version_offcanvas_nav {
@@ -188,13 +217,57 @@ button:focus{
         font-size: 15px;
         font-weight: 500;
     }
-}
-
+    
+    
+       .nav-img{ 
+        width: 250px;
+          margin-right: 30px;
+          margin-left: 20px;
+       }
+}  
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+    
+     .nav-img{ 
+        margin-right: 30px;
+        margin-left: 20px;
+     }
+  } 
+@media only screen and (max-width: 768px) { /* Breakpoint for mobile screens */
+   .nav-img {
+      width: 180px;
+    }
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+       .nav-img{ 
+          margin-right: 30px;
+          margin-left: 20px;
+       }
+  }
 @media screen and (max-width: 981px) {
     body {
         margin: 0%;
         padding: 0%;
-    }
+    }  
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+    
 
     .NavLink {
         margin: 10px 0px;
@@ -220,12 +293,32 @@ button:focus{
        
       }
 }
-
+@media only screen and (max-width: 480px) {
+    /* Styles for small screens */
+    .main_container_contact .navbar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+  }
+  
 @media screen and (max-width: 425px) {
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.6rem;
     }
- 
+    .main_container_contact .navbar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
    
 
         .cart-trolley {
@@ -243,6 +336,15 @@ button:focus{
 }
 
 @media screen and (max-width: 320px) {
+    .main_container_contact .navbar{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+       
+        justify-content: space-between;
+        align-items: center;
+        
+      }
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.3rem;
     }
@@ -256,4 +358,18 @@ button:focus{
         height: 2.2rem;
         font-size: 1rem;
       }
+}
+@media screen and (min-width: 320px) and (max-width: 360px) {
+    
+    .main_container_contact .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    .nav-img{
+        width: 180px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
