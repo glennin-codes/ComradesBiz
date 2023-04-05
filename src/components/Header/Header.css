@@ -4,6 +4,14 @@
     background: url('../../ContactPage/assets/images/contactbg.png');
     background-size: cover;
     background-repeat: no-repeat;
+max-height: 200px;
+    box-shadow: initial;
+    overflow: hidden;
+    transition:500ms ease;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 } 
 .cart-total--item {
     width: 2.4rem;

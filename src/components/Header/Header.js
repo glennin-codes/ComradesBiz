@@ -27,9 +27,10 @@ const Header = () => {
                   alt="logo"
                
         
-                  style={{   width: '180px',
-                  height:'50px',
-                 }}
+                  style={{   width: '200px',
+                  height:'100px',
+                 
+                    }}
                   className="nav-img"
                 />
               </Link>
