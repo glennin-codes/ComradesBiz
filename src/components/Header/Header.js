@@ -25,8 +25,8 @@ const Header = () => {
                 <img
                   src={Logo}
                   alt="logo"
-                 
-                  height="8rem"
+                 width='150px'
+                  height="100px"
                   className="nav-img"
                 />
               </Link>
