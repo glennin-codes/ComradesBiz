@@ -88,7 +88,7 @@ const[loading,setIsLoading]=useState(false);
                //setting up cookie
                console.log('name',name)
                
-console.log(id);
+console.log(_id);
               
                 
            setValues('');
