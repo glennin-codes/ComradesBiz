@@ -28,8 +28,9 @@ const Header = () => {
                
         
                   style={{   width: '220px',
-                  height:'70px',
-                  marginLeft:'20px',
+                  height:'80px',
+                  marginLeft:'30px',
+                  marginRight:'10px'
                  
                     }}
                   className="nav-img"
