@@ -28,7 +28,7 @@ const Header = () => {
                
         
                   style={{   width: '200px',
-                  height:'100px',
+                  height:'60px',
                  
                     }}
                   className="nav-img"
