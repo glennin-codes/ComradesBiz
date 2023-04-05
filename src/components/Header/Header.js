@@ -28,11 +28,8 @@ const Header = () => {
                
         
                   style={{   width: '180px',
-                 
-                    display: 'flex',
-
-                    alignItems:'center',
-                    justifyContent: 'center',}}
+                  height:'50px',
+                 }}
                   className="nav-img"
                 />
               </Link>
