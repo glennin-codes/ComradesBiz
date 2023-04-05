@@ -359,3 +359,17 @@ button:focus{
         font-size: 1rem;
       }
 }
+@media screen and (min-width: 320px) and (max-width: 360px) {
+    
+    .main_container_contact .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    .nav-img{
+        width: 150px;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+}
