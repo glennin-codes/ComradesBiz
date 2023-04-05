@@ -29,7 +29,9 @@ const Header = () => {
         
                   style={{   width: '180px',
                     padding: '0 10px',
-                    alignItems:' center',
+                    display: 'flex',
+                    
+                    alignItems:'center',
                     justifyContent: 'center',}}
                   className="nav-img"
                 />
