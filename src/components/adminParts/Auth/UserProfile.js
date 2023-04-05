@@ -5,7 +5,13 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import ClipLoader from "react-spinners/ClipLoader";
 import { css } from "@emotion/react";
-import { Alert, CircularProgress, Grid,  ThemeProvider,  Typography } from "@mui/material";
+import {
+  Alert,
+  CircularProgress,
+  Grid,
+  ThemeProvider,
+  Typography,
+} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import MuiTheme from "../utils/MuiTheme";
 
@@ -59,14 +65,13 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   console.log("id", id);
-  setLoading(true);
-   
+
   useEffect(() => {
-   
     // Fetch user data from API
     const fetchData = async () => {
-    
       try {
+        setLoading(true);
+
         const response = await axios.get(
           `https://comradesbizapi.azurewebsites.net/api/user/${id}`
         );
@@ -83,29 +88,30 @@ const UserProfile = () => {
       } catch (error) {
         setLoading(false);
         console.error(error);
-        
-          if (error && error.response.status === 404) {
-            setError("User not found");
-          } else if (error && error.response.status === 500) {
-            console.log(error.response.data);
-            setError("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
-          } else {
-            setError(
-              "We're having trouble accessing the network. Please check your internet connection and try again later."
-            );
-          }
-        
+
+        if (error && error.response.status === 404) {
+          setError("User not found");
+        } else if (error && error.response.status === 500) {
+          console.log(error.response.data);
+          setError(
+            "Oops! Something went wrong. Our team has been notified and is working to resolve the issue."
+          );
+        } else {
+          setError(
+            "We're having trouble accessing the network. Please check your internet connection and try again later."
+          );
+        }
       }
     };
     fetchData();
   }, []);
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('id');
-    localStorage.removeItem('email');
-    window.location.href = '/';
-  }; 
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("id");
+    localStorage.removeItem("email");
+    window.location.href = "/";
+  };
 
   const handleUpdate = async () => {
     setSending(true);
@@ -152,110 +158,113 @@ const UserProfile = () => {
         }, 3000);
       } else if (error && error.response.status === 500) {
         console.log(error.response.data);
-        setError("Oops! Something went wrong. Our team has been notified and is working to resolve the issue.");
+        setError(
+          "Oops! Something went wrong. Our team has been notified and is working to resolve the issue."
+        );
       } else {
-        setError("We're having trouble accessing the network. Please check your internet connection and try again later.");
+        setError(
+          "We're having trouble accessing the network. Please check your internet connection and try again later."
+        );
       }
     }
   };
 
   return (
     <ThemeProvider theme={MuiTheme}>
-    <Container>
-      {error && <Alert severity="error">{error}</Alert>}
+      <Container>
+        {error && <Alert severity="error">{error}</Alert>}
 
-      {loading ? (
-        <>
-          <ClipLoader
-            color={"#36D7B7"}
-            loading={loading}
-            css={override}
-            size={150}
-          />
-          <Heading>fetching user profile ,please wait ....</Heading>
-        </>
-      ) : (
-        user && (
+        {loading ? (
           <>
-            <Heading>{name} Profile</Heading>
-            <InputContainer>
-              <TextField
-                label="Name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-              />
-            </InputContainer>
-            <InputContainer>
-              {/* <TextField
+            <ClipLoader
+              color={"#36D7B7"}
+              loading={loading}
+              css={override}
+              size={150}
+            />
+            <Heading>fetching user profile ,please wait ....</Heading>
+          </>
+        ) : (
+          user && (
+            <>
+              <Heading>{name} Profile</Heading>
+              <InputContainer>
+                <TextField
+                  label="Name"
+                  value={name}
+                  onChange={(event) => setName(event.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                {/* <TextField
               label="Email"
               value={email}
               onChange={event => setEmail(event.target.value)}
             /> */}
-            </InputContainer>
-            <InputContainer>
-              <TextField
-                label="Phone"
-                value={phone}
-                onChange={(event) => setPhone(event.target.value)}
-              />
-            </InputContainer>
-            <InputContainer>
-              <TextField
-                label="Location"
-                value={location}
-                onChange={(event) => setLocation(event.target.value)}
-              />
-            </InputContainer>
-            <InputContainer>
-              <TextField
-                label="School"
-                value={school}
-                onChange={(event) => setSchool(event.target.value)}
-              />
-            </InputContainer>
-            <Grid item xs={12} sx={{ textAlign: "right" }}>
-              <Button
-                position="right"
-                variant="contained"
-                size="large"
-                color="primary"
-                onClick={handleUpdate}
-                sx={{ width: "100%", mt: 1.5, mb: 4 }}
-                disabled={sending}
-              >
-                {sending ? <CircularProgress size={24} /> : "Update"}
-              </Button>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: "right" }}>
-              <Typography component={Link} to="/manage">
-                Manage All Products
-              </Typography>
-              <Typography component={Link} to="/admin">
-                upload new Product
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: 'right' }}>
-      <Button 
-        variant="contained" 
-        color="secondary" 
-        onClick={handleLogout}
-        aria-label="Logout"
-        title="Click here to log out"
-      >
-          Logout
-       
-      </Button>
-    </Grid>
-            
-            {success && (
-              <Alert severity="success" position="right">
-                {success}
-              </Alert>
-            )}
-          </>
-        )
-      )}
-    </Container>
+              </InputContainer>
+              <InputContainer>
+                <TextField
+                  label="Phone"
+                  value={phone}
+                  onChange={(event) => setPhone(event.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <TextField
+                  label="Location"
+                  value={location}
+                  onChange={(event) => setLocation(event.target.value)}
+                />
+              </InputContainer>
+              <InputContainer>
+                <TextField
+                  label="School"
+                  value={school}
+                  onChange={(event) => setSchool(event.target.value)}
+                />
+              </InputContainer>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Button
+                  position="right"
+                  variant="contained"
+                  size="large"
+                  color="primary"
+                  onClick={handleUpdate}
+                  sx={{ width: "100%", mt: 1.5, mb: 4 }}
+                  disabled={sending}
+                >
+                  {sending ? <CircularProgress size={24} /> : "Update"}
+                </Button>
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Typography component={Link} to="/manage">
+                  Manage All Products
+                </Typography>
+                <Typography component={Link} to="/admin">
+                  upload new Product
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleLogout}
+                  aria-label="Logout"
+                  title="Click here to log out"
+                >
+                  Logout
+                </Button>
+              </Grid>
+
+              {success && (
+                <Alert severity="success" position="right">
+                  {success}
+                </Alert>
+              )}
+            </>
+          )
+        )}
+      </Container>
     </ThemeProvider>
   );
 };
