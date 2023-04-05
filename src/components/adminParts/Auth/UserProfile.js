@@ -59,12 +59,13 @@ const UserProfile = () => {
   const navigate = useNavigate();
   const id = localStorage.getItem("id");
   console.log("id", id);
+  setLoading(true);
    
   useEffect(() => {
-   ;
+   
     // Fetch user data from API
     const fetchData = async () => {
-      setLoading(true);
+    
       try {
         const response = await axios.get(
           `https://comradesbizapi.azurewebsites.net/api/user/${id}`
@@ -77,6 +78,7 @@ const UserProfile = () => {
           setLocation(location);
           setSchool(school);
           setError("");
+          setLoading(false);
         }
       } catch (error) {
         setLoading(false);

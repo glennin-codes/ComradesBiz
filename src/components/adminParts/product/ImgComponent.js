@@ -44,15 +44,15 @@ export default function ImgComponent({
             <FormControl fullWidth variant="standard" style={{color: 'black'}}>
               <InputLabel>Image {index + 1} Color</InputLabel>
               <Select style={{color: 'black'}} value={image.color} onChange={handleColorChange(index)}>
-                <MenuItem value="red">Red</MenuItem>
-                <MenuItem value="blue">Blue</MenuItem>
-                <MenuItem value="green">Green</MenuItem>
-                <MenuItem value="black">Black</MenuItem>
-                <MenuItem value="white">White</MenuItem>
-                <MenuItem value="pink">Pink</MenuItem>
-                <MenuItem value="purple">Purple</MenuItem>
-                <MenuItem value="silver">Silver</MenuItem>
-                <MenuItem value="yellow">Yellow</MenuItem>
+                <MenuItem  style={{color: 'black'}}  value="red">Red</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="blue">Blue</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="green">Green</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="black">Black</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="white">White</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="pink">Pink</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="purple">Purple</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="silver">Silver</MenuItem>
+                <MenuItem   style={{color: 'black'}}   value="yellow">Yellow</MenuItem>
               </Select>
             </FormControl>
             <IconButton onClick={() => deleteImage(index)}>
