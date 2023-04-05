@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import {BrowserRouter,Routes,Route, useLocation} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import Products from "./Products";
-import Contact from './ContactUs/ContactUs'
+import Contact from "./ContactUs/ContactUs";
 import Cart from "./Cart";
-import SingleProduct from './SingleProduct'
+import SingleProduct from "./SingleProduct";
 import Error from "./Error";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
@@ -21,10 +21,8 @@ import AddItem from "./components/adminParts/product/AddItem";
 import PrivateRoutes from "./privateRoute/PrivateRoute";
 const App = () => {
   const theme = {
-    font:{
-      main:"'Poppins', sans-serif",
-      
-
+    font: {
+      main: "'Poppins', sans-serif",
     },
     font_size: {
       h1: "3rem",
@@ -35,9 +33,7 @@ const App = () => {
       h6: "2rem",
       p: "2rem",
       small: ".8rem",
-      
-    }
-    ,
+    },
     colors: {
       heading: "rgb(24 24 29)",
       text: "rgba(29 ,29, 29, .8)",
@@ -61,49 +57,78 @@ const App = () => {
       tab: "998px",
     },
   };
-  const ScrollToTop=({children})=>{
-    const location=useLocation()
-    useEffect(()=>{
-  window.scrollTo(0,0)
-    },[location])
-  return <>
-  {children}
-  </>
-  }
+  const ScrollToTop = ({ children }) => {
+    const location = useLocation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [location]);
+    return <>{children}</>;
+  };
   return (
     <ThemeProvider theme={theme}>
-    <BrowserRouter>
-    <GlobalStyle/>
-    <Header/>
-    <ScrollToTop>
-    <Routes>
-      
-      <Route path="/" element={<Home/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/products" element={<Products/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/login" element={<Login />} />
-      <Route path="/auth/signup" element={<SignUp />} />
-      <Route path="/admin" element={<AddItem />} />
-      <Route path="/manage" element={<Manageproducts />} />
-      <Route path="/verifycode" element={<VerifyEmail />} />
-      <Route path="/landingPage" element={<LandingPage />} />
-      <Route
-       path="/userprofile" 
-      element={
-        <PrivateRoutes>
-      <UserProfile />
-      </PrivateRoutes>
-      } />
-    
-      <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
-      <Route path="/cart" element={<Cart/>}/>
-      <Route path="*" element={<Error/>}/>
-     
-    </Routes>
-    </ScrollToTop>
-    <Footer/>
-    </BrowserRouter>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Header />
+        <ScrollToTop>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/auth/signup" element={<SignUp />} />
+
+            <Route
+              path="/admin"
+              element={
+                <PrivateRoutes>
+                  <AddItem />
+                </PrivateRoutes>
+              }
+            />
+
+            <Route
+              path="/manage"
+              element={
+                <PrivateRoutes>
+                  <Manageproducts />
+                </PrivateRoutes>
+              }
+            />
+
+            <Route
+              path="/verifycode"
+              element={
+                <PrivateRoutes>
+                  <VerifyEmail />
+                </PrivateRoutes>
+              }
+            />
+
+            <Route
+              path="/landingPage"
+              element={
+                <PrivateRoutes>
+                  <LandingPage />
+                </PrivateRoutes>
+              }
+            />
+            <Route
+              path="/userprofile"
+              element={
+                <PrivateRoutes>
+                  <UserProfile />
+                </PrivateRoutes>
+              }
+            />
+
+            <Route path="/singleproduct/:id" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </ScrollToTop>
+        <Footer />
+      </BrowserRouter>
     </ThemeProvider>
   );
 };
