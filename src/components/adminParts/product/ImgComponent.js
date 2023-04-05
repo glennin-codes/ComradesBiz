@@ -41,9 +41,9 @@ export default function ImgComponent({
               />
             </div>
             {/* color input */}
-            <FormControl fullWidth variant="standard">
+            <FormControl fullWidth variant="standard" style={{color: 'black'}}>
               <InputLabel>Image {index + 1} Color</InputLabel>
-              <Select value={image.color} onChange={handleColorChange(index)}>
+              <Select style={{color: 'black'}} value={image.color} onChange={handleColorChange(index)}>
                 <MenuItem value="red">Red</MenuItem>
                 <MenuItem value="blue">Blue</MenuItem>
                 <MenuItem value="green">Green</MenuItem>
