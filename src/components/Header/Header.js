@@ -27,6 +27,10 @@ const Header = () => {
                   alt="logo"
                  width='150px'
                   height="100px"
+                  style={{   width: '180px',
+                    padding: '0 20px',
+                    alignItems:' center',
+                    justifyContent: 'center',}}
                   className="nav-img"
                 />
               </Link>
