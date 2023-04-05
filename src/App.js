@@ -87,7 +87,13 @@ const App = () => {
       <Route path="/manage" element={<Manageproducts />} />
       <Route path="/verifycode" element={<VerifyEmail />} />
       <Route path="/landingPage" element={<LandingPage />} />
-      <Route path="/userprofile" element={<UserProfile />} />
+      <Route
+       path="/userprofile" 
+      element={
+        <PrivateRoutes>
+      <UserProfile />
+      </PrivateRoutes>
+      } />
     
       <Route path="/singleproduct/:id" element={<SingleProduct/>}/>
       <Route path="/cart" element={<Cart/>}/>
