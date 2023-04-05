@@ -18,6 +18,7 @@ import LandingPage from "./components/adminParts/Auth/LandingPage";
 import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
+import PrivateRoutes from "./privateRoute/PrivateRoute";
 const App = () => {
   const theme = {
     font:{
