@@ -24,6 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
    
   
 
@@ -112,7 +113,7 @@
 .nav-img {
     cursor: pointer;
      
-    width: 300px;
+    width: 320px;
 }
 
 .mobile_version_offcanvas_nav {
@@ -216,18 +217,16 @@ button:focus{
         font-size: 15px;
         font-weight: 500;
     }
-    .navbar{
-        justify-content: space-around;
-      }
+    
+    
        .nav-img{ 
+        width: 250px;
           margin-right: 30px;
           margin-left: 20px;
        }
 }  
 @media screen and (min-width: 768px) and (max-width: 992px) {
-    .navbar{
-      justify-content: space-around;
-    }
+    
      .nav-img{ 
         margin-right: 30px;
         margin-left: 20px;
@@ -237,8 +236,12 @@ button:focus{
    .nav-img {
       width: 180px;
     }
-    .navbar{
+    .main_container_contact .navbar{
+        display: flex;
+       
         justify-content: space-around;
+        align-items: center;
+        
       }
        .nav-img{ 
           margin-right: 30px;
@@ -249,8 +252,13 @@ button:focus{
     body {
         margin: 0%;
         padding: 0%;
-    }  .navbar{
+    }  
+    .main_container_contact .navbar{
+        display: flex;
+       
         justify-content: space-around;
+        align-items: center;
+        
       }
        .nav-img{ 
           margin-right: 30px;
@@ -281,12 +289,28 @@ button:focus{
        
       }
 }
-
+@media only screen and (max-width: 480px) {
+    /* Styles for small screens */
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-around;
+        align-items: center;
+        
+      }
+  }
+  
 @media screen and (max-width: 425px) {
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.6rem;
     }
- 
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-around;
+        align-items: center;
+        
+      }
    
 
         .cart-trolley {
@@ -304,6 +328,13 @@ button:focus{
 }
 
 @media screen and (max-width: 320px) {
+    .main_container_contact .navbar{
+        display: flex;
+       
+        justify-content: space-around;
+        align-items: center;
+        
+      }
     .main_container_contact_content-subHeading>h1 {
         font-size: 1.3rem;
     }
