@@ -221,7 +221,7 @@ const SignUp = () => {
                       label="Name"
                       id="signUp-name"
                       type="text"
-                      defaultValue={values.name}
+                      value={values.name}
                       required
                       onChange={handleChange("name")}
                     />
@@ -235,7 +235,7 @@ const SignUp = () => {
                       label="Email Address"
                       name="email"
                       autoComplete="email"
-                      defaultValue={values.email}
+                      value={values.email}
                       onChange={handleChange("email")}
                     />
                   </Grid>
@@ -245,7 +245,7 @@ const SignUp = () => {
                       label="Password"
                       id="signUp-passwordField"
                       type={values.showPassword ? "text" : "password"}
-                      defaultValue={values.password}
+                       value={values.password}
                       required
                       onChange={handleChange("password")}
                       InputProps={{
@@ -275,7 +275,7 @@ const SignUp = () => {
                       label="Confirm Password"
                       id="signUp-passwordField2"
                       type={values.showPassword ? "text" : "password"}
-                      defaultValue={values.confirmPassword}
+                      value={values.confirmPassword}
                       required
                       onChange={handleChange("confirmPassword")}
                       InputProps={{
@@ -363,7 +363,7 @@ const SignUp = () => {
                         label="School"
                         id="School"
                         type="text"
-                        defaultValue={values.school}
+                   value={values.school}
                         onChange={(event) => {
                           const additionalValues = { ...values };
                           additionalValues.school = event.target.value;

@@ -168,7 +168,8 @@ console.log(id);
                             type={values.showPassword ? 'text' : 'password'}
                             defaultValue={values.password}
                             onChange={handleChange('password')}
-                            endAdornment={
+                           InputProps={{
+                            endAdornment:(
                                 <InputAdornment position="end">
                                     <IconButton
                                         aria-label="toggle password visibility"
@@ -178,7 +179,9 @@ console.log(id);
                                         {values.showPassword ? <VisibilityOff /> : <Visibility />}
                                     </IconButton>
                                 </InputAdornment>
-                            }
+                            )
+                           }}
+                           
                         />
                     
  
