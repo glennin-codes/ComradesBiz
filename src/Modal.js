@@ -188,7 +188,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   onChange={handlePhoneChange}
                 />
               </Box>
-              <Box sx={{ mt: 2 }}>
+              <Box sx={{ mt: 2 }} style={{textTransform:'none'}}>
                 <TextField
                 style={{textTransform:'none'}}
                   label="Message"

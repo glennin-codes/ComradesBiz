@@ -404,7 +404,7 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
-              <Grid item xs={12}>
+              <Grid item xs={12} style={{textTransform:'none'}}>
                 {/* product description textarea */}
                 <TextField
                   style={{ textTransform: "none" }}
