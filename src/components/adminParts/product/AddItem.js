@@ -211,7 +211,7 @@ console.log('email',email)
   };
   return (
     <ThemeProvider theme={MuiTheme}>
-    <Box sx={{top:'20%', margin:'50px'}}>
+    <Box sx={{top:'20%', margin:'50px'}} style={{ fontSize: '16px !important' }}>
       <Toast time={time} />
 
       <Typography
@@ -266,7 +266,7 @@ console.log('email',email)
                   label="Reviews"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("reviews")}
                 />
               </Box>
@@ -279,7 +279,7 @@ console.log('email',email)
                   label="Stock"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("stock")}
                 />
               </Box>
@@ -291,7 +291,7 @@ console.log('email',email)
                   label="Ratings"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("stars")}
                 />
               </Box>
@@ -406,6 +406,7 @@ console.log('email',email)
             <Grid item xs={12}>
               {/* product description textarea */}
               <TextField
+              style={{textTransform:'none !important'}}
                 fullWidth
                 multiline
                 rows={4}
