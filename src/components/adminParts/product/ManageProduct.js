@@ -27,12 +27,12 @@ export default function Manageproducts() {
   const [refresh, setRefresh] = useState(false);
   const email=localStorage.getItem('email');
 
-
+console.log('email', email);
   useEffect(() => {
     const fetchproducts = async () => {
       try{
       const { data } = await axios.get(
-        `https://comradesbizapi.azurewebsites.net/user/products/${email}`
+        `https://comradesbizapi.azurewebsites.net/api/user/products/${email}`
       );
       if (data) {
         setProducts(data);

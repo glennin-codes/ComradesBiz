@@ -162,7 +162,7 @@ export default function AddItem() {
     const token = localStorage.getItem("token");
     const email = localStorage.getItem("email");
     
-
+console.log('email',email)
     const newProductInfo = { ...values, images,user:email };
 
     const config = {
@@ -211,7 +211,7 @@ export default function AddItem() {
   };
   return (
     <ThemeProvider theme={MuiTheme}>
-    <Box sx={{top:'20%', margin:'50px'}}>
+    <Box sx={{top:'20%', margin:'50px'}} style={{ fontSize: '16px !important' }}>
       <Toast time={time} />
 
       <Typography
@@ -266,7 +266,7 @@ export default function AddItem() {
                   label="Reviews"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("reviews")}
                 />
               </Box>
@@ -279,7 +279,7 @@ export default function AddItem() {
                   label="Stock"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("stock")}
                 />
               </Box>
@@ -291,7 +291,7 @@ export default function AddItem() {
                   label="Ratings"
                   variant="standard"
                   required
-                  type="text"
+                  type="number"
                   onChange={handleValueChange("stars")}
                 />
               </Box>
@@ -406,6 +406,7 @@ export default function AddItem() {
             <Grid item xs={12}>
               {/* product description textarea */}
               <TextField
+              style={{textTransform:'none !important'}}
                 fullWidth
                 multiline
                 rows={4}
