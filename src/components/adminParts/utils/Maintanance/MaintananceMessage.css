@@ -1,0 +1,18 @@
+.maintenance-message {
+    position: fixed;
+    top: 0;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    animation: slide-in 10s linear infinite;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

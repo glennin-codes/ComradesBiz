@@ -68,6 +68,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
+        <MaintenanceMessage/>
         <Header />
         <ScrollToTop>
           <Routes>
