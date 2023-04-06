@@ -53,7 +53,7 @@ const SingleProduct = () => {
   
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-  }, [getSingleProduct, id]);
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
