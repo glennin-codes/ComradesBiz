@@ -19,6 +19,7 @@ import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
 import PrivateRoutes from "./privateRoute/PrivateRoute";
+import MaintenanceMessage from "./components/adminParts/utils/Maintanance/Maintanance";
 const App = () => {
   const theme = {
     font: {
