@@ -1,8 +1,5 @@
-## Welcome to Sheela Store { This store insprition is my mom} Ecommerce Website
-⚡️ [![GitHub](https://img.shields.io/github/license/preetiraj3697/Sheela_Ecommerce_Website?color=blue)](https://github.com/cobidev/gatsby-simplefolio/blob/master/LICENSE.md) ![GitHub stars](https://img.shields.io/github/stars/preetiraj3697/Sheela_Ecommerce_Website) ![GitHub forks](https://img.shields.io/github/forks/preetiraj3697/Sheela_Ecommerce_Website)
-### Features:
+## welcome to comradesBiz  secondhand treasures for student budget
 
----
 
 ##### Here's features included in this project
 
