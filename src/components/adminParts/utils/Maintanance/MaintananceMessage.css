@@ -1,34 +1,38 @@
+
+
 .maintenance-message {
-    position: fixed;
-    top: 0;
-    background-color: red;
-    color: white;
-    padding: 10px;
-    animation: slide-in 10s linear infinite;
-    white-space: nowrap; /* prevent text from wrapping */
-    overflow: hidden; /* hide overflowed text */
+  position: fixed;
+  top: 0;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  white-space: nowrap; /* prevent text from wrapping */
+  overflow: hidden; /* hide overflowed text */
+  text-align: center; /* center the text */
+  animation: slide-in 10s linear infinite;
+  font-size: 16px;
+  font-weight: 400px;
+}
+
+.text {
+  display: inline-block; /* make text flow inline with animation */
+  animation: slide-in-text 10s linear infinite;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100%);
   }
-  
-  .text {
-    display: inline-block; /* make text flow inline with animation */
-    animation: slide-in-text 10s linear infinite;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  @keyframes slide-in {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+}
+
+@keyframes slide-in-text {
+  0% {
+    transform: translateX(100%);
   }
-  
-  @keyframes slide-in-text {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+  100% {
+    transform: translateX(-50%); /* move text to the center */
   }
-  
+}
