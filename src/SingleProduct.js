@@ -35,14 +35,14 @@ const SingleProduct = () => {
    console.log('SingleProduct: ', singleProduct);
   const {id} = useParams();
   console.log('id: ', id);
-   const {image,name,company, description,category,stock,stars,reviews,price} = singleProduct;
+   const {image,name,company, description,category,stock,stars,reviews,price,user} = singleProduct;
    const API=`https://comradesbizapi.azurewebsites.net/api/product/:`
    useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://comradesbizapi.azurewebsites.net/api/user/ayiendaglen@gmail.com`
+          `https://comradesbizapi.azurewebsites.net/api/user/${user}`
         );
         if (response) {
           const { name, phone, location, school ,email} = await response.data;
@@ -58,6 +58,7 @@ const SingleProduct = () => {
       
         console.error(error);
         if (error) {
+        
           if (error.response && error.response.status === 404) {
             setError("User not found");
           } else if (error.response && error.response.status === 500) {
@@ -142,6 +143,7 @@ const SingleProduct = () => {
               <p>Brand : <span> {company} </span></p>
               <p> Seller : <span> {owner}</span></p>
               <p> Phone Number : <span> {phone}</span></p>
+              <p> Email Number : <span> {email}</span></p>
               <p> School: <span> {school}</span></p>
               <p> Location: <span> {location}</span></p>
             </div>

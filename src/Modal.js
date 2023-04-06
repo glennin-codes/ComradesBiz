@@ -190,6 +190,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
               </Box>
               <Box sx={{ mt: 2 }}>
                 <TextField
+                style={{textTransform:'none'}}
                   label="Message"
                   multiline
                   rows={4}
