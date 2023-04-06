@@ -73,7 +73,7 @@ p, button {
   font-weight:400;
 }
 p{
-  font-size:16px;
+  font-size:18px;
 }
 a {
   text-decoration: none;

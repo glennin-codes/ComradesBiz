@@ -9,7 +9,9 @@ const MovingText = styled(Box)(({ theme }) => ({
   left: 0,
   width: "100%",
   backgroundColor: "#f44336",
+  fontSize:'18px',
   color: "#fff",
+  textAlign:'center',
   padding: theme.spacing(2),
   animation: "move 10s linear infinite",
   "@keyframes move": {
