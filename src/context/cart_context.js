@@ -23,8 +23,8 @@ const initialState = {
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addToCart = (_id, color,user, amount, product) => {
-    dispatch({ type: "ADD_TO_CART", payload: { _id, color, amount, user,product } });
+  const addToCart = (_id, color, amount, product) => {
+    dispatch({ type: "ADD_TO_CART", payload: { _id, color, amount, product } });
   };
 
   // increment and decrement the product
