@@ -1,6 +1,3 @@
-## Welcome to Sheela Store { This store insprition is my mom} Ecommerce Website
-⚡️ [![GitHub](https://img.shields.io/github/license/preetiraj3697/Sheela_Ecommerce_Website?color=blue)](https://github.com/cobidev/gatsby-simplefolio/blob/master/LICENSE.md) ![GitHub stars](https://img.shields.io/github/stars/preetiraj3697/Sheela_Ecommerce_Website) ![GitHub forks](https://img.shields.io/github/forks/preetiraj3697/Sheela_Ecommerce_Website)
-### Features:
 
 ---
 
@@ -35,8 +32,7 @@ For login and Registration
 ---
 
 
-1. Netlify https://harmonious-squirrel-c80a4a.netlify.app
-2. vercel https://sheela-ecommerce-website.vercel.app
+1. vercel https://www.comradesbiz.live
 
 
 ### How to start?
@@ -55,28 +51,4 @@ npm i
 npm start
 
 ```
-#### Project Look Like 
-<img
-  src="Assets/Home.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto;">
-  <img
-  src="Assets/Features.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto;">
-  <img
-  src="Assets/Trust.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto;">
-  <img
-  src="Assets/Footer.png"
-  alt="Alt text"
-  title="Optional title"
-  style="display: inline-block; margin: 0 auto;">
-  <hr/>
-
-https://user-images.githubusercontent.com/107460745/202193167-1753d63f-8469-4e83-8bbb-a389537f605a.mp4
 
