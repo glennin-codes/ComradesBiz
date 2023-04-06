@@ -6,8 +6,10 @@ const MaintenanceMessage = () => {
 
   return (
     <div className="maintenance-message">
-      <span className="text" >
-        Our system is currently under maintenance to resolve some minor issues. We apologize for any inconvenience caused and appreciate your patience during this time.
+      <span className="text" style={{ left: position }}>
+        Our system is currently under maintenance to resolve some minor issues.
+        We apologize for any inconvenience caused and appreciate your patience
+        during this time.
       </span>
     </div>
   );
