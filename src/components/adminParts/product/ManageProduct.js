@@ -129,7 +129,7 @@ console.log('email', email);
       )}
     { success && <Alert severity="success"  fullwidth >{success}</Alert>}
       <TableContainer component={Paper} sx={{top:'20%'}}>
-        {success && <Alert severity="success">{success}</Alert>}
+
         <Table
           sx={{
             width: "100vw",

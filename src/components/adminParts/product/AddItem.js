@@ -29,11 +29,9 @@ import Typewriter from "typewriter-effect";
 import Toast from "../utils/Toast";
 import MuiTheme from "../utils/MuiTheme";
 
-
 export default function AddItem() {
-  
-    /*states*/
-  
+  /*states*/
+
   const [values, setValues] = useState({});
   const [images, setImages] = useState([]);
   const [status, setStatus] = React.useState("");
@@ -44,7 +42,7 @@ export default function AddItem() {
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
- const navigate=useNavigate();
+  const navigate = useNavigate();
   const time = 1 * 60 * 1000; //waiting time to upload
   useEffect(() => {
     if (isSubmit) {
@@ -126,7 +124,7 @@ export default function AddItem() {
     },
     [selected, images]
   );
- 
+
   const handleColorChange = (index) => (event) => {
     const newImages = [...images];
     newImages[index].color = event.target.value;
@@ -145,15 +143,15 @@ export default function AddItem() {
     setImages((prevState) => prevState.filter((_, i) => i !== index));
     setIsSelected((prevCount) => prevCount - 1);
   };
-  
+
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('email');
-    localStorage.removeItem('id');
-    window.location.href = '/';
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("id");
+    window.location.href = "/";
   };
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmit(true);
@@ -161,9 +159,9 @@ export default function AddItem() {
 
     const token = localStorage.getItem("token");
     const email = localStorage.getItem("email");
-    
-console.log('email',email)
-    const newProductInfo = { ...values, images,user:email };
+
+    console.log("email", email);
+    const newProductInfo = { ...values, images, user: email };
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -211,245 +209,247 @@ console.log('email',email)
   };
   return (
     <ThemeProvider theme={MuiTheme}>
-    <Box sx={{top:'20%', margin:'50px'}} style={{ fontSize: '16px !important' }}>
-      <Toast time={time} />
-
-      <Typography
-        variant="h4"
-        color="primary"
-        sx={{ textAlign: "center" }}
-        fontWeight="bold"
+      <Box
+        sx={{ top: "20%", margin: "50px" }}
+        style={{ fontSize: "16px !important" }}
       >
-        <Typewriter
-          options={{ loop: true }}
-          onInit={(typewriter) => {
-            typewriter
-              .typeString(name ? `Welcome ${name}` : 'Welcome Comrade')
-              .pauseFor(2500)
-              .deleteAll()
-              .typeString("Add A New Product In Shop")
-              .pauseFor(2500)
-              .deleteAll()
-              .typeString("It will take just few minutes")
-              .pauseFor(2500)
-              .start();
-          }}
-        />
-      </Typography>
+        <Toast time={time} />
 
-      <Box maxWidth="sm" sx={{ my: 4, mx: "auto" }}>
-        {/* product information form */}
-        <form onSubmit={handleSubmit}>
-          <Grid
-            container
-            rowSpacing={3.5}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
-            <Grid item xs={12}>
-              {/* product name */}
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Product Name"
-                  variant="standard"
-                  required
-                  type="text"
-                  onChange={handleValueChange("name")}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={6} md={4}>
-              {/*category*/}
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Reviews"
-                  variant="standard"
-                  required
-                  type="number"
-                  onChange={handleValueChange("reviews")}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={6} md={4}>
-              {/* stock */}
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Stock"
-                  variant="standard"
-                  required
-                  type="number"
-                  onChange={handleValueChange("stock")}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={6} md={4}>
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Ratings"
-                  variant="standard"
-                  required
-                  type="number"
-                  onChange={handleValueChange("stars")}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={7} md={8}>
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Category"
-                  variant="standard"
-                  required
-                  text="text"
-                  onChange={handleValueChange("category")}
-                />
-              </Box>
-            </Grid>
+        <Typography
+          variant="h4"
+          color="primary"
+          sx={{ textAlign: "center" }}
+          fontWeight="bold"
+        >
+          <Typewriter
+            options={{ loop: true }}
+            onInit={(typewriter) => {
+              typewriter
+                .typeString(name ? `Welcome ${name}` : "Welcome Comrade")
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString("Add A New Product In Shop")
+                .pauseFor(2500)
+                .deleteAll()
+                .typeString("It will take just few minutes")
+                .pauseFor(2500)
+                .start();
+            }}
+          />
+        </Typography>
 
-            <Grid item xs={7} md={8}>
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Company"
-                  variant="standard"
-                  required
-                  text="text"
-                  onChange={handleValueChange("campany")}
-                />
-              </Box>
-            </Grid>
+        <Box maxWidth="sm" sx={{ my: 4, mx: "auto" }}>
+          {/* product information form */}
+          <form onSubmit={handleSubmit}>
+            <Grid
+              container
+              rowSpacing={3.5}
+              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            >
+              <Grid item xs={12}>
+                {/* product name */}
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Product Name"
+                    variant="standard"
+                    required
+                    type="text"
+                    onChange={handleValueChange("name")}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={4}>
+                {/*category*/}
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Reviews"
+                    variant="standard"
+                    required
+                    type="number"
+                    onChange={handleValueChange("reviews")}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={4}>
+                {/* stock */}
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Stock"
+                    variant="standard"
+                    required
+                    type="number"
+                    onChange={handleValueChange("stock")}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={6} md={4}>
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Ratings"
+                    variant="standard"
+                    required
+                    type="number"
+                    onChange={handleValueChange("stars")}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={7} md={8}>
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Category"
+                    variant="standard"
+                    required
+                    text="text"
+                    onChange={handleValueChange("category")}
+                  />
+                </Box>
+              </Grid>
 
-            <Grid item xs={7} md={8}>
-              <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                <TextField
-                  fullWidth
-                  label="Price"
-                  variant="standard"
-                  required
-                  type="number"
-                  onChange={handleValueChange("price")}
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              {/* <Box sx={{ display: "flex", alignItems: "flex-end" }}> */}
-              <Box>
-                <Paper
-                  style={{
-                    cursor: "pointer",
-                    background: "white",
-                    color: "#bdbdbd",
-                    border: "1px dashed #ccc",
-                    "&:hover": { border: "1px solid magenta" },
-                  }}
-                  elevation={7}
-                >
-                  <div
+              <Grid item xs={7} md={8}>
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Company"
+                    variant="standard"
+                    required
+                    text="text"
+                    onChange={handleValueChange("campany")}
+                  />
+                </Box>
+              </Grid>
+
+              <Grid item xs={7} md={8}>
+                <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+                  <TextField
+                    fullWidth
+                    label="Price"
+                    variant="standard"
+                    required
+                    type="number"
+                    onChange={handleValueChange("price")}
+                  />
+                </Box>
+              </Grid>
+              <Grid item xs={12}>
+                {/* <Box sx={{ display: "flex", alignItems: "flex-end" }}> */}
+                <Box>
+                  <Paper
                     style={{
-                      padding: "16px",
-                      alignItems: "center",
-                      textAlign: "center",
+                      cursor: "pointer",
+                      background: "white",
+                      color: "#bdbdbd",
+                      border: "1px dashed #ccc",
+                      "&:hover": { border: "1px solid magenta" },
                     }}
-                    {...getRootProps()}
+                    elevation={7}
                   >
-                    <input {...getInputProps()} />
-                    {isDragActive ? (
-                      <p style={{ color: "green", fontWeight: "700" }}>
-                        Drop the images here...
-                      </p>
-                    ) : (
-                      <>
-                        <p
-                          style={{
-                            marginBottom: "5px",
-                            fontWeight: "700",
-                            opacity: "none",
-                          }}
-                        >
-                          Drag 'n' Drop some images here, or click to select
-                          files
+                    <div
+                      style={{
+                        padding: "16px",
+                        alignItems: "center",
+                        textAlign: "center",
+                      }}
+                      {...getRootProps()}
+                    >
+                      <input {...getInputProps()} />
+                      {isDragActive ? (
+                        <p style={{ color: "green", fontWeight: "700" }}>
+                          Drop the images here...
                         </p>
-                        <em style={{ color: "#FFBF00", marginTop: "5px" }}>
-                          Please select at least 5 images but a muximum of 10
-                        </em>
-                        <br />
-                        <em
-                          sx={{
-                            color: "magenta",
-                            marginTop: "5px",
-                            size: "18px",
-                          }}
-                        >
-                          Ensure that each image does not exceed 6.5MB in size
-                        </em>
-                        <br />
-                        <em style={{}}>
-                          (images with *.jpeg, *.png, *.jpg extension will be
-                          accepted)
-                        </em>
-                      </>
-                    )}
-                  </div>
-                </Paper>
-              </Box>
-            </Grid>
+                      ) : (
+                        <>
+                          <p
+                            style={{
+                              marginBottom: "5px",
+                              fontWeight: "700",
+                              opacity: "none",
+                            }}
+                          >
+                            Drag 'n' Drop some images here, or click to select
+                            files
+                          </p>
+                          <em style={{ color: "#FFBF00", marginTop: "5px" }}>
+                            Please select at least 5 images but a muximum of 10
+                          </em>
+                          <br />
+                          <em
+                            sx={{
+                              color: "magenta",
+                              marginTop: "5px",
+                              size: "18px",
+                            }}
+                          >
+                            Ensure that each image does not exceed 6.5MB in size
+                          </em>
+                          <br />
+                          <em style={{}}>
+                            (images with *.jpeg, *.png, *.jpg extension will be
+                            accepted)
+                          </em>
+                        </>
+                      )}
+                    </div>
+                  </Paper>
+                </Box>
+              </Grid>
 
-            {/*map images and color inputs */}
-            <ImgComponent
-              images={images}
-              handleColorChange={handleColorChange}
-              deleteImage={deleteImage}
-            />
-            <Grid item xs={12}>
-              {/* product description textarea */}
-              <TextField
-              style={{textTransform:'none !important'}}
-                fullWidth
-                multiline
-                rows={4}
-                sx={{ my: 2 }}
-                label="Description"
-                variant="outlined"
-                type="text"
-                required
-                onChange={handleValueChange("description")}
+              {/*map images and color inputs */}
+              <ImgComponent
+                images={images}
+                handleColorChange={handleColorChange}
+                deleteImage={deleteImage}
               />
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: "right" }}>
-              <Button type="submit" variant="outlined">
-                Add to Database
-              </Button>
-            </Grid>
+              <Grid item xs={12}>
+                {/* product description textarea */}
+                <TextField
+                  style={{ textTransform: "none" }}
+                  fullWidth
+                  multiline
+                  rows={4}
+                  sx={{ my: 2, textTransform: "none" }}
+                  label="Description"
+                  variant="outlined"
+                  type="text"
+                  required
+                  onChange={handleValueChange("description")}
+                />
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Button type="submit" variant="outlined">
+                  Add to Database
+                </Button>
+              </Grid>
 
-            <Grid item xs={12} sx={{ textAlign: "right" }}>
-              <Typography component={Link} to="/manage">
-                Manage All Products
-              </Typography>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Typography component={Link} to="/manage">
+                  Manage All Products
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Typography component={Link} to="/userProfile">
+                  Profile Acount
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={handleLogout}
+                  aria-label="Logout"
+                  title="Click here to log out"
+                >
+                  Logout
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={12} sx={{ textAlign: "right" }}>
-              <Typography component={Link} to="/userProfile">
-                Profile Acount
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: 'right' }}>
-      <Button 
-        variant="contained" 
-        color="secondary" 
-        onClick={handleLogout}
-        aria-label="Logout"
-        title="Click here to log out"
-      >
-          Logout
-       
-      </Button>
-    </Grid>
-          </Grid>
-        </form>
+          </form>
+        </Box>
       </Box>
-    </Box>
     </ThemeProvider>
   );
 }
