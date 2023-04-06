@@ -144,11 +144,11 @@ const SignUp = () => {
         console.log("data", data);
 
         if (status === 201) {
-          const { token, name, email, _id } = data;
+          const { token, name, email, id } = data;
           //setting cookies
           localStorage.setItem("name", name);
           localStorage.setItem("email", email);
-          localStorage.setItem("id", _id);
+          localStorage.setItem("id", id);
           localStorage.setItem("token", token);
 
           setValues("");
