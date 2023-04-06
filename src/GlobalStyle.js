@@ -66,12 +66,12 @@ h3 {
   font-weight: 400;
 }
 
-// p, button {
-//   color: ${({ theme }) => theme.colors.text};
-//   font-size: 1.65rem;
-//   line-height: 1.5;
-//   font-weight:400;
-// }
+p, button {
+  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.65rem;
+  line-height: 1.5;
+  font-weight:400;
+}
 
 a {
   text-decoration: none;
