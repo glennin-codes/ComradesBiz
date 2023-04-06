@@ -50,24 +50,30 @@ const SingleProduct = () => {
   } = singleProduct;
   const API = `https://comradesbizapi.azurewebsites.net/api/product/:`;
   console.log("user", user);
+  
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
+  }, [getSingleProduct, id]);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
-        setUserLoading(true);
-        const response = await axios.get(
-          `https://comradesbizapi.azurewebsites.net/api/user/${user}`
-        );
-        if (response) {
-          setUserLoading(false);
-          const { name, phone, location, school, email } = await response.data;
+        if (singleProduct && user) {
+          setUserLoading(true);
+          const response = await axios.get(
+            `https://comradesbizapi.azurewebsites.net/api/user/${user}`
+          );
+          if (response) {
+            setUserLoading(false);
+            const { name, phone, location, school, email } = await response.data;
 
-          setOwner(name);
-          setPhone(phone);
-          setLocation(location);
-          setSchool(school);
-          setEmail(email);
-          setError("");
+            setOwner(name);
+            setPhone(phone);
+            setLocation(location);
+            setSchool(school);
+            setEmail(email);
+            setError("");
+          }
         }
       } catch (error) {
         setUserLoading(false);
@@ -87,9 +93,13 @@ const SingleProduct = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [singleProduct, user]);
 
-  if (isSingleLoading && userLoading) {
+  
+
+
+
+  if (isSingleLoading) {
     return (
       <div
         style={{
@@ -162,8 +172,17 @@ const SingleProduct = () => {
               <p>
                 Brand : <span> {company} </span>
               </p>
+              {userLoading ?
+                <ClipLoader
+                color={"#36D7B7"}
+                loading={userLoading}
+                css={override}
+                size={24}
+              />:
+              <>
               <p>
                 {" "}
+                
                 Seller : <span> {owner}</span>
               </p>
               <p>
@@ -182,6 +201,8 @@ const SingleProduct = () => {
                 {" "}
                 Location: <span> {location}</span>
               </p>
+              </>
+}
             </div>
             <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}
