@@ -1,6 +1,6 @@
 import React from "react";
-import { Box } from "@mui/material";
-import { ThemeProvider, styled } from "@mui/system";
+import { Box, ThemeProvider } from "@mui/material";
+import {  styled } from "@mui/system";
 import MuiTheme from "../MuiTheme";
 
 const MovingText = styled(Box)(({ theme }) => ({
