@@ -80,15 +80,15 @@ const[loading,setIsLoading]=useState(false);
             // setUser(data);
             setIsLoading(false);
             if(status===200){
-                const {token,name,email,_id}=data;
+                const {token,name,email,id}=data;
                  localStorage.setItem('name',name);
                  localStorage.setItem('token',token);
                     localStorage.setItem('email',email);
-                    localStorage.setItem('id',_id);
+                    localStorage.setItem('id',id);
                //setting up cookie
                console.log('name',name)
                
-console.log(_id);
+console.log(id);
               
                 
            setValues('');

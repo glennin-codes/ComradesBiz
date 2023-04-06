@@ -240,10 +240,14 @@ const UserProfile = () => {
                 <Typography component={Link} to="/manage">
                   Manage All Products
                 </Typography>
-                <Typography component={Link} to="/admin">
-                  upload new Product
-                </Typography>
+                
               </Grid>
+            
+                <Grid item xs={12} sx={{ textAlign: "right" }}>
+                <Typography component={Link} to="/admin">
+                  Upload new Product
+                </Typography>
+                </Grid>
               <Grid item xs={12} sx={{ textAlign: "right" }}>
                 <Button
                   variant="contained"
