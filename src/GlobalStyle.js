@@ -72,7 +72,9 @@ p, button {
   line-height: 1.5;
   font-weight:400;
 }
-
+p{
+  font-size:16px;
+}
 a {
   text-decoration: none;
 }
