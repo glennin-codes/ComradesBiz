@@ -318,7 +318,7 @@ export default function AddItem() {
                     variant="standard"
                     required
                     text="text"
-                    onChange={handleValueChange("campany")}
+                    onChange={handleValueChange("company")}
                   />
                 </Box>
               </Grid>

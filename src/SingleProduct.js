@@ -35,8 +35,10 @@ const SingleProduct = () => {
    console.log('SingleProduct: ', singleProduct);
   const {id} = useParams();
   console.log('id: ', id);
+
    const {image,name,company, description,category,stock,stars,reviews,price,user} = singleProduct;
    const API=`https://comradesbizapi.azurewebsites.net/api/product/:`
+  console.log('user',user);
    useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
     const fetchData = async () => {
