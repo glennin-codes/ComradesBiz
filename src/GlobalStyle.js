@@ -66,12 +66,12 @@ h3 {
   font-weight: 400;
 }
 
-p, button {
-  color: ${({ theme }) => theme.colors.text};
-  font-size: 1.65rem;
-  line-height: 1.5;
-  font-weight:400;
-}
+// p, button {
+//   color: ${({ theme }) => theme.colors.text};
+//   font-size: 1.65rem;
+//   line-height: 1.5;
+//   font-weight:400;
+// }
 
 a {
   text-decoration: none;
@@ -136,24 +136,24 @@ ${"" /* resuable code section  */}
       border-radius: 2rem;
     }
 
-input, textarea{
-    max-width: 50rem;
-    color: ${({ theme }) => theme.colors.black};
-    padding: 1.6rem 2.4rem;
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    text-transform: uppercase;
-   box-shadow: ${({ theme }) => theme.colors.shadowSupport};
-}
+// input, textarea{
+//     max-width: 50rem;
+//     color: ${({ theme }) => theme.colors.black};
+//     padding: 1.6rem 2.4rem;
+//     // border: 1px solid ${({ theme }) => theme.colors.border};
+  
+//    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+// }
     input[type="submit"]{
     max-width: 16rem;
     margin-top: 2rem;
     background-color: ${({ theme }) => theme.colors.btn};
     color: ${({ theme }) => theme.colors.white};
-    padding: 1.4rem 2.2rem;
+
     border-style: solid;
     border-width: .1rem;
-    text-transform: uppercase;
-    font-size: 1.8rem;
+  
+  
     cursor: pointer;
     }
     @media (max-width: ${({ theme }) => theme.media.tab}) {
