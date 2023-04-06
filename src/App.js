@@ -69,8 +69,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
-        <MaintenanceMessage/>
+       
         <Header />
+        <MaintenanceMessage />
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
