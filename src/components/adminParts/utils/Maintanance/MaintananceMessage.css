@@ -5,9 +5,25 @@
     color: white;
     padding: 10px;
     animation: slide-in 10s linear infinite;
+    white-space: nowrap; /* prevent text from wrapping */
+    overflow: hidden; /* hide overflowed text */
+  }
+  
+  .text {
+    display: inline-block; /* make text flow inline with animation */
+    animation: slide-in-text 10s linear infinite;
   }
   
   @keyframes slide-in {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes slide-in-text {
     0% {
       transform: translateX(100%);
     }
