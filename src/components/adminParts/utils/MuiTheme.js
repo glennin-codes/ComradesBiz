@@ -22,7 +22,11 @@ const MuiTheme = createTheme({
       "ubuntu",
     ].join(","),
     fontSize: 25,
+    
+TextField:{
+  textTransform:'none',
 
+}
       
       // add any other typography-related properties you want to apply to all components
     }
