@@ -136,10 +136,16 @@ ${"" /* resuable code section  */}
       border-radius: 2rem;
     }
 
-// input, textarea{
-//     max-width: 50rem;
+input{
+   max-width: 50rem;
+   padding: 1.6rem 2.4rem;
+
+}
+
+// textarea{
+   
 //     color: ${({ theme }) => theme.colors.black};
-//     padding: 1.6rem 2.4rem;
+ 
 //     // border: 1px solid ${({ theme }) => theme.colors.border};
   
 //    box-shadow: ${({ theme }) => theme.colors.shadowSupport};

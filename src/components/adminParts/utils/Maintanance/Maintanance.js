@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { styled } from "@mui/system";
+import { ThemeProvider, styled } from "@mui/system";
+import MuiTheme from "../MuiTheme";
 
 const MovingText = styled(Box)(({ theme }) => ({
   position: "fixed",
@@ -23,11 +24,14 @@ const MovingText = styled(Box)(({ theme }) => ({
 
 const MaintenanceNotice = () => {
   return (
+
+    <ThemeProvider theme={MuiTheme}>
     <MovingText>
       Our system is currently under maintenance to resolve some minor issues. We
       apologize for any inconvenience caused and appreciate your patience during
       this time.
     </MovingText>
+    </ThemeProvider>
   );
 };
 

@@ -175,7 +175,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     border: "none",
                   }}
                   inputStyle={{
-                    padding:"1.6rem ",
+                   
                     fontSize: "16px",
                   
                     borderRadius: "2px",

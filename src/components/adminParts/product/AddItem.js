@@ -209,11 +209,13 @@ export default function AddItem() {
   };
   return (
     <ThemeProvider theme={MuiTheme}>
+       
       <Box
         sx={{ top: "20%", margin: "50px" }}
         style={{ fontSize: "16px !important" }}
       >
-        <Toast time={time} />
+         <Toast time={time} />
+      
 
         <Typography
           variant="h4"

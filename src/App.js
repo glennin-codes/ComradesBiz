@@ -33,7 +33,7 @@ const App = () => {
       h5: "2rem",
       h6: "2rem",
       p: "2rem",
-      small: ".8rem",
+      small: "1rem",
     },
     colors: {
       heading: "rgb(24 24 29)",
