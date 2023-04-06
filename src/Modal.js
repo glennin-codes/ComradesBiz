@@ -165,6 +165,8 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
               </Box>
               <Box sx={{ mt: 2 }}>
                 <PhoneInput
+
+        
                   defaultCountry="KE"
                   placeholder="Enter phone number"
                   style={{
@@ -173,6 +175,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     border: "none",
                   }}
                   inputStyle={{
+                    padding:"1.6rem ",
                     fontSize: "16px",
                   
                     borderRadius: "2px",
