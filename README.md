@@ -29,12 +29,8 @@ For login and Registration
 1. Auth0
 ### Links
 
----
 
-
-1. Netlify https://harmonious-squirrel-c80a4a.netlify.app
-2. vercel https://sheela-ecommerce-website.vercel.app
-
+1 https://comradesbiz.live
 
 ### How to start?
 
