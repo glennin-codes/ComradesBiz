@@ -1,5 +1,7 @@
 
----
+## welcome to comradesBiz  secondhand treasures for student budget
+
+
 
 ##### Here's features included in this project
 
@@ -29,11 +31,11 @@ For login and Registration
 1. Auth0
 ### Links
 
----
 
 
-1. vercel https://www.comradesbiz.live
 
+
+1 https://comradesbiz.live
 
 ### How to start?
 
@@ -50,5 +52,4 @@ npm i
 
 npm start
 
-```
 
