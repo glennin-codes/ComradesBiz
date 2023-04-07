@@ -165,6 +165,8 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
               </Box>
               <Box sx={{ mt: 2 }}>
                 <PhoneInput
+
+        
                   defaultCountry="KE"
                   placeholder="Enter phone number"
                   style={{
@@ -173,6 +175,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                     border: "none",
                   }}
                   inputStyle={{
+                   
                     fontSize: "16px",
                   
                     borderRadius: "2px",
@@ -188,7 +191,7 @@ const MyModal = ({ open, setOpen, confirmedFunction, products }) => {
                   onChange={handlePhoneChange}
                 />
               </Box>
-              <Box sx={{ mt: 2 }}>
+              <Box sx={{ mt: 2 }} style={{textTransform:'none'}}>
                 <TextField
                 style={{textTransform:'none'}}
                   label="Message"

@@ -1,7 +1,9 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react';
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
+import { FaMapMarker } from 'react-icons/fa';
+
+// google-map-react/lib/components/Marker'
 
 const Map = () => {
     const defaultProps = {
@@ -19,11 +21,12 @@ const Map = () => {
                     defaultCenter={defaultProps.center}
                     defaultZoom={defaultProps.zoom}
                 >
-                    <AnyReactComponent
-                        lat={59.955413}
-                        lng={30.337844}
-                        text="My Marker"
-                    />
+                <FaMapMarker
+                
+                lat={-0.5659272502120657}
+                lng={37.32018609457084}
+                style={{ color: 'red' ,fontSize:'20px'}}
+              />
                 </GoogleMapReact>
             </div>
         </>

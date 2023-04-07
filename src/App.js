@@ -19,6 +19,7 @@ import UserProfile from "./components/adminParts/Auth/UserProfile";
 import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
 import PrivateRoutes from "./privateRoute/PrivateRoute";
+import MaintenanceNotice from "./components/adminParts/utils/Maintanance/Maintanance";
 const App = () => {
   const theme = {
     font: {
@@ -32,7 +33,7 @@ const App = () => {
       h5: "2rem",
       h6: "2rem",
       p: "2rem",
-      small: ".8rem",
+      small: "1rem",
     },
     colors: {
       heading: "rgb(24 24 29)",
@@ -68,7 +69,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <GlobalStyle />
+       
         <Header />
+        {/* <MaintenanceNotice /> */}
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -42,7 +42,6 @@ const VerifyEmail = () => {
           { code, email }
         );
         if (response) {
-          console.log(response.data);
           const { data, status } = response;
           if (status === 200) {
             setVerifying(false);

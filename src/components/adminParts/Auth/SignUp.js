@@ -83,7 +83,7 @@ const SignUp = () => {
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
-  console.log("location", locationText);
+
   const handleClickShowPassword = () => {
     setValues({
       ...values,
@@ -141,7 +141,7 @@ const SignUp = () => {
       if (datas) {
         const { data, status } = datas;
         // setUser(data);
-        console.log("data", data);
+       
 
         if (status === 201) {
           const { token, name, email, id } = data;
@@ -327,7 +327,7 @@ const SignUp = () => {
                         value={values.phone}
                         onChange={(phone) => {
                           handleChange("phone")({ target: { value: phone } });
-                         console.log(values.phone);
+                         
                         }}
                         autoComplete="Enter your mobile number"
                       />

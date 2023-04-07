@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const MyImage = ({imgs = [{url:""}]}) => {
   const [mainImage , setMainImage] = useState(imgs[0]);
 
-  console.log('imgs: ', imgs);
+
   return (
     <Wrapper>
       <div className='grid grid-four-column'>
