@@ -317,9 +317,10 @@ export default function AddItem() {
               
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
                 
-                <FormControl variant="standard" fullWidth>
-                  <InputLabel>Car Brand</InputLabel>
+                <FormControl variant="standard"    style={{color:'black'}} fullWidth>
+                  <InputLabel>Category</InputLabel>
                   <Select 
+                  style={{color:'black'}}
                      
                     fullWidth
                     required
