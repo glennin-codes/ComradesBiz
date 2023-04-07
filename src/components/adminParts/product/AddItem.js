@@ -39,6 +39,7 @@ export default function AddItem() {
   const [uploading, setIsUpLoading] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [selected, setIsSelected] = useState(0);
+  const [category, setCategory] = useState('');
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
@@ -161,7 +162,7 @@ export default function AddItem() {
     const email = localStorage.getItem("email");
 
     console.log("email", email);
-    const newProductInfo = { ...values, images, user: email };
+    const newProductInfo = { ...values, images, user: email, category };
 
     const config = {
       headers: { Authorization: `Bearer ${token}` },
@@ -299,7 +300,7 @@ export default function AddItem() {
                   />
                 </Box>
               </Grid>
-              <Grid item xs={7} md={8}>
+              {/* <Grid item xs={7} md={8}>
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
                   <TextField
                     fullWidth
@@ -310,18 +311,43 @@ export default function AddItem() {
                     onChange={handleValueChange("category")}
                   />
                 </Box>
-              </Grid>
-
+              </Grid> */}
+              {/* <Grid item xs={6} md={4}> */}
               <Grid item xs={7} md={8}>
+              
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                  <TextField
+                
+                <FormControl variant="standard" fullWidth>
+                  <InputLabel>Car Brand</InputLabel>
+                  <Select 
+                     
                     fullWidth
-                    label="Company"
-                    variant="standard"
                     required
-                    text="text"
-                    onChange={handleValueChange("company")}
-                  />
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                  >
+                    <MenuItem value={"laptops"}>Laptops</MenuItem>
+                    <MenuItem value={"smartPhones"}>SmartPhones</MenuItem>
+                    <MenuItem value={"kabambe"}>kabambePhones</MenuItem>
+                    <MenuItem value={"electronics"}>Electronics</MenuItem>
+                    <MenuItem value={"furnitures"}>Furniture</MenuItem>
+                    <MenuItem value={"clothing"}>Clothing</MenuItem>
+                    <MenuItem value={"Shoes"}>Shoes</MenuItem>
+                    <MenuItem value={"utensils"}>Utensils</MenuItem>
+                    <MenuItem value={"engineeringInstr"}>EngineeringInstr</MenuItem>
+                    <MenuItem value={"Bycicles"}>Bycicles</MenuItem>
+                    <MenuItem value={"accesories"}>accesories</MenuItem>
+                    <MenuItem value={"books"}>Books</MenuItem>
+                    <MenuItem value={"Tvs"}>Tvs</MenuItem>
+                    <MenuItem value={"Services"}>Services</MenuItem>
+                    <MenuItem value={"cars"}>cars</MenuItem>
+                    <MenuItem value={"Beddings"}>Beddings</MenuItem>
+                    <MenuItem value={"Soap"}>Soap</MenuItem>
+                    <MenuItem value={"Fruits&juice"}>Fruits&juice</MenuItem>
+                    <MenuItem value={"others"}>Others</MenuItem>
+                    
+                  </Select>
+                </FormControl>
                 </Box>
               </Grid>
 
@@ -370,6 +396,7 @@ export default function AddItem() {
                               marginBottom: "5px",
                               fontWeight: "700",
                               opacity: "none",
+                              fontSize:'16px',
                             }}
                           >
                             Drag 'n' Drop some images here, or click to select
@@ -386,7 +413,7 @@ export default function AddItem() {
                               size: "18px",
                             }}
                           >
-                            Ensure that each image does not exceed 6.5MB in size
+                            Ensure that each image does not exceed 5.5MB in size
                           </em>
                           <br />
                           <em style={{}}>
