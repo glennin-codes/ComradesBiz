@@ -39,7 +39,7 @@ export default function AddItem() {
   const [uploading, setIsUpLoading] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
   const [selected, setIsSelected] = useState(0);
-  const [category, setCategory] = useState('');
+  const [category, setCategory] = useState("");
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
 
@@ -210,13 +210,11 @@ export default function AddItem() {
   };
   return (
     <ThemeProvider theme={MuiTheme}>
-       
       <Box
         sx={{ top: "20%", margin: "50px" }}
         style={{ fontSize: "16px !important" }}
       >
-         <Toast time={time} />
-      
+        <Toast time={time} />
 
         <Typography
           variant="h4"
@@ -314,41 +312,90 @@ export default function AddItem() {
               </Grid> */}
               {/* <Grid item xs={6} md={4}> */}
               <Grid item xs={7} md={8}>
-              
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-                
-                <FormControl variant="standard"    style={{color:'black'}} fullWidth>
-                  <InputLabel>Category</InputLabel>
-                  <Select 
-                  
-                     
+                  <FormControl
+                    variant="standard"
+                    style={{ color: "black" }}
                     fullWidth
-                    required
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
                   >
-                    <MenuItem style={{color:'black'}} value={"laptops"}>Laptops</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"smartPhones"}>SmartPhones</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"kabambe"}>kabambePhones</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"electronics"}>Electronics</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"furnitures"}>Furniture</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"clothing"}>Clothing</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Shoes"}>Shoes</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"utensils"}>Utensils</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"engineeringInstr"}>EngineeringInstr</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Bycicles"}>Bycicles</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"accesories"}>accesories</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"books"}>Books</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Tvs"}>Tvs</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Services"}>Services</MenuItem>
-                    <MenuItem style={{color:'black'}} style={{color:'black'}} value={"cars"}>cars</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Beddings"}>Beddings</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Soap"}>Soap</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"Fruits&juice"}>Fruits&juice</MenuItem>
-                    <MenuItem style={{color:'black'}} value={"others"}>Others</MenuItem>
-                    
-                  </Select>
-                </FormControl>
+                    <InputLabel>Category</InputLabel>
+                    <Select
+                      fullWidth
+                      required
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                    >
+                      <MenuItem style={{ color: "black" }} value={"laptops"}>
+                        Laptops
+                      </MenuItem>
+                      <MenuItem
+                        style={{ color: "black" }}
+                        value={"smartPhones"}
+                      >
+                        SmartPhones
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"kabambe"}>
+                        kabambePhones
+                      </MenuItem>
+                      <MenuItem
+                        style={{ color: "black" }}
+                        value={"electronics"}
+                      >
+                        Electronics
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"furnitures"}>
+                        Furniture
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"clothing"}>
+                        Clothing
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Shoes"}>
+                        Shoes
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"utensils"}>
+                        Utensils
+                      </MenuItem>
+                      <MenuItem
+                        style={{ color: "black" }}
+                        value={"engineeringInstr"}
+                      >
+                        EngineeringInstr
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Bycicles"}>
+                        Bycicles
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"accesories"}>
+                        accesories
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"books"}>
+                        Books
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Tvs"}>
+                        Tvs
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Services"}>
+                        Services
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"cars"}>
+                        cars
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Beddings"}>
+                        Beddings
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Soap"}>
+                        Soap
+                      </MenuItem>
+                      <MenuItem
+                        style={{ color: "black" }}
+                        value={"Fruits&juice"}
+                      >
+                        Fruits&juice
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"others"}>
+                        Others
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
                 </Box>
               </Grid>
 
@@ -397,7 +444,7 @@ export default function AddItem() {
                               marginBottom: "5px",
                               fontWeight: "700",
                               opacity: "none",
-                              fontSize:'16px',
+                              fontSize: "16px",
                             }}
                           >
                             Drag 'n' Drop some images here, or click to select
@@ -434,7 +481,7 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
-              <Grid item xs={12} style={{textTransform:'none'}}>
+              <Grid item xs={12} style={{ textTransform: "none" }}>
                 {/* product description textarea */}
                 <TextField
                   style={{ textTransform: "none" }}
