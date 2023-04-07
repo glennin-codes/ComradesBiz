@@ -450,7 +450,13 @@ export default function AddItem() {
                             Drag 'n' Drop some images here, or click to select
                             files
                           </p>
-                          <em style={{ color: "#FFBF00", marginTop: "5px" }}>
+                          <em
+                            style={{
+                              color: "#FFBF00",
+                              marginTop: "5px",
+                              fontSize: "14px",
+                            }}
+                          >
                             Please select at least 5 images but a muximum of 10
                           </em>
                           <br />
@@ -458,13 +464,13 @@ export default function AddItem() {
                             sx={{
                               color: "magenta",
                               marginTop: "5px",
-                              size: "18px",
                             }}
+                            style={{ fontSize: "14px" }}
                           >
                             Ensure that each image does not exceed 5.5MB in size
                           </em>
                           <br />
-                          <em style={{}}>
+                          <em style={{ fontSize: "14px" }}>
                             (images with *.jpeg, *.png, *.jpg extension will be
                             accepted)
                           </em>
