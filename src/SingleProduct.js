@@ -32,9 +32,9 @@ const SingleProduct = () => {
 
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
-  console.log("SingleProduct: ", singleProduct);
+  
   const { id } = useParams();
-  console.log("id: ", id);
+ 
 
   const {
     image,
@@ -49,7 +49,7 @@ const SingleProduct = () => {
     user,
   } = singleProduct;
   const API = `https://comradesbizapi.azurewebsites.net/api/product/:`;
-  console.log("user", user);
+
   
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);

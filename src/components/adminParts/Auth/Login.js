@@ -86,9 +86,9 @@ const[loading,setIsLoading]=useState(false);
                     localStorage.setItem('email',email);
                     localStorage.setItem('id',id);
                //setting up cookie
-               console.log('name',name)
+              
                
-console.log(id);
+
               
                 
            setValues('');

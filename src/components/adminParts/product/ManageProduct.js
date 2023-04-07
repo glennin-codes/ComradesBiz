@@ -27,7 +27,7 @@ export default function Manageproducts() {
   const [refresh, setRefresh] = useState(false);
   const email=localStorage.getItem('email');
 
-console.log('email', email);
+
   useEffect(() => {
     const fetchproducts = async () => {
       try{

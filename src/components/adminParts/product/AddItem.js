@@ -161,7 +161,7 @@ export default function AddItem() {
     const token = localStorage.getItem("token");
     const email = localStorage.getItem("email");
 
-    console.log("email", email);
+    
     const newProductInfo = { ...values, images, user: email, category };
 
     const config = {
