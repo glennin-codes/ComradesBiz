@@ -12,7 +12,7 @@ const Cart = () => {
   const { cart, clearCart, total_price, shipping_fee } = useCartContext();
   // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart);
   const [open, setOpen] = useState(false);
-
+console.log(cart);
   const handleNotifySellers = () => {
     setOpen(true);
   };
