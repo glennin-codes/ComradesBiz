@@ -298,18 +298,18 @@ export default function AddItem() {
                   />
                 </Box>
               </Grid>
-              {/* <Grid item xs={7} md={8}>
+              <Grid item xs={7} md={8}>
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
                   <TextField
                     fullWidth
-                    label="Category"
+                    label="Company"
                     variant="standard"
                     required
                     text="text"
-                    onChange={handleValueChange("category")}
+                    onChange={handleValueChange("company")}
                   />
                 </Box>
-              </Grid> */}
+              </Grid>
               {/* <Grid item xs={6} md={4}> */}
               <Grid item xs={7} md={8}>
                 <Box sx={{ display: "flex", alignItems: "flex-end" }}>
