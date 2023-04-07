@@ -320,32 +320,32 @@ export default function AddItem() {
                 <FormControl variant="standard"    style={{color:'black'}} fullWidth>
                   <InputLabel>Category</InputLabel>
                   <Select 
-                  style={{color:'black'}}
+                  
                      
                     fullWidth
                     required
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                   >
-                    <MenuItem value={"laptops"}>Laptops</MenuItem>
-                    <MenuItem value={"smartPhones"}>SmartPhones</MenuItem>
-                    <MenuItem value={"kabambe"}>kabambePhones</MenuItem>
-                    <MenuItem value={"electronics"}>Electronics</MenuItem>
-                    <MenuItem value={"furnitures"}>Furniture</MenuItem>
-                    <MenuItem value={"clothing"}>Clothing</MenuItem>
-                    <MenuItem value={"Shoes"}>Shoes</MenuItem>
-                    <MenuItem value={"utensils"}>Utensils</MenuItem>
-                    <MenuItem value={"engineeringInstr"}>EngineeringInstr</MenuItem>
-                    <MenuItem value={"Bycicles"}>Bycicles</MenuItem>
-                    <MenuItem value={"accesories"}>accesories</MenuItem>
-                    <MenuItem value={"books"}>Books</MenuItem>
-                    <MenuItem value={"Tvs"}>Tvs</MenuItem>
-                    <MenuItem value={"Services"}>Services</MenuItem>
-                    <MenuItem value={"cars"}>cars</MenuItem>
-                    <MenuItem value={"Beddings"}>Beddings</MenuItem>
-                    <MenuItem value={"Soap"}>Soap</MenuItem>
-                    <MenuItem value={"Fruits&juice"}>Fruits&juice</MenuItem>
-                    <MenuItem value={"others"}>Others</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"laptops"}>Laptops</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"smartPhones"}>SmartPhones</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"kabambe"}>kabambePhones</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"electronics"}>Electronics</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"furnitures"}>Furniture</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"clothing"}>Clothing</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Shoes"}>Shoes</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"utensils"}>Utensils</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"engineeringInstr"}>EngineeringInstr</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Bycicles"}>Bycicles</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"accesories"}>accesories</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"books"}>Books</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Tvs"}>Tvs</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Services"}>Services</MenuItem>
+                    <MenuItem style={{color:'black'}} style={{color:'black'}} value={"cars"}>cars</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Beddings"}>Beddings</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Soap"}>Soap</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"Fruits&juice"}>Fruits&juice</MenuItem>
+                    <MenuItem style={{color:'black'}} value={"others"}>Others</MenuItem>
                     
                   </Select>
                 </FormControl>
