@@ -71,7 +71,7 @@ const App = () => {
         <GlobalStyle />
        
         <Header />
-        <MaintenanceNotice />
+        {/* <MaintenanceNotice /> */}
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />

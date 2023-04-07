@@ -182,6 +182,7 @@ export default function AddItem() {
 
           setIsSubmit(false);
           event.target.reset();
+          setCategory('');
         }
         setError("");
         //  throw new Error('Failed to upload to Cloudinary');
