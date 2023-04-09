@@ -7,7 +7,7 @@ const Product = (curElem) => {
 
   const {_id,name,image,price,category} = curElem;
   
-const isNew = curElem.hasOwnProperty('New') && curElem.New;
+const isNew = curElem.hasOwnProperty('New');
 
  
     return (
