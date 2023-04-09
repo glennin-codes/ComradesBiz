@@ -6,12 +6,13 @@ import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
   const[isNew,setIsNew]=useState(false);
-  const {_id,name,image,price,category} = curElem;
+  const {_id,name,image,price,category,New} = curElem;
   
- if (curElem.hasOwnProperty('New') && curElem.New === true){
-  setIsNew(true);
- }
-
+  useEffect(() => {
+    if (New) {
+      setIsNew(true);
+    }
+  }, [New]);
 
  
     return (
