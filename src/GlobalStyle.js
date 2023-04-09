@@ -193,5 +193,11 @@ input{
           grid-template-columns: 1fr;
         }
     }
-
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* set the columns to auto-fit with a minimum width of 300px */
+        gap: 2rem; /* set the gap between the grid items */
+      }
+    }
+    
 `;
