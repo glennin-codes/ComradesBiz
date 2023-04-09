@@ -137,6 +137,17 @@ ${"" /* resuable code section  */}
       font-size: 1.2rem;
       border-radius: 2rem;
     }
+   .caption-New{
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      text-transform: uppercase;
+      background-color: ${({ theme }) => theme.colors.bg};
+      color:magenta;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 2rem;
+    }
 
 input{
    max-width: 50rem;
