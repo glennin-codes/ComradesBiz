@@ -6,11 +6,9 @@ import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
 
-  const {_id,name,image,price,category} = curElem;
+  const {_id,name,image,price,category,isNew} = curElem;
  
   
-  const isNew = curElem.hasOwnProperty('New') && curElem.New;
-  console.log('value',isNew);
  
     return (
     <NavLink to={`/singleproduct/${_id}`}>
