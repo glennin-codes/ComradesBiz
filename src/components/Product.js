@@ -5,7 +5,10 @@ import { NavLink } from 'react-router-dom';
 import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
-  const {_id,name,image,price,category,New} = curElem;
+  const {_id,name,image,price,category} = curElem;
+  
+const isNew = curElem.hasOwnProperty('New') && curElem.New;
+
  
     return (
     <NavLink to={`/singleproduct/${_id}`}>
@@ -14,7 +17,7 @@ const Product = (curElem) => {
         <img src={image[0]?.url}
          alt={name} />
         <figcaption className="caption">{category}</figcaption>
-       {New &&  <figcaption className="caption-New">New!</figcaption>}
+       {isNew && <figcaption className="caption-New">New!</figcaption>}
       </figure>
 
       <div className="card-data">
