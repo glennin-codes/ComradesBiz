@@ -199,11 +199,11 @@ input{
         gap: 2rem; 
       }
     }
-    @media screen and (max-width: 1024px), screen and (max-width: 912px) {
-      .grid {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 2rem; 
-      }
-      }
+    // @media screen and (max-width: 1024px), screen and (max-width: 912px) {
+    //   .grid {
+    //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    //   gap: 2rem; 
+    //   }
+    //   }
     
 `;
