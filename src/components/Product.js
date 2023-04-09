@@ -14,7 +14,7 @@ const Product = (curElem) => {
     if (New) {
       setIsNew(true);
     }
-  }, [New]);
+  }, []);
 
  
     return (
