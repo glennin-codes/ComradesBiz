@@ -12,6 +12,7 @@ import {
   Box,
   Paper,
   ThemeProvider,
+  Checkbox,
 } from "@mui/material";
 
 import React from "react";
@@ -541,7 +542,7 @@ export default function AddItem() {
                     </Typography>
                     <Checkbox
                       checked={values.featured}
-                      
+
                       
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });
