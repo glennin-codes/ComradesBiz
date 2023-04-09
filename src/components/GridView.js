@@ -55,6 +55,7 @@ const Wrapper = styled.section`
       max-width: 90%;
       width:90%;
       margin-top: 1.5rem;
+      object-fit:contain;
       height: 20rem;
       transition: all 0.2s linear;
     }
