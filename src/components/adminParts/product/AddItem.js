@@ -384,13 +384,16 @@ export default function AddItem() {
                         Beddings
                       </MenuItem>
                       <MenuItem style={{ color: "black" }} value={"Soap"}>
-                        Soap
+                        Soap & detergents
                       </MenuItem>
                       <MenuItem
                         style={{ color: "black" }}
                         value={"Fruits&juice"}
                       >
                         Fruits&juice
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Gas Cylinders"}>
+                        Gas Cylinders
                       </MenuItem>
                       <MenuItem style={{ color: "black" }} value={"others"}>
                         Others
@@ -458,7 +461,7 @@ export default function AddItem() {
                               fontSize: "14px",
                             }}
                           >
-                            Please select at least 5 images but a muximum of 10
+                            Please select at least 5 images but a muximum of 6
                           </em>
                           <br />
                           <em
