@@ -5,17 +5,12 @@ import { NavLink } from 'react-router-dom';
 import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
-  const[isNew,setIsNew]=useState(false);
+
   const {_id,name,image,price,category} = curElem;
  
   
-  useEffect(() => {
-    const New = curElem.hasOwnProperty('New') && curElem.New === true;
-    if (New) {
-      setIsNew(true);
-    }
-  }, []);
-
+  const isNew = curElem.hasOwnProperty('New') && curElem.New;
+  console.log('value',isNew);
  
     return (
     <NavLink to={`/singleproduct/${_id}`}>
