@@ -491,6 +491,64 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
+               <Grid item xs={12} sx={{ m: 1 }}>
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      {" "}
+                      secondHand?
+                    </Typography>
+                    <Checkbox
+                      checked={values.secondHand}
+                      onChange={(event) => {
+                        setValues({ ...values, secondHand: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    />
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      
+                     New?
+                    </Typography>
+                    <Checkbox
+                      checked={values.New}
+                      onChange={(event) => {
+                        setValues({ ...values, New: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    />
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      
+                     featured?
+                    </Typography>
+                    <Checkbox
+                      checked={values.featured}
+                      
+                      
+                      onChange={(event) => {
+                        setValues({ ...values, featured: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                    />
+                  </Grid>
               <Grid item xs={12} style={{ textTransform: "none" }}>
                 {/* product description textarea */}
                 <TextField
