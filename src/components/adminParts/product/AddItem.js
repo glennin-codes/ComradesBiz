@@ -522,6 +522,7 @@ export default function AddItem() {
                       fullWidth
                     >
                      <Tooltip
+                     touch="on"
                        title="You need to subscribe to use this feature" 
                        style={{color:"magenta"}}
                       placement="top">
@@ -547,6 +548,7 @@ export default function AddItem() {
                       fullWidth
                     >
                       <Tooltip
+                      touch="on"
                        title="You need to subscribe to use this feature" 
                       
                       style={{color:"magenta"}}
