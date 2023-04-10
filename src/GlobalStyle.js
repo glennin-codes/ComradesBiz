@@ -137,6 +137,17 @@ ${"" /* resuable code section  */}
       font-size: 1.2rem;
       border-radius: 2rem;
     }
+   .caption-New{
+      position: absolute;
+      top: 15%;
+      left: 10%;
+      text-transform: uppercase;
+      background-color: ${({ theme }) => theme.colors.bg};
+      color:magenta;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 2rem;
+    }
 
 input{
    max-width: 50rem;
@@ -182,5 +193,17 @@ input{
           grid-template-columns: 1fr;
         }
     }
-
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* set the columns to auto-fit with a minimum width of 300px */
+        gap: 2rem; 
+      }
+    }
+    // @media screen and (max-width: 800px), screen and (max-width:1024px) {
+    //   .grid {
+    //   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    //   gap: 2rem; 
+    //   }
+    //   }
+    
 `;

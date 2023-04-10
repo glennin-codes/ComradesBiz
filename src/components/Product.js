@@ -5,7 +5,10 @@ import { NavLink } from 'react-router-dom';
 import FormatPrice from '../Helpers/FormatPrice';
 const Product = (curElem) => {
 
-  const {_id,name,image,price,category} = curElem;
+
+  const {_id,name,image,price,category,isClean} = curElem;
+ 
+  
  
     return (
     <NavLink to={`/singleproduct/${_id}`}>
@@ -14,6 +17,7 @@ const Product = (curElem) => {
         <img src={image[0]?.url}
          alt={name} />
         <figcaption className="caption">{category}</figcaption>
+       {isClean&& <figcaption className="caption-New">New!</figcaption>}
       </figure>
 
       <div className="card-data">

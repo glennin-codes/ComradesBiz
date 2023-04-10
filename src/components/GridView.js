@@ -20,6 +20,7 @@ const Wrapper = styled.section`
 
   .container {
     max-width: 120rem;
+    
   }
 
   .grid {
@@ -53,6 +54,8 @@ const Wrapper = styled.section`
     }
     img {
       max-width: 90%;
+      width:100%;
+     object-fit:fill;
       margin-top: 1.5rem;
       height: 20rem;
       transition: all 0.2s linear;

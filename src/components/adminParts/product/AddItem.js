@@ -12,6 +12,8 @@ import {
   Box,
   Paper,
   ThemeProvider,
+  Checkbox,
+  Tooltip,
 } from "@mui/material";
 
 import React from "react";
@@ -384,13 +386,16 @@ export default function AddItem() {
                         Beddings
                       </MenuItem>
                       <MenuItem style={{ color: "black" }} value={"Soap"}>
-                        Soap
+                        Soap & detergents
                       </MenuItem>
                       <MenuItem
                         style={{ color: "black" }}
                         value={"Fruits&juice"}
                       >
                         Fruits&juice
+                      </MenuItem>
+                      <MenuItem style={{ color: "black" }} value={"Gas Cylinders"}>
+                        Gas Cylinders
                       </MenuItem>
                       <MenuItem style={{ color: "black" }} value={"others"}>
                         Others
@@ -458,7 +463,7 @@ export default function AddItem() {
                               fontSize: "14px",
                             }}
                           >
-                            Please select at least 5 images but a muximum of 10
+                            Please select at least 5 images but a muximum of 6
                           </em>
                           <br />
                           <em
@@ -488,6 +493,81 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
+               <Grid xs={12} sx={{ m: 1 }}  >
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      {" "}
+                      secondHand?
+                    </Typography>
+                    <Checkbox
+                    
+                      checked={values.secondHand}
+                      onChange={(event) => {
+                        setValues({ ...values, secondHand: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }, }}
+                    />
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                     <Tooltip
+                     touch="on"
+                       title="You need to subscribe to use this feature" 
+                       
+                      placement="top">
+                      <span>
+                   New?
+                     </span>
+                     </Tooltip>
+                    </Typography>
+                    <Checkbox
+                      checked={values.isClean}
+                      disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
+                      onChange={(event) => {
+                        setValues({ ...values, isClean: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }}}
+                    />
+                    <Typography
+                      sx={{
+                        m: 1,
+                        fontSize: "16px",
+                      }}
+                      variant="standard"
+                      fullWidth
+                    >
+                      <Tooltip
+                      touch="on"
+                      
+                       title="You need to subscribe to use this feature" 
+                      
+                      style={{color:"magenta"}}
+                      placement="top">
+                      <span>
+                     featured?
+                     </span>
+                     </Tooltip>
+                    </Typography>
+                    <Checkbox
+                      checked={values.featured}
+                      disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
+                      onChange={(event) => {
+                        setValues({ ...values, featured: event.target.checked });
+                      }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }}}
+                    />
+                  </Grid>
               <Grid item xs={12} style={{ textTransform: "none" }}>
                 {/* product description textarea */}
                 <TextField
