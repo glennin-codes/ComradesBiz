@@ -523,10 +523,10 @@ export default function AddItem() {
                      New?
                     </Typography>
                     <Checkbox
-                      checked={values.isNew}
+                      checked={values.isClean}
                       disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
                       onChange={(event) => {
-                        setValues({ ...values, isNew: event.target.checked });
+                        setValues({ ...values, isClean: event.target.checked });
                       }}
                       sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
                     />
