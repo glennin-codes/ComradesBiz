@@ -493,7 +493,7 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
-               <Grid item xs={7} >
+               <Grid xs={12} sx={{ m: 1 }}  >
                     <Typography
                       sx={{
                         m: 1,
@@ -524,11 +524,11 @@ export default function AddItem() {
                      <Tooltip
                      touch="on"
                        title="You need to subscribe to use this feature" 
-                       style={{color:"magenta"}}
+                       
                       placement="top">
-                      <div>
+                      <span>
                    New?
-                     </div>
+                     </span>
                      </Tooltip>
                     </Typography>
                     <Checkbox
@@ -549,13 +549,14 @@ export default function AddItem() {
                     >
                       <Tooltip
                       touch="on"
+                      
                        title="You need to subscribe to use this feature" 
                       
                       style={{color:"magenta"}}
                       placement="top">
-                      <div>
+                      <span>
                      featured?
-                     </div>
+                     </span>
                      </Tooltip>
                     </Typography>
                     <Checkbox
