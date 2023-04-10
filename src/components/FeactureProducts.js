@@ -13,7 +13,7 @@ const FeatureProduct = () => {
     <Wrapper className="section">
       <div className="container">
         <div className="intro-data">Check Now!</div>
-        <div className="common-heading">Our Feature Services</div>
+        <div className="common-heading">Our Featured Products</div>
         <div className="grid grid-three-column">
           {featureProducts.map((curElem) => {
             return <Product key={curElem._id} {...curElem} />;
@@ -59,6 +59,8 @@ const Wrapper = styled.section`
     }
     img {
       max-width: 90%;
+      width:100%;
+      object-fit:fill;
       margin-top: 1.5rem;
       height: 20rem;
       transition: all 0.2s linear;
