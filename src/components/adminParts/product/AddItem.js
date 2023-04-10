@@ -492,7 +492,7 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
-               <Grid item xs={12} sx={{ m: 1 }}>
+               <Grid item xs={12} >
                     <Typography
                       sx={{
                         m: 1,
