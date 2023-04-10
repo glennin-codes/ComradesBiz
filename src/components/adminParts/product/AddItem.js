@@ -511,7 +511,7 @@ export default function AddItem() {
                       onChange={(event) => {
                         setValues({ ...values, secondHand: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }, }}
                     />
                     <Typography
                       sx={{
@@ -523,7 +523,7 @@ export default function AddItem() {
                     >
                      <Tooltip
                        title="You need to subscribe to use this feature" 
-                      color="magenta"
+                       style={{color:"magenta"}}
                       placement="top">
                       <div>
                    New?
@@ -536,7 +536,7 @@ export default function AddItem() {
                       onChange={(event) => {
                         setValues({ ...values, isClean: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }}}
                     />
                     <Typography
                       sx={{
@@ -548,7 +548,8 @@ export default function AddItem() {
                     >
                       <Tooltip
                        title="You need to subscribe to use this feature" 
-                      color="magenta"
+                      
+                      style={{color:"magenta"}}
                       placement="top">
                       <div>
                      featured?
@@ -561,7 +562,7 @@ export default function AddItem() {
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 }}}
                     />
                   </Grid>
               <Grid item xs={12} style={{ textTransform: "none" }}>
