@@ -13,6 +13,7 @@ import {
   Paper,
   ThemeProvider,
   Checkbox,
+  Tooltip,
 } from "@mui/material";
 
 import React from "react";
@@ -492,7 +493,7 @@ export default function AddItem() {
                 handleColorChange={handleColorChange}
                 deleteImage={deleteImage}
               />
-               <Grid item xs={12} >
+               <Grid item xs={7} >
                     <Typography
                       sx={{
                         m: 1,
@@ -505,11 +506,12 @@ export default function AddItem() {
                       secondHand?
                     </Typography>
                     <Checkbox
+                    
                       checked={values.secondHand}
                       onChange={(event) => {
                         setValues({ ...values, secondHand: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
                     />
                     <Typography
                       sx={{
@@ -519,8 +521,14 @@ export default function AddItem() {
                       variant="standard"
                       fullWidth
                     >
-                      
-                     New?
+                     <Tooltip
+                       title="You need to subscribe to use this feature" 
+                      color="magenta"
+                      placement="top">
+                      <div>
+                   New?
+                     </div>
+                     </Tooltip>
                     </Typography>
                     <Checkbox
                       checked={values.isClean}
@@ -528,7 +536,7 @@ export default function AddItem() {
                       onChange={(event) => {
                         setValues({ ...values, isClean: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
                     />
                     <Typography
                       sx={{
@@ -538,8 +546,14 @@ export default function AddItem() {
                       variant="standard"
                       fullWidth
                     >
-                      
+                      <Tooltip
+                       title="You need to subscribe to use this feature" 
+                      color="magenta"
+                      placement="top">
+                      <div>
                      featured?
+                     </div>
+                     </Tooltip>
                     </Typography>
                     <Checkbox
                       checked={values.featured}
@@ -547,7 +561,7 @@ export default function AddItem() {
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });
                       }}
-                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
+                      sx={{ "& .MuiSvgIcon-root": { fontSize: 28 },mr: 1 }}
                     />
                   </Grid>
               <Grid item xs={12} style={{ textTransform: "none" }}>
