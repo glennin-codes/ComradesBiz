@@ -117,11 +117,11 @@ const[loading,setIsLoading]=useState(false);
               
             }else{
              
-              setError('Timeout,something went wrong');
+              setError('Oops!, network error check your connection and try again later');
               
             }
         }else{
-            setError('network error check your connection and try again later')
+            setError('Timeout,something went wrong')
             
         }
         setIsLoading(false);
