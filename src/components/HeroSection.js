@@ -13,24 +13,45 @@ const HeroSection = ({ myData }) => {
             <p className="intro-data">Welcome to </p>
             <h1>{name}</h1>
             <p>
-              Where buying and selling secondhand products has never been
-              easier. Our marketplace is designed to help students save money
-              and reduce waste by giving their pre-loved items a new life.
+              The ultimate student marketplace - the one-stop-shop for
+              everything you need to ace your studies and enjoy campus life to
+              the fullest! Our platform offers a wide range of brand new and
+              gently used products, as well as unique and affordable services
+              from your fellow students.
             </p>
             <p>
-              With comradeBiz, you can find textbooks, electronics, furniture,
-              and more at prices that won't break the bank. Say goodbye to
-              overpriced items and hello to affordable options.
+              We understand being a student can be too expensive, but with
+              comradeBiz, you don't have to break the bank to get what you need.
+              Our platform offers a wide range of products, including shoes,
+              clothing, bedding, electronics, furniture, and more, all at prices
+              that are affordable for students like you. . Say goodbye to
+              overpriced items and hello to budget-friendly options that won't
+              leave you strapped for cash.
             </p>
             <p>
-              But it's not just about buying. If you have items you no longer
-              need, you can sell them on our platform and earn some extra cash.
-              It's a win-win situation.
+              But it's not just about buying,you can easily sign up As a vendor
+              and list your products for sale, whether they're brand new or
+              gently used. From tech devices like smartphones and laptops to
+              practical items like water dispensers and stylish furniture, our
+              platform offers a wide range of products that your fellow students
+              might be looking for. Connect with potential buyers and make some
+              extra cash while helping out your peers at the same time!
             </p>
             <p>
-              Join our comrades community of savvy shoppers and sellers today.
-              Sign up as a vendor and start selling your pre-loved items, or
-              browse our selection and shop now.
+              Our platform is also a hub for advertising your own services such
+              as laundry, juice delivery, beauty and design, event planning,
+              photography, and more! By uploading pictures of your work, we can
+              beautifully showcase your services on our platform and connect
+              with potential customers ASAP. It's the perfect way to connect
+              with your fellow students and offer your unique skills to those in
+              need.
+            </p>
+            <p>
+              So why wait? Join our community of smart, savvy, and ambitious
+              students today and take your academic and social life to the next
+              level! Whether you're searching for the perfect product,
+              advertising your own services, or selling items as a vendor, our
+              platform is the ultimate destination for all your student needs.
             </p>
 
             <NavLink to="/products" style={{ marginRight: "4rem" }}>
