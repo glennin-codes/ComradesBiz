@@ -21,7 +21,7 @@ import {
 } from "@mui/material";
 import PhoneInput from "react-phone-number-input";
 
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { LinkedCamera, Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box, Container } from "@mui/system";
 import { Link, NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
