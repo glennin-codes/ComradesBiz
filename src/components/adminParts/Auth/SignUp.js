@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Typography,
   FormControl,
@@ -36,9 +36,9 @@ const SignUp = () => {
   const navigate = useNavigate();
   //   const{setUser}=useContext(AuthContext)
   const [search, setSearch] = React.useState("");
-
+const[privacy,SetPrivacy]=useState('')
   const [locationText, setLocationText] = React.useState("");
-  const [privacyAlert, setPrivacyAlert] = React.useState("");
+ 
   const [placeData, setPlaceData] = React.useState([]);
   const [error, setError] = React.useState("");
   const [loading, setIsLoading] = React.useState(false);
@@ -59,6 +59,7 @@ const SignUp = () => {
 
   const handleChecked = (event) => {
     setChecked(event.target.checked);
+    
   };
 
   const locationRef = useRef();
@@ -414,8 +415,7 @@ const SignUp = () => {
                           autoFocus
                           required
                           fullWidth
-                          name="location"
-                          label="Search Location"
+                          name="location"                     
                           type="text"
                           id="location"
                           placeholder={locationText}
@@ -455,6 +455,7 @@ const SignUp = () => {
                       sx={{ m: 1, fontSize: "16px" }}
                       variant="standard"
                       fullWidth
+                     
                     >
                       Before you signup, confirm that you have read, understood
                       and agreed with our{" "}
@@ -462,8 +463,23 @@ const SignUp = () => {
                       And our <a href="/privacy">Privacy policy</a>
                     </Typography>
                     <Checkbox
-                      checked={checked}
-                      onChange={handleChecked}
+                    
+                    
+                
+                      checked={privacy}
+                      onChange={(e)=>{
+                        SetPrivacy(e.target.checked)
+                           
+
+                        if (!privacy){
+                          setError('You must read the terms and privacy policy of comradesBiz before account creation')
+                           return;
+                        }
+                        else{
+                          setError('')
+                        }
+                      }}
+
                       sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
                     />
                   </Grid>
