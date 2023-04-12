@@ -44,7 +44,7 @@ export default function AddItem() {
   const [category, setCategory] = useState("");
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
-
+const [open,SetShowTooltip]=useState(false);
   const navigate = useNavigate();
   const time = 1 * 60 * 1000; //waiting time to upload
   useEffect(() => {
@@ -503,7 +503,7 @@ export default function AddItem() {
                       fullWidth
                     >
                       {" "}
-                      secondHand?
+                    Used?
                     </Typography>
                     <Checkbox
                     
@@ -523,11 +523,20 @@ export default function AddItem() {
                     >
                      <Tooltip
                      touch="on"
+                      enterTouchDelay={0}
+                      leaveTouchDelay={6000}
+                     
                        title="You need to subscribe to use this feature" 
                        
                       placement="top">
-                      <span>
-                   New?
+                      <span  onTouchStart={()=>{
+                        SetShowTooltip(true);
+                      }}
+                       onTouchEnd={()=>{
+                        SetShowTooltip(false);
+                       }}
+                       >
+                   Brand New?
                      </span>
                      </Tooltip>
                     </Typography>
@@ -549,7 +558,9 @@ export default function AddItem() {
                     >
                       <Tooltip
                       touch="on"
-                      
+                        enterTouchDelay={0}
+                        leaveTouchDelay={6000}
+                       
                        title="You need to subscribe to use this feature" 
                       
                       style={{color:"magenta"}}
@@ -561,6 +572,8 @@ export default function AddItem() {
                     </Typography>
                     <Checkbox
                       checked={values.featured}
+                      enterTouchDelay={0}
+                      leaveTouchDelay={5000}
                       disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });

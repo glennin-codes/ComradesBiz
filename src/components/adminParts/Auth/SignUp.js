@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Typography,
   FormControl,
@@ -21,9 +21,9 @@ import {
 } from "@mui/material";
 import PhoneInput from "react-phone-number-input";
 
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { LinkedCamera, Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box, Container } from "@mui/system";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
@@ -36,9 +36,9 @@ const SignUp = () => {
   const navigate = useNavigate();
   //   const{setUser}=useContext(AuthContext)
   const [search, setSearch] = React.useState("");
-
+const[privacy,SetPrivacy]=useState('')
   const [locationText, setLocationText] = React.useState("");
-  const [privacyAlert, setPrivacyAlert] = React.useState("");
+ 
   const [placeData, setPlaceData] = React.useState([]);
   const [error, setError] = React.useState("");
   const [loading, setIsLoading] = React.useState(false);
@@ -59,6 +59,7 @@ const SignUp = () => {
 
   const handleChecked = (event) => {
     setChecked(event.target.checked);
+    
   };
 
   const locationRef = useRef();
@@ -414,8 +415,7 @@ const SignUp = () => {
                           autoFocus
                           required
                           fullWidth
-                          name="location"
-                          label="Search Location"
+                          name="location"                     
                           type="text"
                           id="location"
                           placeholder={locationText}
@@ -451,19 +451,36 @@ const SignUp = () => {
                     </Select>
                   </Grid>
                   <Grid item xs={12} sx={{ marginBottom: "10px" }}>
-                    <Typography
-                      sx={{ m: 1, fontSize: "16px" }}
-                      variant="standard"
-                      fullWidth
-                    >
-                      Before you signup, confirm that you have read, understood
-                      and agreed with our{" "}
-                      <a href="/terms"> Terms and conditions </a>
-                      And our <a href="/privacy">Privacy policy</a>
-                    </Typography>
+                  <Typography
+  sx={{ m: 1, fontSize: "16px" }}
+  variant="standard"
+  fullWidth
+>
+  Before you signup, confirm that you have read, understood and agreed with our{" "}
+  <Link href="/terms" style={{color: 'blue', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+    Terms and conditions
+  </Link>{" "}
+  and our{" "}
+  <Link to="/privacy" style={{color: 'blue', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+    Privacy policy
+  </Link>
+</Typography>
                     <Checkbox
-                      checked={checked}
-                      onChange={handleChecked}
+                    
+                    
+                
+                      checked={privacy}
+                      onChange={(e)=>{
+                        SetPrivacy(e.target.checked)
+                           
+                        if (!e.target.checked) {
+                          setError('You must read the terms and privacy policy of comradesBiz before account creation.');
+                          return;
+                        } else {
+                          setError('');
+                        }
+                      }}
+
                       sx={{ "& .MuiSvgIcon-root": { fontSize: 28 } }}
                     />
                   </Grid>

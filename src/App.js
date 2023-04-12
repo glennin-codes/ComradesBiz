@@ -20,6 +20,8 @@ import Login from "./components/adminParts/Auth/Login";
 import AddItem from "./components/adminParts/product/AddItem";
 import PrivateRoutes from "./privateRoute/PrivateRoute";
 import MaintenanceNotice from "./components/adminParts/utils/Maintanance/Maintanance";
+import TermsOfServices from "./components/Terms/TermsOfServices";
+import PrivacyPolicy from "./components/Terms/PrivacyPolicy";
 const App = () => {
   const theme = {
     font: {
@@ -76,11 +78,13 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<PrivacyPolicy/>} />
+            <Route path="/terms" element={<TermsOfServices />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/auth/signup" element={<SignUp />} />
-
+                  
             <Route
               path="/admin"
               element={
