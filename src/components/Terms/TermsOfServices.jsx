@@ -6,7 +6,8 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import { makeStyles } from "@mui/material/styles";
+import { ThemeProvider, makeStyles } from "@mui/material/styles";
+import MuiTheme from "../adminParts/utils/MuiTheme";
 
 const useStyles = {
   header: {
@@ -32,6 +33,7 @@ const useStyles = {
 };
 const TermsOfServices = () => {
   return (
+    <ThemeProvider theme={MuiTheme}>
     <Container
     maxWidth="md"
     sx={{
@@ -140,6 +142,7 @@ const TermsOfServices = () => {
         explicit consent.
       </Typography>
     </Container>
+    </ThemeProvider>
   );
 };
 export default TermsOfServices;
