@@ -523,8 +523,9 @@ const [open,SetShowTooltip]=useState(false);
                     >
                      <Tooltip
                      touch="on"
-                     open={open}
-                     onClose={open}
+                      enterTouchDelay={0}
+                      leaveTouchDelay={6000}
+                     
                        title="You need to subscribe to use this feature" 
                        
                       placement="top">
@@ -556,9 +557,10 @@ const [open,SetShowTooltip]=useState(false);
                       fullWidth
                     >
                       <Tooltip
-                       enterTouchDelay={0}
-                       leaveTouchDelay={5000}
-                      
+                      touch="on"
+                        enterTouchDelay={0}
+                        leaveTouchDelay={6000}
+                       
                        title="You need to subscribe to use this feature" 
                       
                       style={{color:"magenta"}}
