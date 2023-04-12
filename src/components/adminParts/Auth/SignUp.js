@@ -470,13 +470,11 @@ const[privacy,SetPrivacy]=useState('')
                       onChange={(e)=>{
                         SetPrivacy(e.target.checked)
                            
-
-                        if (!privacy){
-                          setError('You must read the terms and privacy policy of comradesBiz before account creation')
-                           return;
-                        }
-                        else{
-                          setError('')
+                        if (!e.target.checked) {
+                          setError('You must read the terms and privacy policy of comradesBiz before account creation.');
+                          return;
+                        } else {
+                          setError('');
                         }
                       }}
 

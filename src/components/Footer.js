@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
-import {FaGithub, FaInstagram, FaLinkedin, FaTwitter} from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -28,7 +28,12 @@ const Footer = () => {
           <div className="container grid grid-four-column">
             <div className="footer-about">
               <h3>ComradesBiz</h3>
-              <p>ComradesBiz is a legitimate platform that connects buyers and sellers, giving you access to a wider pool of potential customers. So NOT A SCAM or a WASH WASH. Buy and sell with confidence on ComradesBiz today! </p>
+              <p>
+                ComradesBiz is a legitimate platform that connects buyers and
+                sellers, giving you access to a wider pool of potential
+                customers. So NOT A SCAM or a WASH WASH. Buy and sell with
+                confidence on ComradesBiz today!{" "}
+              </p>
             </div>
             <div className="footer-subscribe">
               <h3>Subscribe to get important updates</h3>
@@ -43,20 +48,22 @@ const Footer = () => {
               <div className="footer-social--icons">
                 <div>
                   <a href="https://twitter.com/ComradesBiz" target="_blank">
-                  <FaTwitter className="icons" />
+                    <FaTwitter className="icons" />
                   </a>
                 </div>
                 <div>
-                <a
+                  <a
                     href="https://www.instagram.com/comradesbiz/"
-                    target="_blank">
-                  <FaInstagram className="icons" />
+                    target="_blank"
+                  >
+                    <FaInstagram className="icons" />
                   </a>
                 </div>
                 <div>
                   <a
                     href="https://www.linkedin.com/in/glenayienda/"
-                    target="_blank">
+                    target="_blank"
+                  >
                     <FaLinkedin className="icons" />
                   </a>
                 </div>
@@ -72,14 +79,39 @@ const Footer = () => {
             <hr />
             <div className="container grid grid-two-column ">
               <p>
-                @{new Date().getFullYear()} 💟 Glennin Technologies All Rights Reserved
+                @{new Date().getFullYear()} 💟 Glennin Technologies All Rights
+                Reserved
               </p>
               <div>
-                <Link to='/policy'>
-                <p>PRIVACY POLICY</p>
+                <Link
+                  to="/privacy"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <p
+                    style={{
+                      display: "inline",
+                      ":hover": { textDecoration: "underline" },
+                    }}
+                  >
+                    PRIVACY POLICY
+                  </p>
                 </Link>
-                <Link to="/terms" >
-                <p>TERMS & CONDITIONS</p>
+                <Link
+                  to="/terms"
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    marginLeft: "20px",
+                  }}
+                >
+                  <p
+                    style={{
+                      display: "inline",
+                      ":hover": { textDecoration: "underline" },
+                    }}
+                  >
+                    TERMS &amp; CONDITIONS
+                  </p>
                 </Link>
               </div>
             </div>
