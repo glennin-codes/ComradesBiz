@@ -457,11 +457,11 @@ const[privacy,SetPrivacy]=useState('')
   fullWidth
 >
   Before you signup, confirm that you have read, understood and agreed with our{" "}
-  <Link href="/terms" sx={{color: 'inherit', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+  <Link href="/terms" style={{color: 'blue', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
     Terms and conditions
   </Link>{" "}
   and our{" "}
-  <Link to="/privacy" sx={{color: 'inherit', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+  <Link to="/privacy" style={{color: 'blue', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
     Privacy policy
   </Link>
 </Typography>
