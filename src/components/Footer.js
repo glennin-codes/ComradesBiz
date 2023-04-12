@@ -75,7 +75,9 @@ const Footer = () => {
                 @{new Date().getFullYear()} 💟 Glennin Technologies All Rights Reserved
               </p>
               <div>
+                <Link to='/policy'>
                 <p>PRIVACY POLICY</p>
+                </Link>
                 <Link to="/terms" >
                 <p>TERMS & CONDITIONS</p>
                 </Link>
