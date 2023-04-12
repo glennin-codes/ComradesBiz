@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
 import {FaGithub, FaInstagram, FaLinkedin, FaTwitter} from "react-icons/fa";
 
@@ -76,7 +76,9 @@ const Footer = () => {
               </p>
               <div>
                 <p>PRIVACY POLICY</p>
+                <Link to="/terms">
                 <p>TERMS & CONDITIONS</p>
+                </Link>
               </div>
             </div>
           </div>
