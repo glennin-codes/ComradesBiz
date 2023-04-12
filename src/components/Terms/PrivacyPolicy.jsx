@@ -3,12 +3,22 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider } from "@mui/material";
 import MuiTheme from "../adminParts/utils/MuiTheme";
+const useStyles = {
+  header: {
+    backgroundColor: "#f5f5f5",
+    color: "#333",
+    padding: "16px",
+    textAlign: "center",
+    fontWeight: "bold",
+    marginBottom: "24px",
+  },
+}
 
 const PrivacyPolicy = () => {
   return (
     <ThemeProvider theme={MuiTheme}>
     <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Typography variant="h4" sx={{ mb: 2 }}>
+      <Typography variant="h4" sx={{ mb: 2 }} style={useStyles.header}>
         Privacy Policy
       </Typography>
       <Typography variant="body1" sx={{ mb: 2 }}>
