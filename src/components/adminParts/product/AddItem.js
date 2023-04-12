@@ -44,7 +44,7 @@ export default function AddItem() {
   const [category, setCategory] = useState("");
   // const { user } = useContext(AuthContext);
   const [name, setName] = useState(localStorage.getItem("name") || "");
-
+const [open,SetShowTooltip]=useState(false);
   const navigate = useNavigate();
   const time = 1 * 60 * 1000; //waiting time to upload
   useEffect(() => {
@@ -503,7 +503,7 @@ export default function AddItem() {
                       fullWidth
                     >
                       {" "}
-                      Used?
+                    Used?
                     </Typography>
                     <Checkbox
                     
@@ -523,10 +523,18 @@ export default function AddItem() {
                     >
                      <Tooltip
                      touch="on"
+                     open={open}
+                     onClose={open}
                        title="You need to subscribe to use this feature" 
                        
                       placement="top">
-                      <span>
+                      <span  onTouchStart={()=>{
+                        SetShowTooltip(true);
+                      }}
+                       onTouchEnd={()=>{
+                        SetShowTooltip(false);
+                       }}
+                       >
                    Brand New?
                      </span>
                      </Tooltip>
