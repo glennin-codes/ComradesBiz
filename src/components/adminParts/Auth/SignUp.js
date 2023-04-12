@@ -23,7 +23,7 @@ import PhoneInput from "react-phone-number-input";
 
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { Box, Container } from "@mui/system";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
@@ -451,17 +451,20 @@ const[privacy,SetPrivacy]=useState('')
                     </Select>
                   </Grid>
                   <Grid item xs={12} sx={{ marginBottom: "10px" }}>
-                    <Typography
-                      sx={{ m: 1, fontSize: "16px" }}
-                      variant="standard"
-                      fullWidth
-                     
-                    >
-                      Before you signup, confirm that you have read, understood
-                      and agreed with our{" "}
-                      <a href="/terms"> Terms and conditions </a>
-                      And our <a href="/privacy">Privacy policy</a>
-                    </Typography>
+                  <Typography
+  sx={{ m: 1, fontSize: "16px" }}
+  variant="standard"
+  fullWidth
+>
+  Before you signup, confirm that you have read, understood and agreed with our{" "}
+  <Link href="/terms" sx={{color: 'inherit', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+    Terms and conditions
+  </Link>{" "}
+  and our{" "}
+  <Link to="/privacy" sx={{color: 'inherit', textDecoration: 'none', '&:hover': {textDecoration: 'underline'}}}>
+    Privacy policy
+  </Link>
+</Typography>
                     <Checkbox
                     
                     
