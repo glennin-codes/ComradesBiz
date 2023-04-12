@@ -503,7 +503,7 @@ export default function AddItem() {
                       fullWidth
                     >
                       {" "}
-                      secondHand?
+                      Used?
                     </Typography>
                     <Checkbox
                     
@@ -527,7 +527,7 @@ export default function AddItem() {
                        
                       placement="top">
                       <span>
-                   New?
+                   Brand New?
                      </span>
                      </Tooltip>
                     </Typography>
@@ -548,7 +548,8 @@ export default function AddItem() {
                       fullWidth
                     >
                       <Tooltip
-                      touch="on"
+                       enterTouchDelay={0}
+                       leaveTouchDelay={5000}
                       
                        title="You need to subscribe to use this feature" 
                       
@@ -561,6 +562,8 @@ export default function AddItem() {
                     </Typography>
                     <Checkbox
                       checked={values.featured}
+                      enterTouchDelay={0}
+                      leaveTouchDelay={5000}
                       disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });
