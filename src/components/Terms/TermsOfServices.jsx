@@ -62,21 +62,26 @@ const TermsOfServices = () => {
       <Typography variant="h6" gutterBottom>
         Prohibited Items
       </Typography>
-      <List>
+      <List
+        sx={{ fontSize:'16px'}}
+  style={{fontSize:'16px',}}
+      >
         <ListItem>
           <ListItemText secondary="The following items are strictly prohibited on ComradeBiz Marketplace:" />
         </ListItem>
         <ListItem>
-          <ListItemText primary="Illegal items" />
+          <ListItemText secondary="Illegal items" />
         </ListItem>
         <ListItem>
-          <ListItemText primary="Drugs" />
+          <ListItemText secondary="Drugs" />
         </ListItem>
         <ListItem>
-          <ListItemText primary="Weapons" />
+          <ListItemText secondary="Weapons" />
         </ListItem>
-        <ListItem>
-          <ListItemText primary="Any items that promote or glorify violence or hatred" />
+        <ListItem 
+           
+        >
+          <ListItemText  secondary="Any items that promote or glorify violence or hatred" />
         </ListItem>
       </List>
       <Typography variant="h6" gutterBottom>
