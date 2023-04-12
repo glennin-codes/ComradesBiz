@@ -64,7 +64,7 @@ const TermsOfServices = () => {
       </Typography>
       <List>
         <ListItem>
-          <ListItemText primary="The following items are strictly prohibited on ComradeBiz Marketplace:" />
+          <ListItemText secondary="The following items are strictly prohibited on ComradeBiz Marketplace:" />
         </ListItem>
         <ListItem>
           <ListItemText primary="Illegal items" />
