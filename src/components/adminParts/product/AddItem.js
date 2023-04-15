@@ -542,7 +542,7 @@ const [open,SetShowTooltip]=useState(false);
                     </Typography>
                     <Checkbox
                       checked={values.isClean}
-                      disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
+                      
                       onChange={(event) => {
                         setValues({ ...values, isClean: event.target.checked });
                       }}
@@ -574,7 +574,7 @@ const [open,SetShowTooltip]=useState(false);
                       checked={values.featured}
                       enterTouchDelay={0}
                       leaveTouchDelay={5000}
-                      disabled={localStorage.getItem("email") !== "jobombaso98@gmail.com"}
+                     
                       onChange={(event) => {
                         setValues({ ...values, featured: event.target.checked });
                       }}
