@@ -106,9 +106,9 @@ const App = () => {
             <Route
               path="/verifycode"
               element={
-                <PrivateRoutes>
+                
                   <VerifyEmail />
-                </PrivateRoutes>
+              
               }
             />
 
