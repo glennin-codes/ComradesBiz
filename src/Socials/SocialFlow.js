@@ -29,10 +29,11 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
       
       },
       alignItems: 'center', gap: '10px' }}>
+         <Typography variant="subtitle1" sx={{ color: '#666' }}>Notify seller</Typography>
         <ListItem disablePadding>
           <ListItemIcon>
             <IconButton component={Link} href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <WhatsApp fontSize='80px'
+              <WhatsApp  fontSize='40'
                sx={{background: '#075e54'}}
 
                />
@@ -43,7 +44,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
           <ListItemIcon>
             <IconButton component={Link} href={facebookLink} target="_blank" rel="noopener noreferrer">
               <Facebook 
-              fontSize='80px'
+             fontSize='40'
                   sx={{ background: '#4267B2'}}
               />
             </IconButton>
@@ -53,7 +54,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
           <ListItemIcon>
             <IconButton component={Link} href={instagramLink} target="_blank" rel="noopener noreferrer">
             <Instagram
-            fontSize='80px'
+            fontSize='40'
   sx={{
     background: '#f09433',
     background: '-moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', 
@@ -66,7 +67,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             </IconButton>
           </ListItemIcon>
         </ListItem>
-        <Typography variant="subtitle1" sx={{ color: '#666' }}>Notify seller</Typography>
+       
       </List>
     </Box>
   );
