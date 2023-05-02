@@ -51,7 +51,9 @@ export default function SocialFlow({ infos }) {
           gap: "10px",
         }}
       >
-        <Typography variant="subtitle1" sx={{ color: "#666" }}>
+        <Typography variant="h6" sx={{  color: 'gray' ,fontWeight: 'bold', display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'}}>
           Notify seller
         </Typography>
         <ListItem disablePadding>
@@ -79,7 +81,7 @@ export default function SocialFlow({ infos }) {
           <ListItemIcon>
             <IconButton
               component={Link}
-              href={facebookLink}
+              href='#'
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -100,7 +102,7 @@ export default function SocialFlow({ infos }) {
           <ListItemIcon>
             <IconButton
               component={Link}
-              href={instagramLink}
+              href='#'
               target="_blank"
               rel="noopener noreferrer"
             >
