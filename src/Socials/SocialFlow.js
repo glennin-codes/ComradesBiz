@@ -5,7 +5,8 @@ import { WhatsApp, Facebook, Instagram } from '@mui/icons-material';
 export default function SocialFlow({infos}) {
   const {phone,name,price,image}=infos
 
-const message = `Hi, I'm interested in your ${name} product that is priced at ${price}. Can you provide me with more information?<br><img src="${image[0]?.url}" alt="${name}">`;
+const message = `Hi, I'm interested in your ${name} product that is priced at ${price}. Can you provide me with more information?<br>${image && image.length > 0 && <img src={image[0]?.url} alt={name} />}
+`;
 
 const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
   const facebookLink = `https://www.facebook.com/sharer.php?u=${encodeURIComponent(window.location.href)}`;
