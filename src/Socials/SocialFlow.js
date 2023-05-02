@@ -65,6 +65,8 @@ export default function SocialFlow({ infos }) {
               <WhatsApp
                 fontSize="large"
                 sx={{
+                  color: '#fff !important',
+                  borderRadius:'10px',
                   width: "32px",
                   height: "32px",
                   background: "#075e54",
@@ -84,6 +86,8 @@ export default function SocialFlow({ infos }) {
               <Facebook
                 fontSize="large"
                 sx={{
+                  color: '#fff !important',
+                  borderRadius:'10px',
                   width: "32px",
                   height: "32px",
                   background: "#4267B2",
@@ -103,6 +107,8 @@ export default function SocialFlow({ infos }) {
               <Instagram
                 fontSize="large"
                 sx={{
+                  color: '#fff !important',
+                  borderRadius:'10px',
                   width: "32px",
                   height: "32px",
                   background: "#f09433",
