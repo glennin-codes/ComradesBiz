@@ -13,8 +13,8 @@ const Address = () => {
                 </div>
                 <div className='main_container_address-content-heading-para'>
                     <h6 className='main_container_address-content-heading-para' >Kutus Kerugoya Road <br />
-                        3rd Floor <br />
-                        Ngomongo Bypass , </h6>
+                       Chess area<br />
+                        or,lab3 </h6>
                 </div>
             </div>
         </>

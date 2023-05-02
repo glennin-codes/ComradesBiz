@@ -31,22 +31,22 @@ const department = [
 
 export const assessors = [
     {
-        title: "Vendor Relations Manager ",
-        name: "John Smith",
-        email: "john.smith@comradesbiz.com",
-        phone: "+25475454223"
+        title: "Vendor Relations Manager",
+        name: "Malongo BRIAN",
+        email: "gadiebrian9@gmail.com",
+        phone: "+254799286464"
       },
          {
         title: "Secretary",
         name: "Jane Doe",
         email: "jane.doe@comradesbiz.com",
-        phone: "+25433335"
+        phone: "+2543333577"
       },
       {
-        title: "Product Specialist",
-        name: "johnDoe",
-        email: "mark.johnson@comradesbiz.com",
-        phone: "+254723344443"
+        title: "Research And Development Expert",
+        name: "Albright Ogeto Omwenga",
+        email: "albrightogeto@gmail.com",
+        phone: "+254769779475"
 }
 ]
 
