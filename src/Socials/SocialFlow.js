@@ -15,33 +15,55 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
   return (
     <Box
       sx={{
-        position: 'fixed',
-        bottom: '20px',
+        // position: 'fixed',
+        bottom: '50px',
         right: '20px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
       }}
     >
-      <List sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+      <List sx={{ display: 'flex', justifyContent: 'center', 
+       transition: 'all .3s linear' ,'& > *:hover': {
+        transform: 'scale(1.2)',
+        borderBottom: '2px solid rgba(0,0,0,.5)',
+        boxShadow: '0 0 2px 2px rgba(0,0,0,.3)',
+      },
+      alignItems: 'center', gap: '10px' }}>
         <ListItem disablePadding>
           <ListItemIcon>
             <IconButton component={Link} href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <WhatsApp />
+              <WhatsApp fontSize='23px'
+               sx={{background: '#075e54'}}
+
+               />
             </IconButton>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
           </ListItemIcon>
         </ListItem>
         <ListItem disablePadding>
           <ListItemIcon>
             <IconButton component={Link} href={facebookLink} target="_blank" rel="noopener noreferrer">
-              <Facebook />
+              <Facebook 
+              fontSize='23px'
+                  sx={{ background: '#4267B2'}}
+              />
             </IconButton>
           </ListItemIcon>
         </ListItem>
         <ListItem disablePadding>
           <ListItemIcon>
             <IconButton component={Link} href={instagramLink} target="_blank" rel="noopener noreferrer">
-              <Instagram />
+            <Instagram
+            fontSize='23px'
+  sx={{
+    background: '#f09433',
+    background: '-moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', 
+    background: '-webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+    background:' linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
+    // filter:'progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 )',
+  }}
+/>
+
             </IconButton>
           </ListItemIcon>
         </ListItem>
