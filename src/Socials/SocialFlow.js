@@ -15,9 +15,9 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
   return (
     <Box
       sx={{
-        // position: 'fixed',
+        position: 'fixed',
         bottom: '50px',
-        right: '20px',
+        right: '10px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -26,8 +26,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
       <List sx={{ display: 'flex', justifyContent: 'center', 
        transition: 'all .3s linear' ,'& > *:hover': {
         transform: 'scale(1.2)',
-        borderBottom: '2px solid rgba(0,0,0,.5)',
-        boxShadow: '0 0 2px 2px rgba(0,0,0,.3)',
+      
       },
       alignItems: 'center', gap: '10px' }}>
         <ListItem disablePadding>
