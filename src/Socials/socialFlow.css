@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+  
+  }
+  body{
+    height: 100vh;
+  }
+  nav{
+    position: fixed;
+    width: 40px;
+    font-family: 'Ubuntu',sans-serif;
+    bottom: 15%;
+    margin-left:85%;
+    transition: all 0.3s linear;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
+    
+  }
+  
+  nav ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+  }
+  nav li{
+    height: 30px;
+    position:relative;
+  }
+  .icon{
+    padding-bottom:20px;
+    size: 5px;
+  }
+  nav li a{
+    color: #fff !important;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 45px;
+    padding-left:25%;
+    border-bottom: 1px solid rgba(0,0,0,.4);
+    transition: all .3s linear;
+    text-decoration: none !important;
+  }
+  nav li:nth-child(1) a{
+    background: #4267B2;
+  }
+  nav li:nth-child(2) a{
+    background: #1DA1F2;
+  }
+  
+  nav li:nth-child(3) a{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+      
+  }
+  nav li:nth-child(4) a{
+    background: #075e54;
+  }
+  
+  nav li a i{
+        position: absolute;
+      top: 14px;
+      left: 24px;
+      font-size: 15px;
+  }
+  nav ul li a:hover {      
+    border-bottom: 2px solid rgba(0,0,0,.5);
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.3);
+  }
+  
+  @media only screen and  (min-width: 1200px),  (min-width: 550px) {
+   
+    nav{
+      margin-left:94%;
+    }
+  }
+  
+  /* }
+  @media only screen and (min-width: 550px) {
+    nav{
+      margin-left:90%;
+    }
+  } */
+  /* ul li a span{
+    display: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  } */
+  /* nav ul li a:hover {
+    z-index:1;
+    width: 170px;        
+    border-bottom: 1px solid rgba(0,0,0,.5);
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
+  } */
+  /* ul li:hover a span{
+    padding-left: 30%;
+    display: block;
+    font-size: 15px;
+  } */
