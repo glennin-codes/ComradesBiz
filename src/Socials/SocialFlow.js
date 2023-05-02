@@ -1,11 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./socialFlow.css";
-import {
-  faFacebook,
-  faTwitter,
-  faWhatsapp,
-  faInstagram
-} from "@fortawesome/free-brands-svg-icons";
+import { FaFacebook, FaInstagram, FaTwitter, FaWhatsapp } from "react-icons/fa";
+// import {
+//   faFacebook,
+//   faTwitter,
+//   faWhatsapp,
+//   faInstagram
+// } from "@fortawesome/free-brands-svg-icons";
 
 export default function SocialFlow({infos}) {
   const {phone,name,price,image}=infos
@@ -24,7 +25,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             rel="noopener noreferrer"
           >
             <i>
-              <FontAwesomeIcon icon={faFacebook} className="icon" />
+              <FontAwesomeIcon icon={FaFacebook} className="icon" />
             </i>
           
           </a>
@@ -36,7 +37,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             rel="noopener noreferrer"
           >
             <i>
-              <FontAwesomeIcon icon={faTwitter} className="icon" />
+              <FontAwesomeIcon icon={FaTwitter} className="icon" />
             </i>
             
           </a>
@@ -48,7 +49,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             rel="noopener noreferrer"
           >
             <i>
-              <FontAwesomeIcon icon={faInstagram} className="icon" />
+              <FontAwesomeIcon icon={FaInstagram} className="icon" />
             </i>
             
           </a>
@@ -60,7 +61,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             rel="noopener noreferrer"
           >
             <i>
-              <FontAwesomeIcon icon={faWhatsapp} className="icon" />
+              <FontAwesomeIcon icon={FaWhatsapp} className="icon" />
             </i>
             
           </a>
