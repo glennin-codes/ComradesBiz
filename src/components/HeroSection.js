@@ -19,7 +19,7 @@ const HeroSection = ({ myData }) => {
               gently used products, as well as unique and affordable services
               from your fellow students.
             </p>
-            <p>
+            {/* <p>
               We understand being a student can be too expensive, but with
               comradeBiz, you don't have to break the bank to get what you need.
               Our platform offers a wide range of products, including shoes,
@@ -27,9 +27,9 @@ const HeroSection = ({ myData }) => {
               that are affordable for students like you. . Say goodbye to
               overpriced items and hello to budget-friendly options that won't
               leave you strapped for cash.
-            </p>
+            </p> */}
             <p>
-              But it's not just about buying,you can easily sign up As a vendor
+              It's not just about buying,you can easily sign up As a vendor
               and list your products for sale, whether they're brand new or
               gently used. From tech devices like smartphones and laptops to
               practical items like water dispensers and stylish furniture, our
