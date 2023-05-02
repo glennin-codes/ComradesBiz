@@ -66,6 +66,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
             </IconButton>
           </ListItemIcon>
         </ListItem>
+        <Typography variant="subtitle1" sx={{ color: '#666' }}>Notify seller</Typography>
       </List>
     </Box>
   );
