@@ -14,6 +14,7 @@ import { css } from "@emotion/react";
 import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 import { Alert } from "@mui/material";
+import SocialFlow from "./Socials/SocialFlow";
 
 const override = css`
   display: block;
@@ -137,7 +138,7 @@ const SingleProduct = () => {
             <p className="product-data-price ">
               KSH:
               <del>
-                <FormatPrice price={price + 1999} />
+                <FormatPrice price={price + 150} />
               </del>
             </p>
             <p className="product-data-price product-data-real-price">
@@ -206,6 +207,7 @@ const SingleProduct = () => {
             </div>
             <hr />
             {stock > 0 && <AddToCart product={singleProduct} />}
+              <SocialFlow infos={{phone, name ,price ,image}} />
             {error && (
               <Alert severity="error" sx={{ width: "100%" }}>
                 {error}
