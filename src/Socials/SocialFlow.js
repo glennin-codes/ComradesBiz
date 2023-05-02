@@ -15,7 +15,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
   return (
     <Box
       sx={{
-        position: 'fixed',
+        // position: 'fixed',
         bottom: '50px',
         right: '10px',
         display: 'flex',
@@ -32,7 +32,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
         <ListItem disablePadding>
           <ListItemIcon>
             <IconButton component={Link} href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <WhatsApp fontSize='23px'
+              <WhatsApp fontSize='small'
                sx={{background: '#075e54'}}
 
                />
@@ -43,7 +43,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
           <ListItemIcon>
             <IconButton component={Link} href={facebookLink} target="_blank" rel="noopener noreferrer">
               <Facebook 
-              fontSize='23px'
+              fontSize='small'
                   sx={{ background: '#4267B2'}}
               />
             </IconButton>
@@ -53,7 +53,7 @@ const whatsappLink = `https://api.whatsapp.com/send?phone=${phone}&text=${encode
           <ListItemIcon>
             <IconButton component={Link} href={instagramLink} target="_blank" rel="noopener noreferrer">
             <Instagram
-            fontSize='23px'
+            fontSize='small'
   sx={{
     background: '#f09433',
     background: '-moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', 
