@@ -52,9 +52,6 @@ npm i
 
 npm start
 
-# My Project
-
-This project is based on the work of Preeti Raj, available under the MIT license.
 
 ## License
 
