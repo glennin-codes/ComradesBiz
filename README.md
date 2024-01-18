@@ -3,7 +3,7 @@
 
 
 
-##### Here's features included in this project
+##### Here's features  in this project
 
 - Add to cart functionality
 - Shopping cart functionality
@@ -70,7 +70,5 @@ This repository includes modifications to the original codebase, including .
 -used MUI and boostrap for additional stylings
 
 
-## Attribution
 
-Original author: Preeti Raj
 
