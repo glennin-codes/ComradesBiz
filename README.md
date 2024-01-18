@@ -57,9 +57,7 @@ npm start
 
 This code is licensed under the terms of the MIT license. Please see the LICENSE file for more information.
 
-## Modifications
-
-This repository includes modifications to the original codebase, including .
+## admin features
 - Cart and checkout page added a notifyer to notify each seller of a single product
 - Contact page added a map and a working contact form
 - Login and Register page,  the register page increased the authenticity and validation of a new user, buy validating their emails through an email link sent to their reqistered emails
